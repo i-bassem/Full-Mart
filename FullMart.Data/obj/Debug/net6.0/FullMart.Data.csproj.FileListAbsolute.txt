@@ -1,0 +1,17 @@
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll

@@ -1,0 +1,12 @@
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.csproj.AssemblyReference.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.AssemblyInfoInputs.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.AssemblyInfo.cs
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\bin\Debug\net6.0\FullMart.Core.deps.json
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\bin\Debug\net6.0\FullMart.Core.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\bin\Debug\net6.0\FullMart.Core.pdb
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\refint\FullMart.Core.dll
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\FullMart.Core.pdb
+C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Core\obj\Debug\net6.0\ref\FullMart.Core.dll
