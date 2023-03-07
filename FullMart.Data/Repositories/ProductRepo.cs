@@ -1,9 +1,11 @@
 ﻿using FullMart.Core.Interfaces;
 using FullMart.Core.Models;
 using FullMart.Data.Database;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,26 +17,44 @@ namespace FullMart.Data.Repositories
 
         public ProductRepo(ApplicationDbContext context):base(context)
         { 
+           this.context = context;
         }
 
         public int Count()
         {
-            throw new NotImplementedException();
+            return context.Products.Count();
         }
 
-        public Task<IEnumerable<Product>> GetByBrand(int brandId)
+        public async Task<Product> GetByBrand(string brandName)
         {
-            throw new NotImplementedException();
+            var product = await context.Products
+               .Include("Category")
+               .Include("Brand")
+               .FirstOrDefaultAsync(p => p.Brand.BrandName == brandName);
+
+            return product;
         }
 
-        public Task<IEnumerable<Product>> GetByCategory(int categoryId)
+        public async Task<Product> GetByCategory(string categoryName)
         {
-            throw new NotImplementedException();
+            var product = await context.Products
+               .Include("Category")
+               .Include("Brand")
+               .FirstOrDefaultAsync(p => p.Category.CategoryName == categoryName);
+
+            return product;
+
         }
 
-        public async Task<IEnumerable<Product>> GetByName(string name)
+        public async Task<Product> GetByName(string name)
         {
-            throw new NotImplementedException();
+
+            var product = await  context.Products
+                .Include("Category")
+                .Include("Brand")
+                .FirstOrDefaultAsync(p => p.PName == name);
+
+            return product;
         }
     }
 

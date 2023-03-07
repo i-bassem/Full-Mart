@@ -48,6 +48,9 @@ namespace FullMart.Core.Models
         public virtual ICollection<Cart>? Carts { get; set; }
         public virtual ICollection<WishList>? WishLists { get; set; }
 
+ 
+
+
 
 
     }

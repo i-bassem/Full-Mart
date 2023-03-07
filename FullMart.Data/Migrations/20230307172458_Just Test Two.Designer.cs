@@ -4,6 +4,7 @@ using FullMart.Data.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FullMart.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230307172458_Just Test Two")]
+    partial class JustTestTwo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +37,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("CategoriesId");
 
-                    b.ToTable("BrandCategory", (string)null);
+                    b.ToTable("BrandCategory");
                 });
 
             modelBuilder.Entity("CartProduct", b =>
@@ -49,7 +52,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("CartProduct", (string)null);
+                    b.ToTable("CartProduct");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.AppUser", b =>
@@ -144,7 +147,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands", (string)null);
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Cart", b =>
@@ -162,7 +165,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Category", b =>
@@ -184,7 +187,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Order", b =>
@@ -208,7 +211,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Product", b =>
@@ -254,7 +257,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Review", b =>
@@ -284,7 +287,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.WishList", b =>
@@ -303,7 +306,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("WishLists", (string)null);
+                    b.ToTable("WishLists");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -451,7 +454,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("OrderProduct", (string)null);
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("ProductWishList", b =>
@@ -466,7 +469,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("WishListsId");
 
-                    b.ToTable("ProductWishList", (string)null);
+                    b.ToTable("ProductWishList");
                 });
 
             modelBuilder.Entity("BrandCategory", b =>
