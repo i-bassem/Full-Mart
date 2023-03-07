@@ -42,11 +42,12 @@ namespace FullMart.Data.Repositories
                     query = query.Include(includeValue);
 
             return await query.ToListAsync();
+          
         }
 
         public async Task<T> GetById(Expression<Func<T, bool>> expression, string[] includes = null)
         {
-            IQueryable<T> query = _context.Set<T>();
+            IQueryable<T> query =  _context.Set<T>();
 
             if (includes != null)
 

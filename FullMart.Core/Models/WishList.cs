@@ -14,6 +14,7 @@ namespace FullMart.Core.Models
 
   
         public ICollection<Product> Products { get; set; } = new HashSet<Product>();
+
         
 
 
