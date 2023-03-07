@@ -22,29 +22,43 @@ namespace FullMart.Api.Controllers
         }
 
 
+        ////https://localhost:7191/api/Product
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllProduct()
         {
             
-            var products = await _unitOfWork.Products.GetAll(new[] { "Category","Brand", });
-
-            //var result = products.Select(p => new ProductCategoryBrandDto
-            //{
-            //    Id = p.Id,
-            //    ProductName = p.PName,
-            //    Price = p.Price,
-            //    Quantity = p.Quantity,
-            //    BrandName = p.Brand.BrandName,
-            //    CategoryName = p.Category.CategoryName
-            //});
-           
-
+            var products = await _unitOfWork.Products
+                .GetAll(new[] { "Category","Brand", });
 
 
             var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(products);
 
+            if (result.Any())
+            {
+                return Ok(result);
+            }
+            else
+                return Content("Product is Empty");
+          
+        }
+
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetProductById(int id)
+        {
+
+            var product = await _unitOfWork.Products.GetById(p => p.Id == id , new[] { "Category", "Brand", });
+
+            if(product == null)
+            {
+                return BadRequest($"The Product With this Id = {id} Not Found..");
+            }
+            
+              var result = _mapper.Map<ProductCategoryBrandDto>(product);
+
 
             return Ok(result);
+
 
         }
     }

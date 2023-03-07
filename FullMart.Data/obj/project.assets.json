@@ -4399,19 +4399,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\B\\.nuget\\packages\\": {}
+    "C:\\Users\\Ahmed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B\\Desktop\\New folder (7)\\E-Commerce\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj",
+      "projectUniqueName": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj",
       "projectName": "FullMart.Data",
-      "projectPath": "C:\\Users\\B\\Desktop\\New folder (7)\\E-Commerce\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj",
-      "packagesPath": "C:\\Users\\B\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B\\Desktop\\New folder (7)\\E-Commerce\\Full-Mart\\FullMart.Data\\obj\\",
+      "projectPath": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj",
+      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+      "outputPath": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\B\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4425,8 +4425,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\B\\Desktop\\New folder (7)\\E-Commerce\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {
-              "projectPath": "C:\\Users\\B\\Desktop\\New folder (7)\\E-Commerce\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj"
+            "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {
+              "projectPath": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj"
             }
           }
         }

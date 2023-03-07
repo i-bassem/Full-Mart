@@ -32,3 +32,20 @@ C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\n
 C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
 C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
 C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
+C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,9 +44,16 @@ namespace FullMart.Data.Repositories
             return await query.ToListAsync();
         }
 
-        public async Task< T> GetById(int id)
+        public async Task<T> GetById(Expression<Func<T, bool>> expression, string[] includes = null)
         {
-            return  await _context.Set<T>().FindAsync(id);
+            IQueryable<T> query = _context.Set<T>();
+
+            if (includes != null)
+
+                foreach (var includeValue in includes)
+                    query = query.Include(includeValue);
+
+            return await query.FirstOrDefaultAsync(expression);
         }
 
         public void Update(T entity)
