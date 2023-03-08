@@ -28,7 +28,7 @@ namespace FullMart.Data.Database
 
 
         public DbSet<WishListProduct> WishListProducts { get; set; }
-        public DbSet<BrandCategory> BrandCategories { get; set; }
+        
         public DbSet<CartProduct> CartProducts { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
 
@@ -106,18 +106,7 @@ namespace FullMart.Data.Database
 
             #region Many To Many realtionship between brand and category
 
-            builder.Entity<BrandCategory>()
-                .HasKey(bc => new { bc.BrandId, bc.CategoryId });
-
-            builder.Entity<BrandCategory>()
-                .HasOne(b => b.Brand)
-                .WithMany(bc => bc.BrandCategories)
-                .HasForeignKey(b => b.BrandId);
-
-            builder.Entity<BrandCategory>()
-                .HasOne(c => c.Category)
-                .WithMany(bc => bc.BrandCategories)
-                .HasForeignKey(c => c.CategoryId);
+            
 
             #endregion
 
