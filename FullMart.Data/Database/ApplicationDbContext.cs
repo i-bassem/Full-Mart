@@ -52,9 +52,76 @@ namespace FullMart.Data.Database
             //   .WithOne(a => a.WishList)
             //   .HasForeignKey<AppUser>(a => a.WishListId);
 
+
+            #region Many To Many realtionship between wishlist and products
+
+            builder.Entity<WishListProduct>()
+                .HasKey(wp => new { wp.WishlistId, wp.ProductId });
+
+            builder.Entity<WishListProduct>()
+                .HasOne(p => p.Product)
+                .WithMany(wp => wp.WishListProducts)
+                .HasForeignKey(p => p.ProductId);
+
+            builder.Entity<WishListProduct>()
+                .HasOne(w => w.WishList)
+                .WithMany(wp => wp.WishListProducts)
+                .HasForeignKey(w => w.WishlistId);
+
+            #endregion
+
+            #region Many To Many realtionship between order and products
+
+            builder.Entity<OrderProduct>()
+                .HasKey(op => new { op.OrderId, op.ProductId });
+
+            builder.Entity<OrderProduct>()
+                .HasOne(p => p.Product)
+                .WithMany(op => op.OrderProducts)
+                .HasForeignKey(p => p.ProductId);
+
+            builder.Entity<OrderProduct>()
+                .HasOne(o => o.Order)
+                .WithMany(op => op.OrderProducts)
+                .HasForeignKey(o => o.OrderId);
+
+            #endregion
+
+            #region Many To Many realtionship between cart and products
+
+            builder.Entity<CartProduct>()
+                .HasKey(cp => new {cp.CartId , cp.ProductId });
+
+            builder.Entity<CartProduct>()
+                .HasOne(p => p.Product)
+                .WithMany(cp => cp.CartProducts)
+                .HasForeignKey(p => p.ProductId);
+
+            builder.Entity<CartProduct>()
+                .HasOne(c => c.Cart)
+                .WithMany(cp => cp.CartProducts)
+                .HasForeignKey(c => c.CartId);
+
+            #endregion
+
+            #region Many To Many realtionship between brand and category
+
+            builder.Entity<BrandCategory>()
+                .HasKey(bc => new { bc.BrandId, bc.CategoryId });
+
+            builder.Entity<BrandCategory>()
+                .HasOne(b => b.Brand)
+                .WithMany(bc => bc.BrandCategories)
+                .HasForeignKey(b => b.BrandId);
+
+            builder.Entity<BrandCategory>()
+                .HasOne(c => c.Category)
+                .WithMany(bc => bc.BrandCategories)
+                .HasForeignKey(c => c.CategoryId);
+
+            #endregion
+
+
         }
-
-
-       
     }
 }

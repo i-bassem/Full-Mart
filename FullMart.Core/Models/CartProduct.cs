@@ -11,11 +11,10 @@ namespace FullMart.Core.Models
         public int Id { get; set; }
 
         public int ProductId { get; set; }
-        public ICollection<Product>? Products { get; set; } = new HashSet<Product>();
+        public Product Product { get; set; }
 
         public int CartId { get; set; }
-
-        public ICollection<Cart>? Carts { get; set; } = new HashSet<Cart>();
+        public Cart Cart { get; set; }
 
     }
 }

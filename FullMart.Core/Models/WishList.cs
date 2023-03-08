@@ -15,7 +15,7 @@ namespace FullMart.Core.Models
 
         //public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
-        public WishListProduct? WishListProduct { get; set; }
+        public ICollection<WishListProduct> WishListProducts { get; set; }
 
 
 

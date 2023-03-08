@@ -24,7 +24,7 @@ namespace FullMart.Core.Models
 
         public AppUser AppUser { get; set; }
 
-        public OrderProduct? OrderProducts { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
 
         //public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 

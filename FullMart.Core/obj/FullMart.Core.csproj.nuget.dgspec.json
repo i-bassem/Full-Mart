@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {}
+    "G:\\FullMart\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {}
   },
   "projects": {
-    "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {
+    "G:\\FullMart\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
+        "projectUniqueName": "G:\\FullMart\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
         "projectName": "FullMart.Core",
-        "projectPath": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
-        "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\MyData\\GitHub Project\\ITIProject\\Full-Mart\\FullMart.Core\\obj\\",
+        "projectPath": "G:\\FullMart\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
+        "packagesPath": "C:\\Users\\ahmoh\\.nuget\\packages\\",
+        "outputPath": "G:\\FullMart\\Full-Mart\\FullMart.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahmoh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
