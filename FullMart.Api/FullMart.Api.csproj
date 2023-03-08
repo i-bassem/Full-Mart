@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwroot\" />
+    <Folder Include="wwroot\Upload\" />
   </ItemGroup>
 
 </Project>
