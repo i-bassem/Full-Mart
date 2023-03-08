@@ -4544,24 +4544,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ahmoh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\B\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\FullMart\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
+      "projectUniqueName": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
       "projectName": "FullMart.Api",
-      "projectPath": "G:\\FullMart\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
-      "packagesPath": "C:\\Users\\ahmoh\\.nuget\\packages\\",
-      "outputPath": "G:\\FullMart\\Full-Mart\\FullMart.Api\\obj\\",
+      "projectPath": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
+      "packagesPath": "C:\\Users\\B\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ahmoh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\B\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4575,8 +4570,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "G:\\FullMart\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj": {
-              "projectPath": "G:\\FullMart\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj"
+            "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj": {
+              "projectPath": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj"
             }
           }
         }
@@ -4637,7 +4632,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
