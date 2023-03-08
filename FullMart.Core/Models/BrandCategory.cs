@@ -10,12 +10,10 @@ namespace FullMart.Core.Models
     {
         public int Id { get; set; }
 
-
         public int CategoryId { get; set; }
-        public virtual ICollection<Category>? Categories { get; set; } = new HashSet<Category>();
-
+        public Category Category { get; set; }
 
         public int BrandId { get; set; }
-        public virtual ICollection<Brand>? Brands { get; set; } = new HashSet<Brand>();
+        public Brand Brand { get; set; }
     }
 }

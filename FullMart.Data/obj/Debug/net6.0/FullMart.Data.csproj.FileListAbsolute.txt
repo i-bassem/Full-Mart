@@ -49,3 +49,20 @@ C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref
 C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
 C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
 C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
+G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
+G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
+G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
+G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
+G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
+G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
+G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll

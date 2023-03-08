@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FullMart.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class UpdatingRelationshipsConfiguarations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,45 +15,30 @@ namespace FullMart.Data.Migrations
                 name: "Security");
 
             migrationBuilder.CreateTable(
-                name: "BrandCategories",
+                name: "Brands",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: false)
+                    BrandName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BrandCategories", x => x.Id);
+                    table.PrimaryKey("PK_Brands", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CartProducts",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    CartId = table.Column<int>(type: "int", nullable: false)
+                    CategoryName = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartProducts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "OrderProducts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderProducts", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -101,56 +86,57 @@ namespace FullMart.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WishListProducts",
+                name: "BrandCategories",
                 columns: table => new
                 {
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    BrandId = table.Column<int>(type: "int", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WishlistId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WishListProducts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Brands",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BrandName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    BrandCategoryId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Brands", x => x.Id);
+                    table.PrimaryKey("PK_BrandCategories", x => new { x.BrandId, x.CategoryId });
                     table.ForeignKey(
-                        name: "FK_Brands_BrandCategories_BrandCategoryId",
-                        column: x => x.BrandCategoryId,
-                        principalTable: "BrandCategories",
+                        name: "FK_BrandCategories_Brands_BrandId",
+                        column: x => x.BrandId,
+                        principalTable: "Brands",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BrandCategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    PName = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    PDescription = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Rate = table.Column<byte>(type: "tinyint", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BrandCategoryId = table.Column<int>(type: "int", nullable: false)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    BrandId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Categories_BrandCategories_BrandCategoryId",
-                        column: x => x.BrandCategoryId,
-                        principalTable: "BrandCategories",
+                        name: "FK_Products_Brands_BrandId",
+                        column: x => x.BrandId,
+                        principalTable: "Brands",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Products_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -184,18 +170,11 @@ namespace FullMart.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CartProductId = table.Column<int>(type: "int", nullable: false),
                     AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Carts", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Carts_CartProducts_CartProductId",
-                        column: x => x.CartProductId,
-                        principalTable: "CartProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Carts_Users_AppUserId",
                         column: x => x.AppUserId,
@@ -212,18 +191,11 @@ namespace FullMart.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    OrderProductsId = table.Column<int>(type: "int", nullable: false)
+                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Orders_OrderProducts_OrderProductsId",
-                        column: x => x.OrderProductsId,
-                        principalTable: "OrderProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Orders_Users_AppUserId",
                         column: x => x.AppUserId,
@@ -332,7 +304,6 @@ namespace FullMart.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    WishListProductId = table.Column<int>(type: "int", nullable: false),
                     AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -343,64 +314,6 @@ namespace FullMart.Data.Migrations
                         column: x => x.AppUserId,
                         principalSchema: "Security",
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_WishLists_WishListProducts_WishListProductId",
-                        column: x => x.WishListProductId,
-                        principalTable: "WishListProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Products",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PName = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PDescription = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Rate = table.Column<byte>(type: "tinyint", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: true),
-                    WishListProductId = table.Column<int>(type: "int", nullable: false),
-                    CartProductId = table.Column<int>(type: "int", nullable: false),
-                    OrderProductsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Products", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Products_Brands_BrandId",
-                        column: x => x.BrandId,
-                        principalTable: "Brands",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Products_CartProducts_CartProductId",
-                        column: x => x.CartProductId,
-                        principalTable: "CartProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Products_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Products_OrderProducts_OrderProductsId",
-                        column: x => x.OrderProductsId,
-                        principalTable: "OrderProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Products_WishListProducts_WishListProductId",
-                        column: x => x.WishListProductId,
-                        principalTable: "WishListProducts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -433,10 +346,90 @@ namespace FullMart.Data.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "CartProducts",
+                columns: table => new
+                {
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    CartId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartProducts", x => new { x.CartId, x.ProductId });
+                    table.ForeignKey(
+                        name: "FK_CartProducts_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CartProducts_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderProducts",
+                columns: table => new
+                {
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderProducts", x => new { x.OrderId, x.ProductId });
+                    table.ForeignKey(
+                        name: "FK_OrderProducts_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderProducts_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WishListProducts",
+                columns: table => new
+                {
+                    WishlistId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WishListProducts", x => new { x.WishlistId, x.ProductId });
+                    table.ForeignKey(
+                        name: "FK_WishListProducts_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_WishListProducts_WishLists_WishlistId",
+                        column: x => x.WishlistId,
+                        principalTable: "WishLists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Brands_BrandCategoryId",
-                table: "Brands",
-                column: "BrandCategoryId");
+                name: "IX_BrandCategories_CategoryId",
+                table: "BrandCategories",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartProducts_ProductId",
+                table: "CartProducts",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Carts_AppUserId",
@@ -444,14 +437,9 @@ namespace FullMart.Data.Migrations
                 column: "AppUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carts_CartProductId",
-                table: "Carts",
-                column: "CartProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Categories_BrandCategoryId",
-                table: "Categories",
-                column: "BrandCategoryId");
+                name: "IX_OrderProducts_ProductId",
+                table: "OrderProducts",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_AppUserId",
@@ -459,34 +447,14 @@ namespace FullMart.Data.Migrations
                 column: "AppUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_OrderProductsId",
-                table: "Orders",
-                column: "OrderProductsId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Products_BrandId",
                 table: "Products",
                 column: "BrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_CartProductId",
-                table: "Products",
-                column: "CartProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_OrderProductsId",
-                table: "Products",
-                column: "OrderProductsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_WishListProductId",
-                table: "Products",
-                column: "WishListProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_AppUserId",
@@ -545,24 +513,27 @@ namespace FullMart.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_WishListProducts_ProductId",
+                table: "WishListProducts",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_WishLists_AppUserId",
                 table: "WishLists",
                 column: "AppUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WishLists_WishListProductId",
-                table: "WishLists",
-                column: "WishListProductId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Carts");
+                name: "BrandCategories");
 
             migrationBuilder.DropTable(
-                name: "Orders");
+                name: "CartProducts");
+
+            migrationBuilder.DropTable(
+                name: "OrderProducts");
 
             migrationBuilder.DropTable(
                 name: "Reviews");
@@ -588,36 +559,33 @@ namespace FullMart.Data.Migrations
                 schema: "Security");
 
             migrationBuilder.DropTable(
-                name: "WishLists");
+                name: "WishListProducts");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Carts");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Roles",
                 schema: "Security");
 
             migrationBuilder.DropTable(
-                name: "Users",
-                schema: "Security");
+                name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "WishLists");
 
             migrationBuilder.DropTable(
                 name: "Brands");
 
             migrationBuilder.DropTable(
-                name: "CartProducts");
-
-            migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "OrderProducts");
-
-            migrationBuilder.DropTable(
-                name: "WishListProducts");
-
-            migrationBuilder.DropTable(
-                name: "BrandCategories");
+                name: "Users",
+                schema: "Security");
         }
     }
 }

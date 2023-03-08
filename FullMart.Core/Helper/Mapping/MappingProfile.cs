@@ -33,6 +33,77 @@ namespace FullMart.Core.Helper.AutoMapper
                
                 .ReverseMap();
 
+
+            //CreateMap<TableA, TableAViewModel>();
+            //CreateMap<TableB, TableBViewModel>();
+            //CreateMap<MappingTable, MappingTableViewModel>();
+
+            //CreateMap<AppUser, WishListProductUserDTO>()
+            //    .ForMember(dest => dest.UserName ,
+            //    src => src.MapFrom(src => src.FirstName))
+            //    .ReverseMap();
+
+            CreateMap<WishListProduct, WishListProductUserDTO>()
+
+                .ForMember(dest => dest.ProductName,
+                src => src.MapFrom(src => src.Product.PName.ToList()))
+                .ReverseMap();
+
+            //CreateMap<Product, WishListProduct>();
+            //CreateMap<WishListProduct, WishListProductUserDTO>()
+
+            //.ForMember(dest => dest.UserName,
+            //src => src.MapFrom(src => src.AppUser.UserName))
+
+            //.ForMember(dest => dest.ProductName,
+            //src => src.MapFrom(src => src.Product.PName))
+
+            //.ForMember(dest => dest.ProductDescription,
+            //src => src.MapFrom(src => src.WishListProducts))
+
+            //.ForMember(dest => dest.Price,
+            //src => src.MapFrom(src => src.WishListProducts))
+
+            //.ForMember(dest => dest.ImageUrl,
+            //src => src.MapFrom(src => src.WishListProducts))
+
+            //.ForMember(dest => dest.Quantity,
+            //src => src.MapFrom(src => src.WishListProducts))
+
+            //.ForMember(dest => dest.Rate,
+            //src => src.MapFrom(src => src.WishListProducts))
+
+            //.ReverseMap();
+
+            //  CreateMap<WishList, WishListProductUserDTO>()
+
+
+            //.ForMember(dest => dest.UserName,
+            //src => src.MapFrom(src => src.AppUser.UserName))
+
+            //.ForMember(dest => dest.ProductName,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.PName).ToList()))
+
+            //.ForMember(dest => dest.ProductDescription,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.PDescription)))
+
+            //.ForMember(dest => dest.Price,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.Price)))
+
+            //.ForMember(dest => dest.Quantity,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.Quantity)))
+
+            //.ForMember(dest => dest.ImageUrl,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.ImageUrl)))
+
+            //.ForMember(dest => dest.Rate,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.Rate)))
+
+            //.ForMember(dest => dest.ImageUrl,
+            //src => src.MapFrom(src => src.WishListProduct.Products.Select(p => p.ImageUrl)))
+
+            //.ReverseMap();
+
         }
     }
 }

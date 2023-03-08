@@ -10,11 +10,10 @@ namespace FullMart.Core.Models
     {
         public int Id { get; set; }
         public int WishlistId { get; set; }
-        public virtual ICollection<WishList>? WishLists { get; set; }
+        public WishList WishList { get; set; }
 
 
         public int ProductId { get; set; }
-
-        public ICollection<Product>? Products { get; set; } = new HashSet<Product>();
+        public Product Product { get; set; }
     }
 }

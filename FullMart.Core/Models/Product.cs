@@ -41,12 +41,12 @@ namespace FullMart.Core.Models
 
         public virtual ICollection<Review>? Reviews { get; set; } = new HashSet<Review>();
 
-        public WishListProduct? WishListProduct { get; set; }
+        public ICollection<WishListProduct> WishListProducts { get; set; }
 
 
-        public CartProduct? CartProduct { get; set; }
+        public ICollection<CartProduct> CartProducts { get; set; }
 
-        public OrderProduct? OrderProducts { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
 
         //public virtual ICollection<Order>? Orders { get; set; }
         //public virtual ICollection<Cart>? Carts { get; set; }
