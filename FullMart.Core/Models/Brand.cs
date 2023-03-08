@@ -22,6 +22,6 @@ namespace FullMart.Core.Models
         [JsonIgnore]
         //public virtual ICollection<Category>? Categories { get; set; } = new HashSet<Category>();
 
-        public BrandCategory BrandCategory { get; set; }
+        public BrandCategory? BrandCategory { get; set; }
     }
 }
