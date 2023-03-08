@@ -25,9 +25,12 @@ namespace FullMart.Data.Database
         public DbSet<Cart> Carts { get; set; }
         public DbSet<WishList> WishLists { get; set; }
         public DbSet<Order> Orders { get; set; }
-     
-        
 
+
+        public DbSet<WishListProduct> WishListProducts { get; set; }
+        public DbSet<BrandCategory> BrandCategories { get; set; }
+        public DbSet<CartProduct> CartProducts { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

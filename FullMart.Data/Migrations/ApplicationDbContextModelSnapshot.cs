@@ -22,36 +22,6 @@ namespace FullMart.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BrandCategory", b =>
-                {
-                    b.Property<int>("BrandsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BrandsId", "CategoriesId");
-
-                    b.HasIndex("CategoriesId");
-
-                    b.ToTable("BrandCategory", (string)null);
-                });
-
-            modelBuilder.Entity("CartProduct", b =>
-                {
-                    b.Property<int>("CartsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CartsId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CartProduct", (string)null);
-                });
-
             modelBuilder.Entity("FullMart.Core.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -137,6 +107,9 @@ namespace FullMart.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("BrandCategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("BrandName")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -144,7 +117,28 @@ namespace FullMart.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands", (string)null);
+                    b.HasIndex("BrandCategoryId");
+
+                    b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.BrandCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BrandCategories");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Cart", b =>
@@ -158,11 +152,35 @@ namespace FullMart.Data.Migrations
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("CartProductId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Carts", (string)null);
+                    b.HasIndex("CartProductId");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.CartProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CartProducts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Category", b =>
@@ -172,6 +190,9 @@ namespace FullMart.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BrandCategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
@@ -184,7 +205,9 @@ namespace FullMart.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.HasIndex("BrandCategoryId");
+
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Order", b =>
@@ -201,6 +224,9 @@ namespace FullMart.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("OrderProductsId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -208,7 +234,28 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.HasIndex("OrderProductsId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.OrderProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Product", b =>
@@ -222,12 +269,18 @@ namespace FullMart.Data.Migrations
                     b.Property<int?>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CartProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderProductsId")
+                        .HasColumnType("int");
 
                     b.Property<string>("PDescription")
                         .IsRequired()
@@ -248,13 +301,22 @@ namespace FullMart.Data.Migrations
                     b.Property<byte>("Rate")
                         .HasColumnType("tinyint");
 
+                    b.Property<int>("WishListProductId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
 
+                    b.HasIndex("CartProductId");
+
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.HasIndex("OrderProductsId");
+
+                    b.HasIndex("WishListProductId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Review", b =>
@@ -284,7 +346,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.WishList", b =>
@@ -299,11 +361,35 @@ namespace FullMart.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("WishListProductId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("WishLists", (string)null);
+                    b.HasIndex("WishListProductId");
+
+                    b.ToTable("WishLists");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.WishListProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WishlistId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WishListProducts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -439,64 +525,15 @@ namespace FullMart.Data.Migrations
                     b.ToTable("UserToken", "Security");
                 });
 
-            modelBuilder.Entity("OrderProduct", b =>
+            modelBuilder.Entity("FullMart.Core.Models.Brand", b =>
                 {
-                    b.Property<int>("OrdersId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("OrdersId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("OrderProduct", (string)null);
-                });
-
-            modelBuilder.Entity("ProductWishList", b =>
-                {
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WishListsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductsId", "WishListsId");
-
-                    b.HasIndex("WishListsId");
-
-                    b.ToTable("ProductWishList", (string)null);
-                });
-
-            modelBuilder.Entity("BrandCategory", b =>
-                {
-                    b.HasOne("FullMart.Core.Models.Brand", null)
-                        .WithMany()
-                        .HasForeignKey("BrandsId")
+                    b.HasOne("FullMart.Core.Models.BrandCategory", "BrandCategory")
+                        .WithMany("Brands")
+                        .HasForeignKey("BrandCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FullMart.Core.Models.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CartProduct", b =>
-                {
-                    b.HasOne("FullMart.Core.Models.Cart", null)
-                        .WithMany()
-                        .HasForeignKey("CartsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FullMart.Core.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("BrandCategory");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Cart", b =>
@@ -505,7 +542,26 @@ namespace FullMart.Data.Migrations
                         .WithMany()
                         .HasForeignKey("AppUserId");
 
+                    b.HasOne("FullMart.Core.Models.CartProduct", "CartProduct")
+                        .WithMany("Carts")
+                        .HasForeignKey("CartProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("CartProduct");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.Category", b =>
+                {
+                    b.HasOne("FullMart.Core.Models.BrandCategory", "BrandCategory")
+                        .WithMany("Categories")
+                        .HasForeignKey("BrandCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BrandCategory");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Order", b =>
@@ -514,7 +570,15 @@ namespace FullMart.Data.Migrations
                         .WithMany("Orders")
                         .HasForeignKey("AppUserId");
 
+                    b.HasOne("FullMart.Core.Models.OrderProduct", "OrderProducts")
+                        .WithMany("Orders")
+                        .HasForeignKey("OrderProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("OrderProducts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Product", b =>
@@ -523,15 +587,39 @@ namespace FullMart.Data.Migrations
                         .WithMany("Products")
                         .HasForeignKey("BrandId");
 
+                    b.HasOne("FullMart.Core.Models.CartProduct", "CartProduct")
+                        .WithMany("Products")
+                        .HasForeignKey("CartProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("FullMart.Core.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FullMart.Core.Models.OrderProduct", "OrderProducts")
+                        .WithMany("Products")
+                        .HasForeignKey("OrderProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FullMart.Core.Models.WishListProduct", "WishListProduct")
+                        .WithMany("Products")
+                        .HasForeignKey("WishListProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Brand");
 
+                    b.Navigation("CartProduct");
+
                     b.Navigation("Category");
+
+                    b.Navigation("OrderProducts");
+
+                    b.Navigation("WishListProduct");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Review", b =>
@@ -559,7 +647,15 @@ namespace FullMart.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FullMart.Core.Models.WishListProduct", "WishListProduct")
+                        .WithMany("WishLists")
+                        .HasForeignKey("WishListProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("WishListProduct");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -613,36 +709,6 @@ namespace FullMart.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("OrderProduct", b =>
-                {
-                    b.HasOne("FullMart.Core.Models.Order", null)
-                        .WithMany()
-                        .HasForeignKey("OrdersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FullMart.Core.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ProductWishList", b =>
-                {
-                    b.HasOne("FullMart.Core.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FullMart.Core.Models.WishList", null)
-                        .WithMany()
-                        .HasForeignKey("WishListsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("FullMart.Core.Models.AppUser", b =>
                 {
                     b.Navigation("Orders");
@@ -655,14 +721,42 @@ namespace FullMart.Data.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("FullMart.Core.Models.BrandCategory", b =>
+                {
+                    b.Navigation("Brands");
+
+                    b.Navigation("Categories");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.CartProduct", b =>
+                {
+                    b.Navigation("Carts");
+
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("FullMart.Core.Models.Category", b =>
                 {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.OrderProduct", b =>
+                {
+                    b.Navigation("Orders");
+
                     b.Navigation("Products");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Product", b =>
                 {
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("FullMart.Core.Models.WishListProduct", b =>
+                {
+                    b.Navigation("Products");
+
+                    b.Navigation("WishLists");
                 });
 #pragma warning restore 612, 618
         }
