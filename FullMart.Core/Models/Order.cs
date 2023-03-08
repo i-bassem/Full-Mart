@@ -24,9 +24,10 @@ namespace FullMart.Core.Models
 
         public AppUser AppUser { get; set; }
 
-       
-        public ICollection<Product> Products { get; set; } = new HashSet<Product>();
-       
+        public OrderProduct OrderProducts { get; set; }
+
+        //public ICollection<Product> Products { get; set; } = new HashSet<Product>();
+
     }
 
     public enum Status
