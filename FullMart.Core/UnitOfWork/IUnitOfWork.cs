@@ -12,7 +12,11 @@ namespace FullMart.Core.UnitOfWork
     {
 
         IProductRepo  Products { get; }
+<<<<<<< HEAD
         ICategoriesRepo Categories { get; }
+=======
+        ICartProductsRepo CartProducts { get; }
+>>>>>>> e7d8498803e7040ed5ac6a26024e931ebe686756
         IBaseRepo<Review> Reviews { get; }
         IBaseRepo<Order> Orders { get; }
         IBaseRepo<Brand> Brands { get; }
