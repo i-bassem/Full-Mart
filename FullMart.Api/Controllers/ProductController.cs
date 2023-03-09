@@ -22,14 +22,14 @@ namespace FullMart.Api.Controllers
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly IWebHostEnvironment _environment;
+       
 
         public ProductController(IUnitOfWork unitOfWork , IMapper mapper 
             ,IWebHostEnvironment environment)
         {
             _unitOfWork = unitOfWork;   
             _mapper = mapper;  
-            _environment = environment;
+            
         }
 
 
@@ -141,6 +141,9 @@ namespace FullMart.Api.Controllers
             return Ok(result);
         }
 
+
+
+        //https://localhost:7191/api/Product
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromForm] NewProductDto dto)
         {
@@ -171,7 +174,7 @@ namespace FullMart.Api.Controllers
         }
 
 
-
+        //https://localhost:7191/api/Product/18
         [HttpPut("{id}")]
 
         public async Task<IActionResult> UpdateProduct(int id, [FromForm] NewProductDto dto)
@@ -187,9 +190,7 @@ namespace FullMart.Api.Controllers
 
             if (dto.ImageUrl != null)
             {
-              
-
-
+             
                 if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
                 {
                     return BadRequest("Only .jpg and .png  images  are allowed");
@@ -230,8 +231,14 @@ namespace FullMart.Api.Controllers
         {
             var product = await _unitOfWork.Products.GetById(p => p.Id ==id);
 
+
+         
+
             if (product == null)
                 return NotFound($"No Product was found with Id {id}");
+
+            ImageUpload.RemoveFile("Files/Images/", product.ImageUrl);
+
 
             _unitOfWork.Products.Delete(product);
             _unitOfWork.Complete();
