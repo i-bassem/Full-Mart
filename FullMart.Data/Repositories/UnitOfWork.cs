@@ -22,6 +22,7 @@ namespace FullMart.Data.Repositories
         //public IBaseRepo<Product> Products { get;  }
 
         public IProductRepo Products { get; }
+        public ICartProductsRepo CartProducts { get; }
 
         public IBaseRepo<Review> Reviews {get;}
 
@@ -43,6 +44,7 @@ namespace FullMart.Data.Repositories
             _context = context;
 
             Products = new ProductRepo(_context);
+            CartProducts= new CartProductsRepo(_context);
 
             Categories = new BaseRepositiory<Category>(_context);
 

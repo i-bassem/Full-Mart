@@ -2036,19 +2036,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\B\\.nuget\\packages\\": {}
+    "C:\\Users\\hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B\\Desktop\\New folder (8)\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
+      "projectUniqueName": "C:\\Project\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
       "projectName": "FullMart.Core",
-      "projectPath": "C:\\Users\\B\\Desktop\\New folder (8)\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
-      "packagesPath": "C:\\Users\\B\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B\\Desktop\\New folder (8)\\Full-Mart\\FullMart.Core\\obj\\",
+      "projectPath": "C:\\Project\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
+      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Project\\Full-Mart\\FullMart.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\B\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2103,8 +2103,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Project\\Full-Mart\\FullMart.Core\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

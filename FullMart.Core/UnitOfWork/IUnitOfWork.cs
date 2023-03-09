@@ -12,7 +12,7 @@ namespace FullMart.Core.UnitOfWork
     {
 
         IProductRepo  Products { get; }
-
+        ICartProductsRepo CartProducts { get; }
         IBaseRepo<Review> Reviews { get; }
         IBaseRepo<Order> Orders { get; }
         IBaseRepo<Brand> Brands { get; }
