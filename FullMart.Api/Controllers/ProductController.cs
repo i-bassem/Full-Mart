@@ -69,6 +69,8 @@ namespace FullMart.Api.Controllers
             
               var result = _mapper.Map<ProductCategoryBrandDto>(product);
 
+           
+            
 
             return Ok(result);
 

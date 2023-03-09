@@ -26,11 +26,23 @@ namespace FullMart.Data.Repositories
 
         public async Task<Category> GetByName(string name)
         {
-            var category = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryName == name);
-            //.Include("Products")
-
+            var category = await _context.Categories
+                          .Include("Products")
+                          .FirstOrDefaultAsync(c => c.CategoryName == name);
 
             return category;
+        }
+
+        public async Task<Category> GetById(Expression<Func<Category, bool>> expression, string[] includes = null)
+        {
+            IQueryable<Category> query = _context.Set<Category>();
+
+            if (includes != null)
+
+                foreach (var includeValue in includes)
+                    query = query.Include(includeValue);
+
+            return await query.FirstOrDefaultAsync(expression);
         }
     }
 }

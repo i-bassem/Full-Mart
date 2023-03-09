@@ -2041,11 +2041,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
+      "projectUniqueName": "C:\\Users\\B\\Desktop\\New folder B Remote\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
       "projectName": "FullMart.Core",
-      "projectPath": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
+      "projectPath": "C:\\Users\\B\\Desktop\\New folder B Remote\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj",
       "packagesPath": "C:\\Users\\B\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Core\\obj\\",
+      "outputPath": "C:\\Users\\B\\Desktop\\New folder B Remote\\Full-Mart\\FullMart.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\B\\AppData\\Roaming\\NuGet\\NuGet.Config",

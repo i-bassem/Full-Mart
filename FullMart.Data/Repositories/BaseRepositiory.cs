@@ -27,7 +27,7 @@ namespace FullMart.Data.Repositories
         public void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
-         
+
         }
 
         public async Task<IEnumerable<T>> GetAll(string[] includes = null)

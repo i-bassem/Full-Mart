@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S2fc3LVfMnTqaKTtJuhw1nR+EI5WZmEIa0YrCXb4GLLmopx7VMx2O6XUQ3tqgj3kPlRmAdqM8wrnEOQzj268OA==",
+  "dgSpecHash": "ZDGMAMTG4hoLbuwV1k9mT7QZwo9DDjxcO3ITqWAMiCencFP62JWKi9yQYyAaW5abH4MgBrtL4FuK8VHMqerruw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\B\\Desktop\\New folder (7)\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
+  "projectFilePath": "C:\\Users\\B\\Desktop\\New folder B Remote\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\B\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
