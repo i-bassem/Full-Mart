@@ -40,32 +40,13 @@ namespace FullMart.Api.Controllers
         [HttpGet("GetByName")]
         public async Task<IActionResult> GetByName(string name)
         {
-            var cat = await _unitOfWork.Categories.GetById(name);
-
-
-            IQueryable<T> query = _context.Set<T>();
-
-            if (includes != null)
-
-                foreach (var includeValue in includes)
-                    query = query.Include(includeValue);
-
-            return await query.FirstOrDefaultAsync(expression);
-        }
-        public async Task<IActionResult> GetProductByName(string name)
-        {
-
-            var product = await _unitOfWork.Products
-                .GetByName(name);
-
-            if (product == null)
+            var cat = await _unitOfWork.Categories.GetByName(name);
+               
+            if (cat == null)
             {
-                return BadRequest($"The Product With this Id = {name} Not Found..");
+                return BadRequest($"The Category Name = {name} Not Found...");
             }
-
-            var result = _mapper.Map<ProductCategoryBrandDto>(product);
-
-            return Ok(result);
+            return Ok(cat);
         }
 
     }

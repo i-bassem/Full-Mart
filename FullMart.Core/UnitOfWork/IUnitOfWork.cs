@@ -12,13 +12,13 @@ namespace FullMart.Core.UnitOfWork
     {
 
         IProductRepo  Products { get; }
-
+        ICategoriesRepo Categories { get; }
         IBaseRepo<Review> Reviews { get; }
         IBaseRepo<Order> Orders { get; }
         IBaseRepo<Brand> Brands { get; }
         IBaseRepo<Cart> Carts { get; }
         IBaseRepo<WishList> WishLists { get; }
-        IBaseRepo<Category> Categories { get; }
+        
         int Complete(); //Return Number Of Effected Rows [SaveChanges]
     }
 }

@@ -23,6 +23,8 @@ namespace FullMart.Data.Repositories
 
         public IProductRepo Products { get; }
 
+        public ICategoriesRepo Categories { get; }
+
         public IBaseRepo<Review> Reviews {get;}
 
         public IBaseRepo<Order> Orders { get; }
@@ -33,7 +35,7 @@ namespace FullMart.Data.Repositories
 
         public IBaseRepo<WishList> WishLists { get; }
 
-        public IBaseRepo<Category> Categories { get; }
+        
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -41,7 +43,7 @@ namespace FullMart.Data.Repositories
 
             Products = new ProductRepo(_context);
 
-            Categories = new BaseRepositiory<Category>(_context);
+            Categories = new CategoriesRepo (_context);
 
             WishLists = new BaseRepositiory<WishList>(_context);
 
