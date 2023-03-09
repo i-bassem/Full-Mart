@@ -10,3 +10,15 @@ C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Core\obj\Debug\net6.0\Full
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Core\obj\Debug\net6.0\refint\FullMart.Core.dll
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.pdb
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Core\obj\Debug\net6.0\ref\FullMart.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\bin\Debug\net6.0\FullMart.Core.deps.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\bin\Debug\net6.0\FullMart.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\bin\Debug\net6.0\FullMart.Core.pdb
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.csproj.AssemblyReference.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.AssemblyInfoInputs.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.AssemblyInfo.cs
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.csproj.CoreCompileInputs.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\refint\FullMart.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\FullMart.Core.pdb
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Core\obj\Debug\net6.0\ref\FullMart.Core.dll
