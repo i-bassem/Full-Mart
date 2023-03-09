@@ -1,0 +1,35 @@
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FullMart.Core.DTOS
+{
+    public class UpdateProductDto
+    {
+
+        public int Id { get; set; }
+        public string PName { get; set; }
+
+
+        public string PDescription { get; set; }
+
+        public decimal Price { get; set; }
+
+        public byte Rate { get; set; }
+
+        public int Quantity { get; set; }
+
+
+        [Required]
+
+        //[IFormFile => Name Of File , Size Of File , Kind Of File]
+        public IFormFile ImageUrl { get; set; }
+        public int CategoryId { get; set; }
+
+        public int BrandId { get; set; }
+    }
+}

@@ -12,7 +12,7 @@ namespace FullMart.Core.DTOS
     public class NewProductDto
     {
 
-        //public int Id { get; set; }
+      
 
        
         public string PName { get; set; }
