@@ -18,6 +18,9 @@ namespace FullMart.Core.UnitOfWork
         IBaseRepo<Brand> Brands { get; }
         IBaseRepo<Cart> Carts { get; }
         IBaseRepo<WishList> WishLists { get; }
+        IBaseRepo<WishListProduct> WishListProducts { get; }
+
+        IWishListProductRepo wishListProductRepo { get; }
         IBaseRepo<Category> Categories { get; }
         int Complete(); //Return Number Of Effected Rows [SaveChanges]
     }

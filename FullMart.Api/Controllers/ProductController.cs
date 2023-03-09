@@ -4,6 +4,7 @@ using FullMart.Core.Models;
 using FullMart.Core.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 
 namespace FullMart.Api.Controllers
@@ -12,6 +13,10 @@ namespace FullMart.Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private List<string> _allowedExtensions = new() { ".jpg", ".png" };
+
+        private long _maxAllowedImageSize = 1048576;
+
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -134,7 +139,120 @@ namespace FullMart.Api.Controllers
             return Ok(result);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddProduct([FromForm] NewProductDto dto)
+        {
+           
 
-        
+            if (dto.ImageUrl == null)
+            {
+                return BadRequest("Image Is Required");
+            }
+
+            if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
+            {
+                return BadRequest("Only .jpg and .png  images  are allowed");
+            }
+
+            if (dto.ImageUrl.Length > _maxAllowedImageSize)
+            {
+                return BadRequest("Max allowed Image Size is 1MB");
+            }
+
+            using var stream = new MemoryStream();
+
+            await dto.ImageUrl.CopyToAsync(stream);
+            StreamReader reader = new(stream);
+            string text = reader.ReadToEnd();
+
+
+
+            var product = _mapper.Map<Product>(dto);
+            product.ImageUrl = text.ToString();
+
+            
+
+            _unitOfWork.Products.Create(product);
+
+            _unitOfWork.Complete();
+
+            return Ok();
+
+        }
+
+
+
+        [HttpPut("{id}")]
+
+        public async Task<IActionResult> UpdateProduct(int id, [FromForm] NewProductDto dto)
+        {
+
+            try
+            {
+                var product = await _unitOfWork.Products.GetById(p => p.Id == id);
+
+                if (product == null)
+                    return NotFound($" No Product was found with this Id {id}");
+
+                string text = "";
+
+                if (dto.ImageUrl != null)
+                {
+                    if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
+                    {
+                        return BadRequest("Only .jpg and .png  images  are allowed");
+
+                    }
+                    if (dto.ImageUrl.Length > _maxAllowedImageSize)
+                    {
+                        return BadRequest("Max allowed Image Size is 1MB");
+                    }
+
+                    var dataStream = new MemoryStream();
+                    await dto.ImageUrl.CopyToAsync(dataStream);
+
+                    StreamReader reader = new(dataStream);
+                    text = reader.ReadToEnd();
+                    product.ImageUrl = text.ToString();
+
+                }
+
+                var result = _mapper.Map<Product>(dto);
+              
+
+
+                _unitOfWork.Products.Update(result);
+
+                _unitOfWork.Complete();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+          
+        }
+
+
+
+
+
+        //https://localhost:7191/api/Product/1
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _unitOfWork.Products.GetById(p => p.Id ==id);
+
+            if (product == null)
+                return NotFound($"No Product was found with Id {id}");
+
+            _unitOfWork.Products.Delete(product);
+            _unitOfWork.Complete();
+
+            return Ok(product);
+        }
+
+
     }
 }

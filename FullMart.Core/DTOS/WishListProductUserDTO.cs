@@ -9,7 +9,7 @@ namespace FullMart.Core.DTOS
     public class WishListProductUserDTO
     {
         public int Id { get; set; }
-        public List<string> ProductName { get; set; }
+        public string ProductName { get; set; }
 
         public string ProductDescription { get; set; }
 

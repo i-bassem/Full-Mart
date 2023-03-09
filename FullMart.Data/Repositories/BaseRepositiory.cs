@@ -22,13 +22,12 @@ namespace FullMart.Data.Repositories
         {
             _context.Set<T>().Add(entity);
 
-
         }
 
         public void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
-         
+
         }
 
         public async Task<IEnumerable<T>> GetAll(string[] includes = null)

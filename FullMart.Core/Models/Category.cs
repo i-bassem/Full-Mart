@@ -19,8 +19,9 @@ namespace FullMart.Core.Models
         [Required]
         public string ImageUrl { get; set; }
 
+        public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
-        public virtual ICollection<BrandCategory> BrandCategories { get; set; }
+        //public virtual ICollection<BrandCategory> BrandCategories { get; set; }
         //public virtual ICollection<Brand> Brands { get; set; } = new HashSet<Brand>();
 
     }
