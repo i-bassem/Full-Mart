@@ -20,19 +20,35 @@ namespace FullMart.Core.Helper.AutoMapper
             CreateMap<Product, ProductCategoryBrandDto>()
 
 
-                .ForMember(dest => dest.ProductName,
-                src => src.MapFrom(src => src.PName))
-                .ForMember(dest => dest.ProductDescription,
-                src => src.MapFrom(src => src.PDescription))
-                .ForMember(dest => dest.CategoryName,
-                src => src.MapFrom(src => src.Category.CategoryName))
-                .ForMember(dest => dest.BrandName,
-                src => src.MapFrom(src => src.Brand.BrandName))
-                .ForMember(dest => dest.IsFree,
-                src => src.MapFrom(src => src.Price == 0))
+                //.ForMember(dest => dest.ProductName,
+                //src => src.MapFrom(src => src.PName))
+                //.ForMember(dest => dest.ProductDescription,
+                //src => src.MapFrom(src => src.PDescription))
+                //.ForMember(dest => dest.CategoryName,
+                //src => src.MapFrom(src => src.Category.CategoryName))
+                //.ForMember(dest => dest.BrandId,
+                //src => src.MapFrom(src => src.Brand.Id))
+                //.ForMember(dest => dest.IsFree,
+                //src => src.MapFrom(src => src.Price == 0))
                
                 .ReverseMap();
 
+<<<<<<< HEAD
+=======
+            CreateMap<Product, NewProductDto>().ReverseMap();
+
+
+
+            //CreateMap<TableA, TableAViewModel>();
+            //CreateMap<TableB, TableBViewModel>();
+            //CreateMap<MappingTable, MappingTableViewModel>();
+
+            //CreateMap<AppUser, WishListProductUserDTO>()
+            //    .ForMember(dest => dest.UserName ,
+            //    src => src.MapFrom(src => src.FirstName))
+            //    .ReverseMap();
+
+>>>>>>> dd5b6e2725f3f084fecc15304271db1872f7de84
             CreateMap<WishListProduct, WishListProductUserDTO>()
 
                 .ForMember(dest => dest.ProductName,

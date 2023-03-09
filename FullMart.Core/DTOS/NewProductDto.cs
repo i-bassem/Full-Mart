@@ -12,12 +12,12 @@ namespace FullMart.Core.DTOS
     public class NewProductDto
     {
 
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
-        [Required, MaxLength(150)]
+       
         public string PName { get; set; }
 
-        [Required, MaxLength(250)]
+       
         public string PDescription { get; set; }
 
         public decimal Price { get; set; }
@@ -28,9 +28,12 @@ namespace FullMart.Core.DTOS
 
 
         [Required]
-        public IFormFile ImageUrl { get; set; } //[IFormFile => Name Of File , Size Of File , Kind Of File]
 
-        public List<Category>? Categories { get; set; }
-        public List<Brand>? Brands { get; set; }
+        //[IFormFile => Name Of File , Size Of File , Kind Of File]
+        public IFormFile ImageUrl { get; set; }
+        public int CategoryId { get; set; }
+    
+        public int BrandId { get; set; }
+
     }
 }
