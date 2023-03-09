@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "FullMart.Api/1.0.0": {
         "dependencies": {
+          "FullMart.Core": "1.0.0",
           "FullMart.Data": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Negotiate": "6.0.11",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "6.0.14",
