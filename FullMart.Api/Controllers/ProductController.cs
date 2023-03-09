@@ -4,6 +4,8 @@ using FullMart.Core.Helper.UploadImages;
 using FullMart.Core.Models;
 using FullMart.Core.UnitOfWork;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Security.Policy;
@@ -15,32 +17,42 @@ namespace FullMart.Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private List<string> _allowedExtensions = new() { ".jpg", ".png" };
 
-        private long _maxAllowedImageSize = 1048576;
+        #region Properites
+        private readonly List<string> _allowedExtensions = new() { ".jpg", ".png" };
+
+        private readonly long _maxAllowedImageSize = 1048576;
 
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-       
+        
 
-        public ProductController(IUnitOfWork unitOfWork , IMapper mapper 
-            ,IWebHostEnvironment environment)
+
+        #endregion
+
+
+        #region Ctor
+        public ProductController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;   
-            _mapper = mapper;  
-            
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+           
         }
+        #endregion
 
+
+        #region Actions
 
         //https://localhost:7191/api/Product/GetAllProduct
 
         [HttpGet("GetAllProduct")]
         public async Task<IActionResult> GetAllProduct()
         {
-            
+
+            //throw new UnauthorizedAccessException();//Attempted to perform an unauthorized operation
             var products = await _unitOfWork.Products
-                .GetAll(new[] { "Category","Brand", });
+                .GetAll(new[] { "Category", "Brand", });
 
 
             var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(products);
@@ -51,7 +63,7 @@ namespace FullMart.Api.Controllers
             }
             else
                 return Content("Product is Empty");
-          
+
         }
 
 
@@ -61,18 +73,26 @@ namespace FullMart.Api.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetProductById(int id)
         {
-
-            var product = await _unitOfWork.Products.GetById(p => p.Id == id , new[] { "Category", "Brand", });
-
-            if(product == null)
+            try
             {
-                return BadRequest($"The Product With this Id = {id} Not Found..");
+                var product = await _unitOfWork.Products.GetById(p => p.Id == id, new[] { "Category", "Brand", });
+
+                if (product == null)
+                {
+                    return BadRequest($"The Product With this Id = {id} Not Found..");
+                }
+
+                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+
+
+                return Ok(result);
+
             }
-            
-              var result = _mapper.Map<ProductCategoryBrandDto>(product);
+            catch (Exception ex)
+            {
 
-
-            return Ok(result);
+                return BadRequest(ex.Message);
+            }
 
 
         }
@@ -82,20 +102,27 @@ namespace FullMart.Api.Controllers
         //https://localhost:7191/api/Product/GetProductByName?name=
         [HttpGet("GetProductByName")]
 
-        public async  Task<IActionResult> GetProductByName(string name)
+        public async Task<IActionResult> GetProductByName(string name)
         {
-
-            var product = await _unitOfWork.Products
-                .GetByName(name);
-
-            if (product == null)
+            try
             {
-                return BadRequest($"The Product With this Id = {name} Not Found..");
+                var product = await _unitOfWork.Products.GetByName(name);
+
+                if (product == null)
+                {
+                    return BadRequest($"The Product With this Id = {name} Not Found..");
+                }
+
+                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
             }
 
-            var result = _mapper.Map<ProductCategoryBrandDto>(product);
-
-            return Ok(result);
         }
 
         [HttpGet("GetProductByCategoryName")]
@@ -104,18 +131,27 @@ namespace FullMart.Api.Controllers
         //https://localhost:7191/api/Product/GetProductByCategoryName?name=Electronics
         public async Task<IActionResult> GetProductByCategory(string name)
         {
-
-            var product = await _unitOfWork.Products
-                .GetByCategory(name);
-
-            if (product == null)
+            try
             {
-                return BadRequest($"The Product With Category Name = {name} Not Found..");
+
+                var product = await _unitOfWork.Products
+                  .GetByCategory(name);
+
+                if (product == null)
+                {
+                    return BadRequest($"The Product With Category Name = {name} Not Found..");
+                }
+
+                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
             }
 
-            var result = _mapper.Map<ProductCategoryBrandDto>(product);
-
-            return Ok(result);
         }
 
 
@@ -126,19 +162,27 @@ namespace FullMart.Api.Controllers
         public async Task<IActionResult> GetProductByBrand(string name)
         {
 
-          
-           
-            var product = await _unitOfWork.Products
-                .GetByBrand(name);
 
-            if (product == null)
+            try
             {
-                return BadRequest($"The Product With this Brand Name = {name} Not Found..");
+                var product = await _unitOfWork.Products
+               .GetByBrand(name);
+
+                if (product == null)
+                {
+                    return BadRequest($"The Product With this Brand Name = {name} Not Found..");
+                }
+
+                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
             }
 
-            var result = _mapper.Map<ProductCategoryBrandDto>(product);
-
-            return Ok(result);
         }
 
 
@@ -147,29 +191,42 @@ namespace FullMart.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromForm] NewProductDto dto)
         {
-            string ImageUrl =  ImageUpload.UploadFile("Files/Images", dto.ImageUrl);
 
-
-            if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
+            try
             {
-                return BadRequest("Only .jpg and .png  images  are allowed");
+                string ImageUrl = ImageUpload.UploadFile("Files/Images/Product", dto.ImageUrl);
 
+               
+
+
+                if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
+                {
+                    return BadRequest("Only .jpg and .png  images  are allowed");
+
+                }
+
+                if (dto.ImageUrl.Length > _maxAllowedImageSize)
+                {
+                    return BadRequest("Max allowed Image Size is 1MB");
+                }
+
+                var product = _mapper.Map<Product>(dto);
+
+
+                product.ImageUrl = ImageUrl;
+
+                _unitOfWork.Products.Create(product);
+
+                _unitOfWork.Complete();
+
+                return Ok(product);
             }
-            if (dto.ImageUrl.Length > _maxAllowedImageSize)
+            catch (Exception ex)
             {
-                return BadRequest("Max allowed Image Size is 1MB");
+
+                return BadRequest(ex.Message);
             }
 
-            var product = _mapper.Map<Product>(dto);
-
-
-            product.ImageUrl = ImageUrl;
-
-            _unitOfWork.Products.Create(product);
-
-            _unitOfWork.Complete();
-
-            return Ok();
 
         }
 
@@ -179,44 +236,61 @@ namespace FullMart.Api.Controllers
 
         public async Task<IActionResult> UpdateProduct(int id, [FromForm] NewProductDto dto)
         {
-
-
-            var product = await _unitOfWork.Products.GetById(p => p.Id == id);
-
-            if (product == null)
-                return NotFound($" No Product was found with this Id {id}");
-
-            string ImageUrl = ImageUpload.UploadFile("Files/Images", dto.ImageUrl);
-
-            if (dto.ImageUrl != null)
+            try
             {
-             
-                if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
-                {
-                    return BadRequest("Only .jpg and .png  images  are allowed");
 
-                }
-                if (dto.ImageUrl.Length > _maxAllowedImageSize)
+                string ImageUrl = "";
+                var product = await _unitOfWork.Products.GetById(p => p.Id == id);
+
+                if (product == null)
+                    return NotFound($" No Product was found with this Id {id}");
+
+
+
+                if (dto.ImageUrl != null)
                 {
-                    return BadRequest("Max allowed Image Size is 1MB");
+
+
+                    ImageUpload.RemoveFile("Files/Images/Product/", product.ImageUrl);
+
+
+                     ImageUrl = ImageUpload.UploadFile("Files/Images/Product", dto.ImageUrl);
+
+                    if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
+                    {
+                        return BadRequest("Only .jpg and .png  images  are allowed");
+
+                    }
+                    if (dto.ImageUrl.Length > _maxAllowedImageSize)
+                    {
+                        return BadRequest("Max allowed Image Size is 1MB");
+                    }
+
+
+                    product.ImageUrl = ImageUrl;
                 }
 
-               
+                //Map(dto,product) => dto it's My Dto we can called it my Form
+                // product => it's my Model 
+
+                var result = _mapper.Map(dto, product);
+                product.ImageUrl = ImageUrl;
+
+
+                _unitOfWork.Products.Update(result);
+
+
+                _unitOfWork.Complete();
+
+                return NoContent(); //204
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
             }
 
-            //Map(dto,product) => dto it's My Dto we can called it my Form
-            // product => it's my Model 
 
-            var result = _mapper.Map(dto,product);
-            product.ImageUrl = ImageUrl;
-            
-
-            _unitOfWork.Products.Update(result);
-           
-
-            _unitOfWork.Complete();
-
-            return Ok();
 
 
         }
@@ -229,23 +303,30 @@ namespace FullMart.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            var product = await _unitOfWork.Products.GetById(p => p.Id ==id);
+            try
+            {
+                var product = await _unitOfWork.Products.GetById(p => p.Id == id);
+
+                if (product == null)
+                    return NotFound($"No Product was found with Id = {id}");
+
+                ImageUpload.RemoveFile("Files/Images/Product/", product.ImageUrl);
 
 
-         
+                _unitOfWork.Products.Delete(product);
+                _unitOfWork.Complete();
 
-            if (product == null)
-                return NotFound($"No Product was found with Id {id}");
+                return NoContent(); //204
+            }
+            catch (Exception ex)
+            {
 
-            ImageUpload.RemoveFile("Files/Images/", product.ImageUrl);
+                return BadRequest(ex.Message);
+            }
 
-
-            _unitOfWork.Products.Delete(product);
-            _unitOfWork.Complete();
-
-            return Ok(product);
         }
 
-
+     
+        #endregion
     }
 }

@@ -17,28 +17,46 @@ namespace FullMart.Core.Helper.AutoMapper
 
             //Source => My Domain Model
             //Destination => MY DTO
+            #region Product To ProductCategoryBrandDto And Reverse
+
             CreateMap<Product, ProductCategoryBrandDto>()
 
 
-                //.ForMember(dest => dest.ProductName,
+                //.ForMember(dest => dest.Name,
                 //src => src.MapFrom(src => src.PName))
-                //.ForMember(dest => dest.ProductDescription,
+                //.ForMember(dest => dest.Description,
                 //src => src.MapFrom(src => src.PDescription))
                 //.ForMember(dest => dest.CategoryName,
                 //src => src.MapFrom(src => src.Category.CategoryName))
                 //.ForMember(dest => dest.BrandId,
                 //src => src.MapFrom(src => src.Brand.Id))
-                //.ForMember(dest => dest.IsFree,
-                //src => src.MapFrom(src => src.Price == 0))
-               
+
+
                 .ReverseMap();
 
-            CreateMap<Product, NewProductDto>().ReverseMap();
-            CreateMap<Product, UpdateProductDto>().ReverseMap();
+            #endregion
+
+            #region  Product  To NewProductDto and Reverse
+            CreateMap<Product, NewProductDto>()
+                //  .ForMember(dest => dest.Name,
+                //src => src.MapFrom(src => src.PName))
+                //.ForMember(dest => dest.Description,
+                //src => src.MapFrom(src => src.PDescription))
+                //.ForMember(dest => dest.CategoryId,
+                //src => src.MapFrom(src => src.Category.Id))
+                //.ForMember(dest => dest.BrandId,
+                //src => src.MapFrom(src => src.Brand.Id))
+
+               .ReverseMap();
+
+
+            #endregion
+
+
+            #region  WishListProduct To  WishListProductUserDTO and Reverse
 
 
 
- 
             CreateMap<WishListProduct, WishListProductUserDTO>()
 
                 .ForMember(dest => dest.ProductName,
@@ -61,7 +79,7 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
-
+            #endregion
         }
     }
 }
