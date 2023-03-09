@@ -33,22 +33,11 @@ namespace FullMart.Core.Helper.AutoMapper
                
                 .ReverseMap();
 
-<<<<<<< HEAD
-=======
             CreateMap<Product, NewProductDto>().ReverseMap();
 
 
 
-            //CreateMap<TableA, TableAViewModel>();
-            //CreateMap<TableB, TableBViewModel>();
-            //CreateMap<MappingTable, MappingTableViewModel>();
-
-            //CreateMap<AppUser, WishListProductUserDTO>()
-            //    .ForMember(dest => dest.UserName ,
-            //    src => src.MapFrom(src => src.FirstName))
-            //    .ReverseMap();
-
->>>>>>> dd5b6e2725f3f084fecc15304271db1872f7de84
+ 
             CreateMap<WishListProduct, WishListProductUserDTO>()
 
                 .ForMember(dest => dest.ProductName,
