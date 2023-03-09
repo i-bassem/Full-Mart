@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Images\**" />
+    <Content Remove="wwwroot\Images\**" />
+    <EmbeddedResource Remove="wwwroot\Images\**" />
+    <None Remove="wwwroot\Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.1.23111.4" />
@@ -19,11 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FullMart.Core\FullMart.Core.csproj" />
     <ProjectReference Include="..\FullMart.Data\FullMart.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwroot\Upload\" />
+    <Folder Include="wwwroot\Files\Images\" />
   </ItemGroup>
 
 </Project>

@@ -34,6 +34,7 @@ namespace FullMart.Core.Helper.AutoMapper
                 .ReverseMap();
 
             CreateMap<Product, NewProductDto>().ReverseMap();
+            CreateMap<Product, UpdateProductDto>().ReverseMap();
 
 
 

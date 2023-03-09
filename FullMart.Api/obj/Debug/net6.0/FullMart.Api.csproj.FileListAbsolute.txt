@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.AssemblyReference.cache
 C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Api\obj\Debug\net6.0\FullMart.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfoInputs.cache
@@ -440,8 +441,11 @@ C:\Project\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.CopyCompl
 C:\Project\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
 C:\Project\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
 =======
+=======
+>>>>>>> c2b00d8291592ed41b262a436aeb33e19a86e93f
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.Development.json
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.staticwebassets.runtime.json
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.exe
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.deps.json
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.runtimeconfig.json
@@ -527,8 +531,8 @@ C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runti
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Core.dll
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.dll
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.pdb
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Core.pdb
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.pdb
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.AssemblyReference.cache
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfoInputs.cache
@@ -550,6 +554,7 @@ C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\refin
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.pdb
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
+<<<<<<< HEAD
 C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.AssemblyReference.cache
 C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfoInputs.cache
@@ -661,3 +666,116 @@ C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Api\obj\Debug\net6.
 C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
 C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
 >>>>>>> af381931f2847a76647341f9455b01b3ac670f7f
+=======
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.staticwebassets.runtime.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.exe
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.deps.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.runtimeconfig.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.pdb
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Negotiate.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Core.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Core.pdb
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.pdb
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.AssemblyReference.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfoInputs.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfo.cs
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.CoreCompileInputs.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.FullMart.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.FullMart.Api.props
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.FullMart.Api.props
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.FullMart.Api.props
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\scopedcss\bundle\FullMart.Api.styles.css
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.CopyComplete
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\refint\FullMart.Api.dll
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.pdb
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
+C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
+>>>>>>> c2b00d8291592ed41b262a436aeb33e19a86e93f

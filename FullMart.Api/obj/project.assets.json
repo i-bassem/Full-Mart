@@ -4534,6 +4534,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FullMart.Core >= 1.0.0",
       "FullMart.Data >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Negotiate >= 6.0.11",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.14",
@@ -4570,6 +4571,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Project\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {
+              "projectPath": "C:\\Project\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj"
+            },
             "C:\\Project\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj": {
               "projectPath": "C:\\Project\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj"
             }
@@ -4635,5 +4639,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Project\\Full-Mart\\FullMart.Api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
