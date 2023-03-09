@@ -31,9 +31,12 @@ namespace FullMart.Data.Repositories
 
         public IBaseRepo<Cart> Carts { get; }
 
-        public IBaseRepo<WishList> WishLists { get; }
+        public IBaseRepo<WishListProduct> WishListProducts { get; }
+        public IWishListProductRepo wishListProductRepo { get; }
 
         public IBaseRepo<Category> Categories { get; }
+
+        public IBaseRepo<WishList> WishLists => throw new NotImplementedException();
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -43,7 +46,8 @@ namespace FullMart.Data.Repositories
 
             Categories = new BaseRepositiory<Category>(_context);
 
-            WishLists = new BaseRepositiory<WishList>(_context);
+            WishListProducts = new BaseRepositiory<WishListProduct>(_context);
+            wishListProductRepo = new WishListProductRepo(_context);
 
             Carts = new BaseRepositiory<Cart>(_context);
 
