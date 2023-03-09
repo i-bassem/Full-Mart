@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VkTwmlPqn/rT5Au4ISbICGm7cNJk8V14gjDAD8s0fK8=",
+  "Hash": "l4ee6KSrSX66LJZxA8AgYYGoRftxB+kAfUDdvBYCRPI=",
   "Source": "FullMart.Api",
   "BasePath": "_content/FullMart.Api",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\0983a5a3-adc4-4b80-b0be-9937f94bf93f82366829_1653064554833198_4116909088758038528_n.jpg",
+      "SourceId": "FullMart.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\",
+      "BasePath": "_content/FullMart.Api",
+      "RelativePath": "Files/Images/0983a5a3-adc4-4b80-b0be-9937f94bf93f82366829_1653064554833198_4116909088758038528_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\Images\\0983a5a3-adc4-4b80-b0be-9937f94bf93f82366829_1653064554833198_4116909088758038528_n.jpg"
+    },
+    {
+      "Identity": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\492f1a07-fcec-4728-87a0-ee22cc65080f261651793_2249728778500103_2207844076224596823_n.jpg",
+      "SourceId": "FullMart.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\",
+      "BasePath": "_content/FullMart.Api",
+      "RelativePath": "Files/Images/492f1a07-fcec-4728-87a0-ee22cc65080f261651793_2249728778500103_2207844076224596823_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\Images\\492f1a07-fcec-4728-87a0-ee22cc65080f261651793_2249728778500103_2207844076224596823_n.jpg"
+    },
     {
       "Identity": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\c22329da-49cd-4e8c-ae3a-64b657e23373lajja.jpg",
       "SourceId": "FullMart.Api",

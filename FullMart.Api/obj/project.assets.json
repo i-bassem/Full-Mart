@@ -4534,6 +4534,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FullMart.Core >= 1.0.0",
       "FullMart.Data >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Negotiate >= 6.0.11",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.14",
@@ -4544,19 +4545,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\B\\.nuget\\packages\\": {}
+    "C:\\Users\\Ahmed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B\\Desktop\\Remote copy\\E-Commerce\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
+      "projectUniqueName": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
       "projectName": "FullMart.Api",
-      "projectPath": "C:\\Users\\B\\Desktop\\Remote copy\\E-Commerce\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
-      "packagesPath": "C:\\Users\\B\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B\\Desktop\\Remote copy\\E-Commerce\\Full-Mart\\FullMart.Api\\obj\\",
+      "projectPath": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\FullMart.Api.csproj",
+      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+      "outputPath": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\B\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4570,8 +4571,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\B\\Desktop\\Remote copy\\E-Commerce\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj": {
-              "projectPath": "C:\\Users\\B\\Desktop\\Remote copy\\E-Commerce\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj"
+            "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj": {
+              "projectPath": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Core\\FullMart.Core.csproj"
+            },
+            "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj": {
+              "projectPath": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Data\\FullMart.Data.csproj"
             }
           }
         }

@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FullMart.Core\FullMart.Core.csproj" />
     <ProjectReference Include="..\FullMart.Data\FullMart.Data.csproj" />
   </ItemGroup>
 
