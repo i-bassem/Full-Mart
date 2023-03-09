@@ -9,7 +9,7 @@ namespace FullMart.Core.Interfaces
 {
     public interface IBaseRepo<T> where T : class
     {
-       Task<T> GetById(Expression<Func<T, bool>> expression, string[] includes = null);
+        Task<T> GetById(Expression<Func<T, bool>> expression, string[] includes = null);
 
 
         Task<IEnumerable<T>> GetAll(string[] includes = null);

@@ -23,7 +23,7 @@ namespace FullMart.Core.DTOS
         public string ImageUrl { get; set; }
 
         public string CategoryName { get; set; }
-        public string BrandName { get; set; }
+        public int BrandId { get; set; }
 
         public bool? IsFree { get; set; }
     }

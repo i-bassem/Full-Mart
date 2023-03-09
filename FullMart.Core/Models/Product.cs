@@ -34,10 +34,15 @@ namespace FullMart.Core.Models
         public int CategoryId { get; set; }
 
         [ForeignKey(nameof(CategoryId))]
+
         public  virtual  Category? Category { get; set; }
 
+        public int BrandId { get; set; }
 
+        [ForeignKey(nameof(BrandId))]
         public virtual  Brand? Brand { get; set; }
+
+
 
         public virtual ICollection<Review>? Reviews { get; set; } = new HashSet<Review>();
 
@@ -48,11 +53,7 @@ namespace FullMart.Core.Models
 
         public ICollection<OrderProduct> OrderProducts { get; set; }
 
-        //public virtual ICollection<Order>? Orders { get; set; }
-        //public virtual ICollection<Cart>? Carts { get; set; }
-
-
-        //public virtual ICollection<WishList>? WishLists { get; set; }
+       
 
 
 

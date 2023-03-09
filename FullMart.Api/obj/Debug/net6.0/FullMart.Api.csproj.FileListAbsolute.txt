@@ -328,6 +328,7 @@ G:\FullMart\Full-Mart\FullMart.Api\obj\Debug\net6.0\refint\FullMart.Api.dll
 G:\FullMart\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.pdb
 G:\FullMart\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
 G:\FullMart\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
+<<<<<<< HEAD
 C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.json
 C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.exe
@@ -438,3 +439,115 @@ C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\obj\Debug\net6.0\refint
 C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.pdb
 C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
 C:\Users\B\Desktop\New folder (7)\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
+=======
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\appsettings.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.exe
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.deps.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.runtimeconfig.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.pdb
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Azure.Core.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Azure.Identity.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Humanizer.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Negotiate.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.CodeDom.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.DirectoryServices.Protocols.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Memory.Data.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Text.Json.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Core.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Data.pdb
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Core.pdb
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.AssemblyReference.cache
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfoInputs.cache
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.AssemblyInfo.cs
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.CoreCompileInputs.cache
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.FullMart.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.FullMart.Api.props
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.FullMart.Api.props
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.FullMart.Api.props
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\scopedcss\bundle\FullMart.Api.styles.css
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.csproj.CopyComplete
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\refint\FullMart.Api.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.pdb
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
+>>>>>>> dd5b6e2725f3f084fecc15304271db1872f7de84
