@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using FullMart.Core.DTOS;
+using FullMart.Core.Helper.UploadImages;
 using FullMart.Core.Models;
 using FullMart.Core.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
+using System.Security.Policy;
 
 
 namespace FullMart.Api.Controllers
@@ -142,35 +144,23 @@ namespace FullMart.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromForm] NewProductDto dto)
         {
-           
+            string ImageUrl =  ImageUpload.UploadFile("Files/Images", dto.ImageUrl);
 
-            if (dto.ImageUrl == null)
-            {
-                return BadRequest("Image Is Required");
-            }
 
             if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
             {
                 return BadRequest("Only .jpg and .png  images  are allowed");
-            }
 
+            }
             if (dto.ImageUrl.Length > _maxAllowedImageSize)
             {
                 return BadRequest("Max allowed Image Size is 1MB");
             }
 
-            using var stream = new MemoryStream();
-
-            await dto.ImageUrl.CopyToAsync(stream);
-            StreamReader reader = new(stream);
-            string text = reader.ReadToEnd();
-
-
-
             var product = _mapper.Map<Product>(dto);
-            product.ImageUrl = text.ToString();
 
-            
+
+            product.ImageUrl = ImageUrl;
 
             _unitOfWork.Products.Create(product);
 
@@ -187,51 +177,47 @@ namespace FullMart.Api.Controllers
         public async Task<IActionResult> UpdateProduct(int id, [FromForm] NewProductDto dto)
         {
 
-            try
+
+            var product = await _unitOfWork.Products.GetById(p => p.Id == id);
+
+            if (product == null)
+                return NotFound($" No Product was found with this Id {id}");
+
+            string ImageUrl = ImageUpload.UploadFile("Files/Images", dto.ImageUrl);
+
+            if (dto.ImageUrl != null)
             {
-                var product = await _unitOfWork.Products.GetById(p => p.Id == id);
-
-                if (product == null)
-                    return NotFound($" No Product was found with this Id {id}");
-
-                string text = "";
-
-                if (dto.ImageUrl != null)
-                {
-                    if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
-                    {
-                        return BadRequest("Only .jpg and .png  images  are allowed");
-
-                    }
-                    if (dto.ImageUrl.Length > _maxAllowedImageSize)
-                    {
-                        return BadRequest("Max allowed Image Size is 1MB");
-                    }
-
-                    var dataStream = new MemoryStream();
-                    await dto.ImageUrl.CopyToAsync(dataStream);
-
-                    StreamReader reader = new(dataStream);
-                    text = reader.ReadToEnd();
-                    product.ImageUrl = text.ToString();
-
-                }
-
-                var result = _mapper.Map<Product>(dto);
               
 
 
-                _unitOfWork.Products.Update(result);
+                if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
+                {
+                    return BadRequest("Only .jpg and .png  images  are allowed");
 
-                _unitOfWork.Complete();
-                return Ok();
+                }
+                if (dto.ImageUrl.Length > _maxAllowedImageSize)
+                {
+                    return BadRequest("Max allowed Image Size is 1MB");
+                }
+
+               
             }
-            catch (Exception ex)
-            {
-                
-                throw;
-            }
-          
+
+            //Map(dto,product) => dto it's My Dto we can called it my Form
+            // product => it's my Model 
+
+            var result = _mapper.Map(dto,product);
+            product.ImageUrl = ImageUrl;
+            
+
+            _unitOfWork.Products.Update(result);
+           
+
+            _unitOfWork.Complete();
+
+            return Ok();
+
+
         }
 
 

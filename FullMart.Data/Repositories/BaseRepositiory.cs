@@ -58,8 +58,9 @@ namespace FullMart.Data.Repositories
 
         public void Update(T entity)
         {
-            _context.Update(entity);
+            _context.Update(entity); 
             
+
         }
     }
 }

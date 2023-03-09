@@ -438,3 +438,4 @@ C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\refin
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.pdb
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\FullMart.Api.genruntimeconfig.cache
 C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\obj\Debug\net6.0\ref\FullMart.Api.dll
+C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Api\bin\Debug\net6.0\FullMart.Api.staticwebassets.runtime.json
