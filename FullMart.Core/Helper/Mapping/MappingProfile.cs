@@ -62,7 +62,7 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
-            #region Categories
+         
 
             CreateMap<Category, ProductsInCategoryDto>()
                 .ForMember(dsc => dsc.categoryID, src => src.MapFrom(src => src.Id))
@@ -80,7 +80,7 @@ namespace FullMart.Core.Helper.AutoMapper
                 .ForMember(dsc => dsc.productRating, src => src.MapFrom(src => src.Rate))
                 .ReverseMap();
 
-            #endregion
+      
 
 
 
