@@ -62,8 +62,9 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
+            #region Categories
 
-            CreateMap<Category,ProductsInCategoryDto>()
+            CreateMap<Category, ProductsInCategoryDto>()
                 .ForMember(dsc => dsc.categoryID, src => src.MapFrom(src => src.Id))
                 .ForMember(dsc => dsc.categoryName, src => src.MapFrom(src => src.CategoryName))
                 .ForMember(dsc => dsc.categoryImageURL, src => src.MapFrom(src => src.ImageUrl))
@@ -71,7 +72,7 @@ namespace FullMart.Core.Helper.AutoMapper
 
             CreateMap<Category, NewCategoryDto>().ReverseMap();
 
-            CreateMap<Product,ProductDTO>()
+            CreateMap<Product, ProductDTO>()
                 .ForMember(dsc => dsc.productID, src => src.MapFrom(src => src.Id))
                 .ForMember(dsc => dsc.productName, src => src.MapFrom(src => src.PName))
                 .ForMember(dsc => dsc.productPrice, src => src.MapFrom(src => src.Price))
@@ -79,6 +80,7 @@ namespace FullMart.Core.Helper.AutoMapper
                 .ForMember(dsc => dsc.productRating, src => src.MapFrom(src => src.Rate))
                 .ReverseMap();
 
+            #endregion
 
 
 
