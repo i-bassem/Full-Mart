@@ -14,7 +14,10 @@ namespace FullMart.Core.DTOS
         public string categoryImageURL { get; set; }
 
 
-        //public List<Product> products { get; set; } = new List<Product>();
+        public List<ProductDTO> Products { get; set; } = new List<ProductDTO>();
+
+        public class ProductDTO 
+        { 
 
         public int productID { get; set; }
         public string productName { get; set; }
@@ -23,6 +26,7 @@ namespace FullMart.Core.DTOS
         public int productRating { get; set; }
         public string productImageURL { get; set; }
 
+        }
 
     }
 }

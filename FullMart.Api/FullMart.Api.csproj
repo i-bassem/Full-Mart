@@ -31,11 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
+
     <Folder Include="wwwroot\Upload\" />
-=======
+
     <Folder Include="wwwroot\Files\Images\" />
->>>>>>> c0c98111dfa69863a6a53521868a741d88f4883e
+
   </ItemGroup>
 
 </Project>

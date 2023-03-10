@@ -27,19 +27,13 @@ namespace FullMart.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _unitOfWork.Categories.GetAll());
+            var categorise = await _unitOfWork.Categories.GetAll();
+            var result = _mapper.Map<IEnumerable<NewCategoryDto>>(categorise);
+
+            return Ok(result);
         }
 
-        //https://localhost:44308/api/Categories/{id}
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> GetById(int id)
-        //{
-        //    var cat = await _unitOfWork.Categories.GetById(c => c.Id == id);
-        //    if(cat == null) { return NotFound($"The Product With this Id = {id} Not Found..."); }
-        //    return Ok(cat);      
-        //}
-
-
+        //https://localhost:44308/api/Categories/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetcategoryById(int id)
         {
@@ -49,11 +43,12 @@ namespace FullMart.Api.Controllers
             {
                 return BadRequest($"The Product With this Id = {id} Not Found..");
             }
-            var result = _mapper.Map<IEnumerable<ProductsInCategoryDto>>(category);
+            var result = _mapper.Map<ProductsInCategoryDto>(category);
 
             return Ok(result);
         }
 
+        //https://localhost:44308/api/Categories/GetByName?name=shoes
         [HttpGet("GetByName")]
         public async Task<IActionResult> GetByName(string name)
         {
@@ -64,19 +59,12 @@ namespace FullMart.Api.Controllers
                 return BadRequest($"The Category Name = {name} Not Found...");
             }
 
-            var result = _mapper.Map<IEnumerable<ProductsInCategoryDto>>(cat.Products);
+            var result = _mapper.Map<ProductsInCategoryDto>(cat);
 
-            ProductsInCategoryDto pc = new ProductsInCategoryDto()
-            {
-                categoryID = cat.Id,
-                categoryName = cat.CategoryName,
-                categoryImageURL = cat.ImageUrl,
-            };
-            
-            return Ok(cat);
+            return Ok(result);
         }
 
-
+        //https://localhost:44308/api/Categories
         [HttpPost]
         public async Task<IActionResult> AddCategory(NewCategoryDto dto)
         {
@@ -98,6 +86,7 @@ namespace FullMart.Api.Controllers
                 return BadRequest();
         }
 
+        //https://localhost:44308/api/Categories/17
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, NewCategoryDto dto)
         {
@@ -106,7 +95,7 @@ namespace FullMart.Api.Controllers
             {
                 try 
                 {
-                    var updatedcategory = _mapper.Map<Category>(dto);
+                    var updatedcategory = _mapper.Map(dto,cat);
                     _unitOfWork.Categories.Update(updatedcategory);
                     _unitOfWork.Complete();
                     return NoContent();
@@ -120,6 +109,7 @@ namespace FullMart.Api.Controllers
                 return BadRequest();
         }
 
+        //https://localhost:44308/api/Categories?id=17
         [HttpDelete]
         public async Task<IActionResult> DeleteCategory(int id)
         {
