@@ -14,7 +14,7 @@ FullMart.Core/obj/
 FullMart.Data/obj/
 *.suo
 *.sln
-
+*.csproj
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
