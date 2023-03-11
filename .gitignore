@@ -9,9 +9,10 @@
 *.user
 *.userosscache
 *.sln.docstates
-FullMart.Data/obj/
-FullMart.Api/obj/
-FullMart.Core\obj\
+
+/FullMart.Api/obj/
+/FullMart.Core/obj/
+/FullMart.Data/obj/
 
 *.suo
 *.sln
