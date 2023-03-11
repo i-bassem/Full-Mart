@@ -91,8 +91,15 @@ namespace FullMart.Api.Controllers
             catch (Exception ex)
             {
 
+
                 return BadRequest(ex.Message);
             }
+
+           
+            
+
+            
+
 
 
         }

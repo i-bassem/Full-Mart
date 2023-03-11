@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FullMart.Core.DTOS.ProductsInCategoryDto;
 
 namespace FullMart.Core.Helper.AutoMapper
 {
@@ -119,6 +120,35 @@ namespace FullMart.Core.Helper.AutoMapper
                 .ReverseMap();
 
             #endregion
+
+
+            #region Categories
+
+
+            CreateMap<Category, ProductsInCategoryDto>()
+                .ForMember(dsc => dsc.categoryID, src => src.MapFrom(src => src.Id))
+                .ForMember(dsc => dsc.categoryName, src => src.MapFrom(src => src.CategoryName))
+                .ForMember(dsc => dsc.categoryImageURL, src => src.MapFrom(src => src.ImageUrl))
+                .ReverseMap();
+
+            CreateMap<Category, NewCategoryDto>().ReverseMap();
+
+            CreateMap<Product, ProductDTO>()
+                .ForMember(dsc => dsc.productID, src => src.MapFrom(src => src.Id))
+                .ForMember(dsc => dsc.productName, src => src.MapFrom(src => src.PName))
+                .ForMember(dsc => dsc.productPrice, src => src.MapFrom(src => src.Price))
+                .ForMember(dsc => dsc.productImageURL, src => src.MapFrom(src => src.ImageUrl))
+                .ForMember(dsc => dsc.productRating, src => src.MapFrom(src => src.Rate))
+                .ReverseMap(); 
+
+            #endregion
+
+      
+
+
+
+
+
         }
     }
 }
