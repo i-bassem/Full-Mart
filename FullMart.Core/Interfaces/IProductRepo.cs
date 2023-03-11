@@ -11,9 +11,9 @@ namespace FullMart.Core.Interfaces
     {
         int Count();
 
-        Task <Product> GetByCategory(string categoryName);
-        Task< Product> GetByBrand(string brandName);
+        Task <IEnumerable<Product>> GetByCategory(string categoryName);
+        Task<IEnumerable<Product>> GetByBrand(string brandName);
 
-        Task<Product> GetByName(string name);
+        Task<IEnumerable<Product>> GetByName(string name);
     }
 }

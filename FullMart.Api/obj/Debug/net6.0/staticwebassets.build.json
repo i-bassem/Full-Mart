@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "IApkC+ESMojhpFgERiNYdTUivBRvCNQD6pgGpNYFwkc=",
+  "Source": "FullMart.Api",
+  "BasePath": "_content/FullMart.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FullMart.Api\\wwwroot",
+      "Source": "FullMart.Api",
+      "ContentRoot": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\",
+      "BasePath": "_content/FullMart.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\Product\\bb82a7c6-465e-4a65-9cef-1697d9da4899lajja.jpg",
+      "SourceId": "FullMart.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\",
+      "BasePath": "_content/FullMart.Api",
+      "RelativePath": "Files/Images/Product/bb82a7c6-465e-4a65-9cef-1697d9da4899lajja.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\Images\\Product\\bb82a7c6-465e-4a65-9cef-1697d9da4899lajja.jpg"
+    },
+    {
+      "Identity": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\Product\\f54b531b-749e-475a-851c-9cc354990d3ddownload (1).png",
+      "SourceId": "FullMart.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\",
+      "BasePath": "_content/FullMart.Api",
+      "RelativePath": "Files/Images/Product/f54b531b-749e-475a-851c-9cc354990d3ddownload (1).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\Images\\Product\\f54b531b-749e-475a-851c-9cc354990d3ddownload (1).png"
+    }
+  ]
+}

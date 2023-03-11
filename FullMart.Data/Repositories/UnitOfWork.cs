@@ -16,17 +16,14 @@ namespace FullMart.Data.Repositories
         protected readonly ApplicationDbContext _context;
 
 
-        //Prop
-
-
-        //public IBaseRepo<Product> Products { get;  }
-
+      
         public IProductRepo Products { get; }
         public ICartProductsRepo CartProducts { get; }
 
         public ICategoriesRepo Categories { get; }
 
-        public IBaseRepo<Review> Reviews {get;}
+
+      
 
         public IBaseRepo<Order> Orders { get; }
 
@@ -40,6 +37,8 @@ namespace FullMart.Data.Repositories
         
 
         public IBaseRepo<WishList> WishLists => throw new NotImplementedException();
+
+        public IReviewRepo Reviews { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -57,9 +56,11 @@ namespace FullMart.Data.Repositories
 
             Brands = new BaseRepositiory<Brand>(_context);
 
-            Reviews = new BaseRepositiory<Review>(_context);
+           
 
             Orders = new BaseRepositiory<Order>(_context);
+
+            Reviews = new ReviewRepo(_context); 
             
         }
 
