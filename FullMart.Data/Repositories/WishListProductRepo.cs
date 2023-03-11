@@ -26,6 +26,7 @@ namespace FullMart.Data.Repositories
         public void DeleteProductFromUserCart(string userId, int productId)
         {
             throw new NotImplementedException();
+           
         }
 
         public async Task<IReadOnlyList<WishList>> GetProductByUserIdAsync(string UserName)

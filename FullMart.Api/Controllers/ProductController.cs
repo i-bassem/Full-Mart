@@ -52,7 +52,7 @@ namespace FullMart.Api.Controllers
 
             //throw new UnauthorizedAccessException();//Attempted to perform an unauthorized operation
             var products = await _unitOfWork.Products
-                .GetAll(new[] { "Category", "Brand", });
+                .GetAll(new[] { "Category", "Brand", "Reviews" });
 
 
             var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(products);
@@ -75,7 +75,7 @@ namespace FullMart.Api.Controllers
         {
             try
             {
-                var product = await _unitOfWork.Products.GetById(p => p.Id == id, new[] { "Category", "Brand", });
+                var product = await _unitOfWork.Products.GetById(p => p.Id == id, new[] { "Category", "Brand","Reviews" });
 
                 if (product == null)
                 {
@@ -99,6 +99,16 @@ namespace FullMart.Api.Controllers
 
 
 
+        //https://localhost:7191/api/Product/CountOfProduct
+
+        [HttpGet("CountOfProduct")]
+        public async Task<IActionResult> GetCountOfProduct()
+        {
+            var count = _unitOfWork.Products.Count();
+
+            return Ok(count);
+        }
+
         //https://localhost:7191/api/Product/GetProductByName?name=
         [HttpGet("GetProductByName")]
 
@@ -113,7 +123,7 @@ namespace FullMart.Api.Controllers
                     return BadRequest($"The Product With this Id = {name} Not Found..");
                 }
 
-                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+                var result = _mapper.Map<IEnumerable< ProductCategoryBrandDto>>(product);
 
                 return Ok(result);
             }
@@ -142,7 +152,7 @@ namespace FullMart.Api.Controllers
                     return BadRequest($"The Product With Category Name = {name} Not Found..");
                 }
 
-                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+                var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(product);
 
                 return Ok(result);
             }
@@ -173,7 +183,7 @@ namespace FullMart.Api.Controllers
                     return BadRequest($"The Product With this Brand Name = {name} Not Found..");
                 }
 
-                var result = _mapper.Map<ProductCategoryBrandDto>(product);
+                var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(product);
 
                 return Ok(result);
             }

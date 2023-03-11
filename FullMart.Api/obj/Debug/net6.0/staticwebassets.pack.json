@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\Product\\ed5c5b7e-1ed9-4888-bc4a-88023d7cefa251599152_1351536461652677_8032415096443502592_n.jpg",
-      "PackagePath": "staticwebassets\\Files\\Images\\Product\\ed5c5b7e-1ed9-4888-bc4a-88023d7cefa251599152_1351536461652677_8032415096443502592_n.jpg"
+      "Id": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\Product\\bb82a7c6-465e-4a65-9cef-1697d9da4899lajja.jpg",
+      "PackagePath": "staticwebassets\\Files\\Images\\Product\\bb82a7c6-465e-4a65-9cef-1697d9da4899lajja.jpg"
+    },
+    {
+      "Id": "C:\\MyData\\GitHub Project\\ECommerce\\Full-Mart\\FullMart.Api\\wwwroot\\Files\\Images\\Product\\f54b531b-749e-475a-851c-9cc354990d3ddownload (1).png",
+      "PackagePath": "staticwebassets\\Files\\Images\\Product\\f54b531b-749e-475a-851c-9cc354990d3ddownload (1).png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FullMart.Api.Microsoft.AspNetCore.StaticWebAssets.props",
