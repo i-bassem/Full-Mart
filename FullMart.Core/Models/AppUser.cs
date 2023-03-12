@@ -15,12 +15,11 @@ namespace FullMart.Core.Models
         public string ImageUrl { get; set; }
 
 
-        //public int? ReviewId { get; set; }
+       
         public ICollection<Review>? Reviews { get; set; } = new HashSet<Review>();
 
        
-        //public WishList? WishList { get; set; }
-
+     
         public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
     }
 }

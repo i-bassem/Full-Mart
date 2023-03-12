@@ -18,28 +18,85 @@ namespace FullMart.Core.Helper.AutoMapper
 
             //Source => My Domain Model
             //Destination => MY DTO
+            #region Product To ProductCategoryBrandDto And Reverse
+
             CreateMap<Product, ProductCategoryBrandDto>()
 
 
-                //.ForMember(dest => dest.ProductName,
-                //src => src.MapFrom(src => src.PName))
-                //.ForMember(dest => dest.ProductDescription,
-                //src => src.MapFrom(src => src.PDescription))
-                //.ForMember(dest => dest.CategoryName,
-                //src => src.MapFrom(src => src.Category.CategoryName))
-                //.ForMember(dest => dest.BrandId,
-                //src => src.MapFrom(src => src.Brand.Id))
-                //.ForMember(dest => dest.IsFree,
-                //src => src.MapFrom(src => src.Price == 0))
-               
+                .ForMember(dest => dest.ProductName,
+                src => src.MapFrom(src => src.PName))
+                .ForMember(dest => dest.ProductDescription,
+                src => src.MapFrom(src => src.PDescription))
+                .ForMember(dest => dest.CategoryName,
+                src => src.MapFrom(src => src.Category.CategoryName))
+                .ForMember(dest => dest.Comment,
+                src => src.MapFrom(src => src.Reviews.Select(r =>r.Comment).ToList()))
+                .ForMember(dest => dest.BrandId,
+                src => src.MapFrom(src => src.Brand.Id))
+
+
                 .ReverseMap();
 
-            CreateMap<Product, NewProductDto>().ReverseMap();
-            CreateMap<Product, UpdateProductDto>().ReverseMap();
+            #endregion
+
+            #region  Product  To NewProductDto and Reverse
+            CreateMap<Product, NewProductDto>()
+                //  .ForMember(dest => dest.Name,
+                //src => src.MapFrom(src => src.PName))
+                //.ForMember(dest => dest.Description,
+                //src => src.MapFrom(src => src.PDescription))
+                //.ForMember(dest => dest.CategoryId,
+                //src => src.MapFrom(src => src.Category.Id))
+                //.ForMember(dest => dest.BrandId,
+                //src => src.MapFrom(src => src.Brand.Id))
+
+               .ReverseMap();
+
+
+            #endregion
+
+            #region Review To ReviewProduct 
+
+
+            CreateMap<Review, ReviewProductDto>()
+
+
+            .ForMember(dest => dest.Comment,
+                src => src.MapFrom(src => src.Comment))
+
+            .ForMember(dest => dest.NumberOfStar,
+                src => src.MapFrom(src => src.NumberOfStar))
+
+            .ForMember(dest => dest.UserId,
+                src => src.MapFrom(src => src.AppUser.UserName))
+            .ForMember(dest => dest.ProductName,
+                src => src.MapFrom(src => src.Product.PName))
+            .ReverseMap();
+            #endregion
+
+
+            #region NewReview To Review
+
+            CreateMap<Review, NewReviewDto>()
+
+
+            //.ForMember(dest => dest.Comment,
+            //    src => src.MapFrom(src => src.Comment))
+
+            //.ForMember(dest => dest.NumberOfStar,
+            //    src => src.MapFrom(src => src.NumberOfStar))
+
+            //.ForMember(dest => dest.AppUserId,
+            //    src => src.MapFrom(src => src.AppUser.Id))
+            //.ForMember(dest => dest.ProductId,
+            //    src => src.MapFrom(src => src.Product.Id))
+                .ReverseMap();
+            #endregion
+
+            #region  WishListProduct To  WishListProductUserDTO and Reverse
 
 
 
- 
             CreateMap<WishListProduct, WishListProductUserDTO>()
 
                 .ForMember(dest => dest.ProductName,
@@ -62,7 +119,11 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
+            #endregion
+
+
             #region Categories
+
 
             CreateMap<Category, ProductsInCategoryDto>()
                 .ForMember(dsc => dsc.categoryID, src => src.MapFrom(src => src.Id))
@@ -82,6 +143,7 @@ namespace FullMart.Core.Helper.AutoMapper
 
             #endregion
 
+      
 
 
 
