@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace FullMart.Core.Helper.UploadImages
 {
     public static  class ImageUpload
     {
-
+       
         public static string UploadFile(string _FolderPath, IFormFile _File)
         {
 
@@ -39,13 +40,14 @@ namespace FullMart.Core.Helper.UploadImages
             }
 
         }
-
+     
         public static void RemoveFile(string FolderName, string FileName)
         {
             if (File.Exists(Directory.GetCurrentDirectory() + "/wwwroot/" + FolderName + FileName))
             {
                 File.Delete(Directory.GetCurrentDirectory() + "/wwwroot/" + FolderName + FileName);
             }
+
         }
 
     }

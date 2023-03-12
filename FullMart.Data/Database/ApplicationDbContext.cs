@@ -104,11 +104,6 @@ namespace FullMart.Data.Database
 
             #endregion
 
-            #region Many To Many realtionship between brand and category
-
-            
-
-            #endregion
 
 
         }

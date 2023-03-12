@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace FullMart.Api
 {
@@ -78,11 +80,34 @@ namespace FullMart.Api
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(
+                    options =>
+                    {
+
+                        options.Run(async context =>
+                        {
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            var ex = context.Features.Get<IExceptionHandlerFeature>();
+
+                            if (ex != null)
+                            {
+                                await context.Response.WriteAsync(ex.Error.Message);
+                            }
+                        });
+                    });
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+
             app.UseAuthentication();
+
             app.UseAuthorization();
 
 

@@ -25,36 +25,39 @@ namespace FullMart.Data.Repositories
             return context.Products.Count();
         }
 
-        public async Task<Product> GetByBrand(string brandName)
+        public async Task<IEnumerable<Product>> GetByBrand(string brandName)
         {
-            var product = await context.Products
-               .Include("Category")
-               .Include("Brand")
-               .FirstOrDefaultAsync(p => p.Brand.BrandName == brandName);
+            return await context.Products
+                    .Include("Category")
+                .Include("Brand")
+                .Include("Reviews")
+               .Where(p => p.Brand.BrandName == brandName).ToListAsync();
 
-            return product;
+           
         }
 
-        public async Task<Product> GetByCategory(string categoryName)
+        public async Task<IEnumerable<Product>> GetByCategory(string categoryName)
         {
-            var product = await context.Products
-               .Include("Category")
-               .Include("Brand")
-               .FirstOrDefaultAsync(p => p.Category.CategoryName == categoryName);
+            return await context.Products
+                    .Include("Category")
+                .Include("Brand")
+                .Include("Reviews")
+               .Where(p => p.Category.CategoryName == categoryName).ToListAsync();
 
-            return product;
+
 
         }
 
-        public async Task<Product> GetByName(string name)
+        public async Task<IEnumerable<Product>> GetByName(string name)
         {
 
-            var product = await  context.Products
+            return await  context.Products
                 .Include("Category")
                 .Include("Brand")
-                .FirstOrDefaultAsync(p => p.PName == name);
+                .Include("Reviews")
+                .Where(p => p.PName == name).ToListAsync();
 
-            return product;
+          
         }
     }
 

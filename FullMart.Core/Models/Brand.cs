@@ -16,7 +16,6 @@ namespace FullMart.Core.Models
         public string  BrandName { get; set; }
 
 
-        //public virtual ICollection<BrandCategory>? BrandCategories{ get; set; }
 
         public ICollection<Product> Products { get; set; } = new HashSet<Product>(); 
     }
