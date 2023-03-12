@@ -1,81 +1,8 @@
-<<<<<<< HEAD
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-C:\Users\Ahmed\source\repos\E-Commerce\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-C:\Users\B\Desktop\New folder (7)\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-C:\MyData\GitHub Project\ITIProject\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
-G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-G:\FullMart\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-G:\FullMart\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
-<<<<<<< HEAD
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
 C:\Project\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
 C:\Project\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
 C:\Project\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
@@ -83,63 +10,8 @@ C:\Project\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
 C:\Project\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
 C:\Project\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
+C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
+C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
+C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
 C:\Project\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
-=======
-=======
->>>>>>> c2b00d8291592ed41b262a436aeb33e19a86e93f
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-C:\MyData\GitHub Project\ECommerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
-<<<<<<< HEAD
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-C:\Users\B\Desktop\Remote copy\E-Commerce\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
->>>>>>> af381931f2847a76647341f9455b01b3ac670f7f
-=======
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.deps.json
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.runtimeconfig.json
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Data.pdb
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.dll
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\bin\Debug\net6.0\FullMart.Core.pdb
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.AssemblyReference.cache
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfoInputs.cache
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.AssemblyInfo.cs
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CoreCompileInputs.cache
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.csproj.CopyComplete
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\refint\FullMart.Data.dll
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.pdb
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\FullMart.Data.genruntimeconfig.cache
-C:\Users\B\Desktop\New folder (8)\Full-Mart\FullMart.Data\obj\Debug\net6.0\ref\FullMart.Data.dll
->>>>>>> c2b00d8291592ed41b262a436aeb33e19a86e93f
