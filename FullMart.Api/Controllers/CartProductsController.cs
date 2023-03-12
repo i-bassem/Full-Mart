@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FullMart.Core.DTOS;
 using FullMart.Core.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,25 +24,32 @@ namespace FullMart.Api.Controllers
             _environment = environment;
         }
         [HttpGet]
-        public IActionResult getProductByUserId(string Id)
+        public IActionResult getProductByUserId(string userId)
         {
-            return Ok( _unitOfWork.CartProducts.GetProductsByUserId(Id));
+            try
+            {
+                var result = _mapper.Map<IEnumerable<CartProductDTO>>(_unitOfWork.CartProducts.GetProductsByUserId(userId));
+                return Ok(result);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
         [HttpPost]
         public IActionResult AddProductToCart(string userId,int productId)
         {
-            //try
-            //{
+            try
+            {
                 _unitOfWork.CartProducts.AddProductToUserCart(userId, productId);
-             int x= _unitOfWork.Complete();
-                return Ok();
-               // if (_unitOfWork.Complete() > 0) return Ok();
-               // else return BadRequest();
-        //    }
-        //    catch
-        //    {
-        //        return BadRequest();
-        //    }
+
+                if (_unitOfWork.Complete() > 0) return Ok();
+               else return BadRequest();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
         [HttpDelete]
         public IActionResult DeleteProductFromCart(string userId, int productId)

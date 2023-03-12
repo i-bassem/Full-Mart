@@ -19,6 +19,7 @@ namespace FullMart.Data.Repositories
       
         public IProductRepo Products { get; }
         public ICartProductsRepo CartProducts { get; }
+        public ICartRepo Carts { get; }
 
         public ICategoriesRepo Categories { get; }
 
@@ -29,7 +30,6 @@ namespace FullMart.Data.Repositories
 
         public IBaseRepo<Brand> Brands { get; }
 
-        public IBaseRepo<Cart> Carts { get; }
 
         public IBaseRepo<WishListProduct> WishListProducts { get; }
         public IWishListProductRepo wishListProductRepo { get; }
@@ -52,7 +52,7 @@ namespace FullMart.Data.Repositories
             WishListProducts = new BaseRepositiory<WishListProduct>(_context);
             wishListProductRepo = new WishListProductRepo(_context);
 
-            Carts = new BaseRepositiory<Cart>(_context);
+            Carts = new CartRepo(_context);
 
             Brands = new BaseRepositiory<Brand>(_context);
 

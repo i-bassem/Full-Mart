@@ -37,6 +37,13 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
+
+            CreateMap<Product, CartProductDTO>().ReverseMap();
+  
+
+
+
+
             #endregion
 
             #region  Product  To NewProductDto and Reverse
@@ -94,6 +101,7 @@ namespace FullMart.Core.Helper.AutoMapper
             #endregion
 
             #region  WishListProduct To  WishListProductUserDTO and Reverse
+
 
 
 

@@ -19,32 +19,35 @@ namespace FullMart.Data.Repositories
         {
             this.context = context;
         }
+        
+         public void AddProductToUserCart(string userId, int productId)
+         {
+             var cart = context.Carts.Include("AppUser").FirstOrDefault(a => a.AppUser.Id == userId);
+             int cartId = cart.Id;
+             CartProduct cartProduct=new CartProduct() { CartId=cartId,ProductId=productId};
+             context.CartProducts.Add(cartProduct);
 
-        public void AddProductToUserCart(string userId, int productId)
-        {
-            var cart = context.Carts.Include("AppUser").FirstOrDefault(a => a.AppUser.Id == userId);
-            int cartId = cart.Id;
-            CartProduct cartProduct=new CartProduct() { CartId=cartId,ProductId=productId};
-            context.CartProducts.Add(cartProduct);
+         }
 
-        }
+         public void DeleteProductFromUserCart(string userId, int productId)
+         {
+             var cart = context.Carts.Include("AppUser").FirstOrDefault(a => a.AppUser.Id == userId);
+             int cartId = cart.Id;
+             CartProduct? cartProduct = context.CartProducts.Find(cartId,productId);
+             if(cartProduct != null) context.CartProducts.Remove(cartProduct);
 
-        public void DeleteProductFromUserCart(string userId, int productId)
-        {
-            var cart = context.Carts.Include("AppUser").FirstOrDefault(a => a.AppUser.Id == userId);
-            int cartId = cart.Id;
-            CartProduct? cartProduct = context.CartProducts.Find(cartId);
-            if(cartProduct != null) context.CartProducts.Remove(cartProduct);
+         }
 
-        }
+         public IEnumerable<Product> GetProductsByUserId(string userId)
+         {
+             var cart=context.Carts.Include("AppUser").FirstOrDefault(a=>a.AppUser.Id==userId);
+             int cartId = cart.Id;
+             return context.CartProducts.Include("Product").Where(a=>a.CartId==cartId).Select(a=>a.Product).ToList();
 
-        public IEnumerable<Product> GetProductsByUserId(string userId)
-        {
-            var cart=context.Carts.Include("AppUser").FirstOrDefault(a=>a.AppUser.Id==userId);
-            int cartId = cart.Id;
-            return context.CartProducts.Include("Product").Where(a=>a.CartId==cartId).Select(a=>a.Product).ToList();
-           
-   
-        }
+
+         }
+        
+
+
     }
 }

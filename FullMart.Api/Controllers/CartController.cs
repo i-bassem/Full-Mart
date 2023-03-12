@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FullMart.Core.DTOS;
+using FullMart.Core.Models;
 using FullMart.Core.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,14 +11,49 @@ namespace FullMart.Api.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
-        protected readonly IUnitOfWork _unitOfWork;
-        protected readonly IMapper _mapper;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
+
         public CartController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
+            this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
         }
-    
-  
+        [HttpPost]
+        public async  Task<IActionResult> AddCart(string userId)
+        {
+            try
+            {
+               await  unitOfWork.Carts.AddCart(userId);
+                if (unitOfWork.Complete() > 0) return Ok();
+                else return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCart(string userId)
+        {
+            try
+            {
+                await unitOfWork.Carts.DeletCart(userId);
+                if(unitOfWork.Complete()>0)  return Ok();
+                else return BadRequest();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+
+
+   
     }
 }
