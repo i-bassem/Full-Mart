@@ -62,11 +62,11 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
-<<<<<<< HEAD
+
          
-=======
+
             #region Categories
->>>>>>> c0d2845b6dd8e3d1d2ba63a901062e446f1bc834
+
 
             CreateMap<Category, ProductsInCategoryDto>()
                 .ForMember(dsc => dsc.categoryID, src => src.MapFrom(src => src.Id))

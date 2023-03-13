@@ -68,7 +68,14 @@ namespace FullMart.Api
 
 
 
-
+            //("http://localhost:4200")
+            builder.Services.AddCors(p => p.AddPolicy("corspolicy",
+                builder => {
+                           builder.AllowAnyOrigin();
+                           builder.AllowAnyMethod();
+                           builder.AllowAnyHeader(); 
+                         }
+                ));
 
 
             var app = builder.Build();
@@ -82,10 +89,11 @@ namespace FullMart.Api
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseCors("corspolicy");
+
             app.UseAuthentication();
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();
