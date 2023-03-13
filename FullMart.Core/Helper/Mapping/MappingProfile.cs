@@ -147,12 +147,44 @@ namespace FullMart.Core.Helper.AutoMapper
                 .ForMember(dsc => dsc.productPrice, src => src.MapFrom(src => src.Price))
                 .ForMember(dsc => dsc.productImageURL, src => src.MapFrom(src => src.ImageUrl))
                 .ForMember(dsc => dsc.productRating, src => src.MapFrom(src => src.Rate))
-                .ReverseMap(); 
+                .ReverseMap();
 
             #endregion
 
-      
 
+            #region order maping
+    
+
+            CreateMap<Order, OrderDTO>()
+        .ForMember(dest => dest.ProductNames,
+               src => src.MapFrom(src => src.OrderProducts.
+               Select(a => a.Product.PName).ToList()));
+
+            CreateMap<OrderProductCreateDTO, OrderProduct>()
+      .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
+
+      .ForMember(dest => dest.Order, opt => opt.Ignore()).ReverseMap();
+
+            CreateMap<OrderCreateDTO, Order>()
+                .ForMember(dest => dest.OrderProducts, opt => opt.MapFrom(src => src.OrderProducts))
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.AppUser, opt => opt.Ignore()).ReverseMap();
+
+            #endregion
+
+            #region brand
+            CreateMap<BrandDTO, Brand>()
+     .ForMember(dest => dest.Id, opt => opt.Ignore())
+     .ForMember(dest => dest.Products, opt => opt.ToString())
+     .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.BrandName)).ReverseMap();
+
+
+            // CreateMap<Brand, BrandDTO>()
+
+            //.ForMember(dest => dest.ProductNames, opt => opt.MapFrom(src => src.Products.Select(p => p.PName).ToList()));
+
+
+            #endregion
 
 
 

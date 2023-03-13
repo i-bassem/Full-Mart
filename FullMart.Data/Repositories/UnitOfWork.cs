@@ -24,9 +24,9 @@ namespace FullMart.Data.Repositories
         public ICategoriesRepo Categories { get; }
 
 
-      
 
-        public IBaseRepo<Order> Orders { get; }
+
+        public IorderRepo Orders { get; }
 
         public IBaseRepo<Brand> Brands { get; }
 
@@ -56,9 +56,9 @@ namespace FullMart.Data.Repositories
 
             Brands = new BaseRepositiory<Brand>(_context);
 
-           
 
-            Orders = new BaseRepositiory<Order>(_context);
+
+            Orders = new OrderRepo(_context);
 
             Reviews = new ReviewRepo(_context); 
             
