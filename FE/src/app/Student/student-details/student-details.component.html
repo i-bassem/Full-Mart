@@ -1,0 +1,20 @@
+<p>Student Details</p>
+
+<table class="table table-bordered ">
+    <thead>
+          <th>NAME</th>
+          <th>ID</th>
+          <th>AGE</th>
+          <!-- <th><button (click)="stdser.showflag=false">HIDE ME</button></th> -->
+          <th rowspan="2"> <a routerLink="/student" class="nav-link">Hide me</a></th>
+          
+    </thead>
+    <tbody>
+        <tr>
+        <!-- ? propagation operator if it is null it won't operate-->
+          <td>{{student?.stdid}}</td>
+          <td>{{student?.stdname}}</td>
+          <td>{{student?.stdage}}</td> 
+   
+    </tbody>
+  </table>

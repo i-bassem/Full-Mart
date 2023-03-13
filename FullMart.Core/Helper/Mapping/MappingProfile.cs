@@ -127,7 +127,12 @@ namespace FullMart.Core.Helper.AutoMapper
 
                 .ReverseMap();
 
+
+
+         
+
             #endregion
+
 
 
             #region Categories

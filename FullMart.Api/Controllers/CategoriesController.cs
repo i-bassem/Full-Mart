@@ -2,6 +2,8 @@
 using FullMart.Core.DTOS;
 using FullMart.Core.Models;
 using FullMart.Core.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,8 @@ namespace FullMart.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("corspolicy")]
+  
     public class CategoriesController : ControllerBase
     {
         private IUnitOfWork _unitOfWork;
