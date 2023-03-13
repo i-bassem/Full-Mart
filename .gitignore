@@ -9,9 +9,19 @@
 *.user
 *.userosscache
 *.sln.docstates
-FullMart.Data/obj/
-FullMart.Api/obj/
-FullMart.Core\obj\
+
+/FullMart.Api/obj/
+/FullMart.Core/obj/
+/FullMart.Data/obj/
+
+.vs/FullMart/DesignTimeBuild/.dtbcache.v2
+.vs/FullMart/v17/.futdcache.v2
+.vs/FullMart/v17/.suo
+# .vs/ProjectEvaluation/fullmart.metadata.v5.2
+# .vs/ProjectEvaluation/fullmart.projects.v5.2
+
+
+
 
 *.suo
 *.sln

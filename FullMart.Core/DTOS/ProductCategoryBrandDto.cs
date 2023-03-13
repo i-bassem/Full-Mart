@@ -25,6 +25,10 @@ namespace FullMart.Core.DTOS
         public string CategoryName { get; set; }
         public int BrandId { get; set; }
 
+        public string[] Comment { get; set; }
+
+       
+
         public bool? IsFree { get; set; }
     }
 }

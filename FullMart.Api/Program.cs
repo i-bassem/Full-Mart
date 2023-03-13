@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace FullMart.Api
 {
@@ -40,7 +42,6 @@ namespace FullMart.Api
 
             #endregion
 
-
             #region Connection String
 
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
@@ -49,7 +50,6 @@ namespace FullMart.Api
             });
 
             #endregion
-
 
             #region DI
 
@@ -66,16 +66,16 @@ namespace FullMart.Api
              .AddDefaultTokenProviders();
             #endregion
 
-
-
-            //("http://localhost:4200")
+            #region CORS Policy
             builder.Services.AddCors(p => p.AddPolicy("corspolicy",
-                builder => {
-                           builder.AllowAnyOrigin();
-                           builder.AllowAnyMethod();
-                           builder.AllowAnyHeader(); 
-                         }
-                ));
+                   builder =>
+                   {
+                       builder.AllowAnyOrigin();
+                       builder.AllowAnyMethod();
+                       builder.AllowAnyHeader();
+                   }
+                   )); 
+            #endregion
 
 
             var app = builder.Build();
@@ -85,9 +85,29 @@ namespace FullMart.Api
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(
+                    options =>
+                    {
+
+                        options.Run(async context =>
+                        {
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            var ex = context.Features.Get<IExceptionHandlerFeature>();
+
+                            if (ex != null)
+                            {
+                                await context.Response.WriteAsync(ex.Error.Message);
+                            }
+                        });
+                    });
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseCors("corspolicy");
