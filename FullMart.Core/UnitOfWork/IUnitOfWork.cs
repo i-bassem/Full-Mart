@@ -21,9 +21,9 @@ namespace FullMart.Core.UnitOfWork
 
         ICartProductsRepo CartProducts { get; }
 
-   
 
-        IBaseRepo<Order> Orders { get; }
+
+        IorderRepo Orders { get; }
         IBaseRepo<Brand> Brands { get; }
         ICartRepo Carts { get; }
         IBaseRepo<WishList> WishLists { get; }
