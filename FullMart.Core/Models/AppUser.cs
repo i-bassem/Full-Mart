@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using FullMart.Core.Models.JwtModels;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace FullMart.Core.Models
         public string LastName { get; set; }
         public string ImageUrl { get; set; }
 
+        public List<RefreshToken>? RefreshTokens { get; set; }
 
         //public int? ReviewId { get; set; }
         public ICollection<Review>? Reviews { get; set; } = new HashSet<Review>();

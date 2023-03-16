@@ -44,7 +44,7 @@ namespace FullMart.Data.Database
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "Security");
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleCliams", "Security");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserToken", "Security");
-
+            builder.Entity<IdentityUserToken<string>>().ToTable("RefreshTokens", "Security");
 
 
             //builder.Entity<WishList>()
