@@ -17,7 +17,7 @@ namespace FullMart.Data.Database
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options) { }
 
-
+        public DbSet<AppUser> AppUsers { get; set; }
         public  DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -104,11 +104,6 @@ namespace FullMart.Data.Database
 
             #endregion
 
-            #region Many To Many realtionship between brand and category
-
-            
-
-            #endregion
 
 
         }

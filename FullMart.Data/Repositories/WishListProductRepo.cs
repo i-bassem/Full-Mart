@@ -44,6 +44,8 @@ namespace FullMart.Data.Repositories
                     _context.WishListProducts.Remove(product);
                 }
             }
+            throw new NotImplementedException();
+           
         }
 
         public async Task<IEnumerable<Product>> GetProductByUserIdAsync(string UserId)

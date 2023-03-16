@@ -1,0 +1,26 @@
+<p>department works!</p>
+
+<input type="text"  [(ngModel)]="d1.deptname">
+<input type="text"  [(ngModel)]="d1.deptid">
+<input type="text"  [(ngModel)]="d1.deptinstructor">
+<button (click)="add()">ADD</button>
+<button (click)="delete(d1.deptid)">Delete</button>
+
+<table class="table table-bordered">
+    <thead>
+        <!-- <th>INDEX</th> -->
+        <th>NAME</th>
+        <th>ID</th>
+        <th>Instructor</th>
+    </thead>
+  <tbody>
+    <tr *ngFor="let dt of departments; let x=index ">
+        <!-- <td>{{x}}</td> -->
+       
+        <td>{{dt.deptname}}</td>
+        <td>{{dt.deptid}}</td>
+        <td>{{dt.deptinstructor}}</td> 
+        <!-- <td><button (click)="delete(x)">Delete</button></td> -->
+    </tr>
+  </tbody>
+</table>
