@@ -4,6 +4,7 @@ using FullMart.Data.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FullMart.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230310232123_UpdatineAppUserTable")]
+    partial class UpdatineAppUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,7 +117,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands", (string)null);
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Cart", b =>
@@ -132,7 +135,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.CartProduct", b =>
@@ -150,7 +153,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartProducts", (string)null);
+                    b.ToTable("CartProducts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Category", b =>
@@ -172,7 +175,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Order", b =>
@@ -196,7 +199,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.OrderProduct", b =>
@@ -214,7 +217,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts", (string)null);
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Product", b =>
@@ -260,7 +263,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.Review", b =>
@@ -272,7 +275,6 @@ namespace FullMart.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AppUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Comment")
@@ -291,7 +293,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.WishList", b =>
@@ -310,7 +312,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("WishLists", (string)null);
+                    b.ToTable("WishLists");
                 });
 
             modelBuilder.Entity("FullMart.Core.Models.WishListProduct", b =>
@@ -328,7 +330,7 @@ namespace FullMart.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("WishListProducts", (string)null);
+                    b.ToTable("WishListProducts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -580,9 +582,7 @@ namespace FullMart.Data.Migrations
                 {
                     b.HasOne("FullMart.Core.Models.AppUser", "AppUser")
                         .WithMany("Reviews")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AppUserId");
 
                     b.HasOne("FullMart.Core.Models.Product", "Product")
                         .WithMany("Reviews")

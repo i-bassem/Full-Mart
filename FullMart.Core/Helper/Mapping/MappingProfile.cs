@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using FullMart.Core.DTOS;
 using FullMart.Core.Models;
+using FullMart.Core.Models.JwtModels;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,28 +106,43 @@ namespace FullMart.Core.Helper.AutoMapper
 
 
 
+            #region Mapping wishList Product
 
-            CreateMap<WishListProduct, WishListProductUserDTO>()
+            CreateMap<Product, WishListProductUserDTO>()
 
                 .ForMember(dest => dest.ProductName,
-                src => src.MapFrom(src => src.Product.PName))
+                src => src.MapFrom(src => src.PName))
 
                 .ForMember(dest => dest.ProductDescription,
-                src => src.MapFrom(src => src.Product.PDescription))
+                src => src.MapFrom(src => src.PDescription))
 
                 .ForMember(dest => dest.Price,
-                src => src.MapFrom(src => src.Product.Price))
+                src => src.MapFrom(src => src.Price))
 
                 .ForMember(dest => dest.ImageUrl,
-                src => src.MapFrom(src => src.Product.ImageUrl))
+                src => src.MapFrom(src => src.ImageUrl))
 
                 .ForMember(dest => dest.Quantity,
-                src => src.MapFrom(src => src.Product.Quantity))
+                src => src.MapFrom(src => src.Quantity))
 
                 .ForMember(dest => dest.Rate,
-                src => src.MapFrom(src => src.Product.Rate))
+                src => src.MapFrom(src => src.Rate))
 
                 .ReverseMap();
+
+            #endregion
+
+            #region Mapping AppUser RegisterModel
+
+            CreateMap<AppUser, RegisterModel>()
+                .ForMember(dest => dest.Username, src => src.MapFrom(src => src.UserName))
+                .ForMember(dest => dest.FirstName, src => src.MapFrom(src => src.FirstName))
+                .ForMember(dest => dest.LastName, src => src.MapFrom(src => src.LastName))
+                .ForMember(dest => dest.Email, src => src.MapFrom(src => src.Email))
+                .ForMember(dest => dest.ImageUrl, src => src.MapFrom(src => src.ImageUrl))
+                .ReverseMap();
+
+            #endregion
 
 
 
