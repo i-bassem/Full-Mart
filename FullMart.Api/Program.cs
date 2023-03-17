@@ -42,7 +42,6 @@ namespace FullMart.Api
 
             #endregion
 
-
             #region Connection String
 
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
@@ -51,7 +50,6 @@ namespace FullMart.Api
             });
 
             #endregion
-
 
             #region DI
 
@@ -68,9 +66,16 @@ namespace FullMart.Api
              .AddDefaultTokenProviders();
             #endregion
 
-
-
-
+            #region CORS Policy
+            builder.Services.AddCors(p => p.AddPolicy("corspolicy",
+                   builder =>
+                   {
+                       builder.AllowAnyOrigin();
+                       builder.AllowAnyMethod();
+                       builder.AllowAnyHeader();
+                   }
+                   )); 
+            #endregion
 
 
             var app = builder.Build();
@@ -105,12 +110,10 @@ namespace FullMart.Api
 
             app.UseStaticFiles();
 
+            app.UseCors("corspolicy");
 
             app.UseAuthentication();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();

@@ -26,17 +26,18 @@ namespace FullMart.Api.Controllers
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        
+        private readonly IWebHostEnvironment _host;
 
 
         #endregion
 
 
         #region Ctor
-        public ProductController(IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductController(IUnitOfWork unitOfWork, IMapper mapper ,IWebHostEnvironment host)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _host = host;
            
         }
         #endregion
@@ -57,8 +58,14 @@ namespace FullMart.Api.Controllers
 
             var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(products);
 
+
             if (result.Any())
             {
+
+                foreach (var item in products)
+                {
+                    item.ImageUrl = $"{_host.WebRootPath}/Files/Images/Product/{item.ImageUrl}";
+                }
                 return Ok(result);
             }
             else
@@ -82,8 +89,9 @@ namespace FullMart.Api.Controllers
                     return BadRequest($"The Product With this Id = {id} Not Found..");
                 }
 
+                product.ImageUrl = $"{_host.WebRootPath}/Files/Images/Product/{product.ImageUrl}";
                 var result = _mapper.Map<ProductCategoryBrandDto>(product);
-
+              
 
                 return Ok(result);
 

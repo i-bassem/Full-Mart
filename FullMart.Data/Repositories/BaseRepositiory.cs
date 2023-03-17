@@ -55,7 +55,17 @@ namespace FullMart.Data.Repositories
 
             return await query.FirstOrDefaultAsync(expression);
         }
+        public async Task<T> GetByNmae(Expression<Func<T, bool>> expression, string[] includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
 
+            if (includes != null)
+
+                foreach (var includeValue in includes)
+                    query = query.Include(includeValue);
+
+            return await query.FirstOrDefaultAsync(expression);
+        }
         public void Update(T entity)
         {
             _context.Update(entity); 
