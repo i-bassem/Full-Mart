@@ -33,8 +33,8 @@ namespace FullMart.Core.Helper.AutoMapper
                 src => src.MapFrom(src => src.Category.CategoryName))
                 .ForMember(dest => dest.Comment,
                 src => src.MapFrom(src => src.Reviews.Select(r =>r.Comment).ToList()))
-                .ForMember(dest => dest.BrandId,
-                src => src.MapFrom(src => src.Brand.Id))
+                .ForMember(dest => dest.BrandName,
+                src => src.MapFrom(src => src.Brand.BrandName))
 
 
                 .ReverseMap();

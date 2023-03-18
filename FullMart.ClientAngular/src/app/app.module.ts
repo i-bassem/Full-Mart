@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -16,16 +18,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { LibrariesimportModule } from './librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryModule } from './Category/category.module';
+import { ProductModule } from './Product/product/product.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,StudentComponent,DepartmentComponent, LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent
-  ],
+    AboutUsComponent, NotFoundComponent],
   imports: [
     BrowserModule,FormsModule,CoreModule,SharedModule,StudentModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,CategoryModule
+    LibrariesimportModule, BrowserAnimationsModule,CategoryModule , ProductModule
    
   ],
   providers: [],

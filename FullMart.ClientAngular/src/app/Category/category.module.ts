@@ -8,13 +8,13 @@ import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   declarations: [
-            CategoryAddComponent,
-            CategoryDetailsComponent,
-            CategoryListComponent
+    CategoryAddComponent,
+    CategoryDetailsComponent,
+    CategoryListComponent
   ],
-  exports:[
-        CategoryAddComponent, CategoryDetailsComponent, CategoryListComponent
-      ],
+  exports: [
+    CategoryAddComponent, CategoryDetailsComponent, CategoryListComponent
+  ],
   imports: [
     CommonModule
   ]
