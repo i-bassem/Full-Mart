@@ -1,0 +1,33 @@
+<p style="text-align: center;">libraries works!</p>
+
+<table class="table">
+    <tr>
+        <td><label>Enter password</label></td>
+        <td><p-password [(ngModel)]="passvalue"></p-password></td>
+    </tr>
+    <tr>
+        <td><label>Chips</label></td>
+        <td><p-chips [(ngModel)]="values"></p-chips></td>
+        <td><span *ngFor="let ch of values">{{ch}}</span></td>
+    </tr>
+    <tr>
+        <td><label>Calender</label></td>
+        <td><p-calendar [(ngModel)]="value" dateFormat="dd.mm.yy"></p-calendar></td>
+        <td><span>{{value}}</span></td>
+    </tr>
+    <tr>
+        <td><label>Pie Chart</label></td>
+        <td><p-chart type="doughnut" [data]="data" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart></td>
+    </tr>
+    <tr>
+        <td><label></label></td>
+        <td></td>
+    </tr> 
+    <tr>
+        <td><label></label></td>
+        <td></td>
+    </tr> 
+
+
+
+</table>
