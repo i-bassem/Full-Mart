@@ -1,0 +1,30 @@
+<table class="table">
+    <tr>   
+    <input type="text"   hidden>
+        <td><label for="catName">Category Name</label></td>
+        <td><input type="text" placeholder={{category?.categoryName}}  [(ngModel)]="catName"></td>
+    
+    </tr>
+    <tr>
+        <td><label for="categoryImage">Image</label></td>
+        <td><img src="{{serverLink+category?.imageUrl}} " alt="img"></td>
+    </tr>
+    <tr>
+        <td><label for="catImageURL">New Image</label></td>
+        <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>
+    </tr>
+    </table>
+
+<button (click)="update(catName)"  class="btn btn-warning">Update</button>
+<!-- routerLink="/category" priorety over  navigateByUrl -->
+<p-toast position="bottom-center"></p-toast>
+
+<!-- export class ICategory{
+
+    constructor(
+       public id:number,
+       public categoryName:string,
+       public imageUrl:string,     
+    ){}
+
+} -->
