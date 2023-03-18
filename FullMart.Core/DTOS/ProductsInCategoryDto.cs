@@ -18,7 +18,6 @@ namespace FullMart.Core.DTOS
 
         public class ProductDTO 
         { 
-
         public int productID { get; set; }
         public string productName { get; set; }
 

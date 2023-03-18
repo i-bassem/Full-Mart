@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FullMart.Api.Controllers
@@ -7,7 +8,12 @@ namespace FullMart.Api.Controllers
     [ApiController]
     public class ImageController : ControllerBase
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
+        public ImageController(IWebHostEnvironment webHostEnvironment)
+        {
+            this._webHostEnvironment = webHostEnvironment;
+        }
 
         [HttpPost]
 
@@ -39,6 +45,20 @@ namespace FullMart.Api.Controllers
                 return ex.Message;
             }
 
+        }
+        [HttpGet("{imageId}")]
+        public ActionResult<string> GetImage(Guid imageId)
+        {
+            var fileName = $"{imageId}.jpg";
+            var path = Path.Combine(_webHostEnvironment.WebRootPath, fileName);
+            if (!System.IO.File.Exists(path))
+            {
+                return NotFound();
+            }
+
+            var imageBytes = System.IO.File.ReadAllBytes(path);
+            var base64String = Convert.ToBase64String(imageBytes);
+            return base64String;
         }
 
 
