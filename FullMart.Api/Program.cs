@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
 using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace FullMart.Api
 {
@@ -21,7 +22,7 @@ namespace FullMart.Api
             // Add services to the container.
 
             builder.Services.AddControllers()
-                .AddNewtonsoftJson(options =>
+                            .AddNewtonsoftJson(options =>
                                  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -74,8 +75,17 @@ namespace FullMart.Api
                        builder.AllowAnyMethod();
                        builder.AllowAnyHeader();
                    }
-                   )); 
+                   ));
             #endregion
+
+            //UPLOADING FILES(prevent the multipart body length error)
+            builder.Services.Configure<FormOptions>(o =>
+            {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit= int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
+
 
 
             var app = builder.Build();
@@ -107,9 +117,9 @@ namespace FullMart.Api
             }
 
             app.UseHttpsRedirection();
-
+            //All the files in (wwwroot) are servable for client apllications by adding this line
             app.UseStaticFiles();
-
+            //Using CORS policy
             app.UseCors("corspolicy");
 
             app.UseAuthentication();

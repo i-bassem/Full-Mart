@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div  class="row "  >
+    <div class="col" >
+    <img src="{{ serverURL + category?.imageUrl }}" alt="Shoes Category" style="width: 100%;height:40vh;" />
+    </div>
+</div>
+<div class="row " >
+    <!-- <div class="col-2">
+      <p>Sidebar</p>
+    </div> -->
+    
+    <div class="card" style="width: 18rem;" *ngFor="let prd of category?.products">
+        <img class="card-img-top" src="{{serverURL + prd.productImageURL }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><a class="nav-link" routerLink="/product/details/{{prd.productID}}">{{prd.productName}}</a></h5>
+          <!-- AVGRating -->
+          <p-rating  ngModel="{{prd.productRating}}" [readonly]="true" [cancel]="false"></p-rating>
+          <p class="card-text">{{prd.productPrice|currency}}</p>
+          <a href="#" class="btn btn-primary">Add to chart</a>
+        </div>
+      </div>
+   
+
+
+    
+</div>
