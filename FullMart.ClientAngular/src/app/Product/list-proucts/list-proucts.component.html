@@ -1,0 +1,38 @@
+<p>Product-list works!!!!</p>
+
+
+<table class="table table-bordered table-dark" >
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>ProductName</th>
+        <th>ProductDesc</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Rate</th>
+        <th>Quantity</th>
+        <th>CategoryName</th>
+        <th>BrandName</th>
+      </tr>
+       
+    </thead>
+  <tbody>
+    <tr *ngFor="let prd of prdList; let x=index ">
+     
+       <td>{{x+1}}</td>
+        <td> {{prd.productName}}</td>
+        <td> {{prd.productDescription}}</td>
+        <td> <img  src={{prd.imageUrl}} style="height: 100px; width: 100px"> </td>
+       <!-- <td> <img  src="assets/Images/Product/+{{prd.imageUrl}}" style="height: 100px; width: 100px"> </td> -->
+        
+       
+        <td> {{prd.price}}</td>
+        <td> {{prd.rate}}</td>
+        <td> {{prd.quantity}}</td>
+        <td> {{prd.categoryName}}</td>
+        <td> {{prd.brandName}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
