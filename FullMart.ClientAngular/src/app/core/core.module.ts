@@ -4,6 +4,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { LibrariesimportModule } from '../Libraries/librariesimport.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -15,7 +18,7 @@ import { LibrariesimportModule } from '../Libraries/librariesimport.module';
     HeaderComponent,FooterComponent
   ],
   imports: [
-    CommonModule,RouterModule,LibrariesimportModule
+    CommonModule,RouterModule,LibrariesimportModule,MatFormFieldModule,MatInputModule,MatButtonModule
   ]
 })
 export class CoreModule { }
