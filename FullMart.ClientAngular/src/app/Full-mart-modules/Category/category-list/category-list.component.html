@@ -1,0 +1,20 @@
+
+
+
+<a routerLink="/category/add" class="btn btn-primary" style="float:right;">ADD</a>
+
+<div class="row">
+  <div class="col-4" *ngFor="let cat of catList; let x=index">
+
+    <div class="card">
+      <a class="btn btn-secondary" routerLink="/category/edit/{{ cat.id }}" >Edit</a>
+
+      <img class="card-img-top" [src]="createImagepath(cat.imageUrl)" alt="" width="100%"routerLink="/category/details/{{ cat.id }}">
+      <div class="card-body">
+        <h3 class="card-title"><p>{{ cat.categoryName }}</p></h3>
+        <button class="btn btn-danger" (click)="delete(cat.id)" routerLink="/category">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+

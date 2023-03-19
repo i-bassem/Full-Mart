@@ -14,7 +14,7 @@ namespace FullMart.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("corspolicy")]
+    //[EnableCors("corspolicy")]
   
     public class CategoriesController : ControllerBase
     {
@@ -31,10 +31,10 @@ namespace FullMart.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var categorise = await _unitOfWork.Categories.GetAll();
-            var result = _mapper.Map<IEnumerable<NewCategoryDto>>(categorise);
+            var categories = await _unitOfWork.Categories.GetAll();
+            var result = _mapper.Map<IEnumerable<NewCategoryDto>>(categories);
 
-            return Ok(result);
+            return Ok(categories);
         }
 
         //https://localhost:44308/api/Categories/1

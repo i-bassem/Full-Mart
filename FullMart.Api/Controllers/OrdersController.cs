@@ -39,7 +39,7 @@ public class OrderController : ControllerBase
    
  
     [HttpPost("{userId}")]
-    public async Task<ActionResult<OrderDTO>> CreateOrderAsync(string userId, [FromBody] OrderCreateDTO orderDTO)
+    public async Task<IActionResult> CreateOrderAsync(string userId, [FromBody] OrderCreateDTO orderDTO)
     {
         // Create the order
         var order = await unitOfWork.Orders.CreateOrderAsync(userId, mapper.Map<List<OrderProduct>>(orderDTO.OrderProducts));

@@ -1,3 +1,4 @@
+import { ICatProduct} from "./ICatProduct";
 
 
 
@@ -5,11 +6,11 @@
 export class ICategory{
 
     constructor(
-       public catId:number,
+       public id:number,
        public categoryName:string,
-       public catImageUrl:string,
-
-       
+       public imageUrl:string,   
+       public products? :ICatProduct[],
+  
     ){}
 
 }

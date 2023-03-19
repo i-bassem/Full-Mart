@@ -1,37 +1,38 @@
-
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { StudentComponent } from './Student/student.componet';
-import { DepartmentComponent } from './department/department.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { StudentModule } from './Student/student.module';
-import { LibrariesComponent } from './libraries/libraries.component';
+import { LibrariesComponent } from './Libraries/libraries.component';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './Not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LibrariesimportModule } from './librariesimport.module';
+import { LibrariesimportModule } from './Libraries/librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CategoryModule } from './Category/category.module';
-import { ProductModule } from './Product/product/product.module';
+import { FullMartModulesModule } from './Full-mart-modules/full-mart-modules.module';
+import { SpinnerComponent } from './Spinner/spinner.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './Interceptor/loading.interceptor';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
+import { MatPseudoCheckbox } from '@angular/material/core';
 
 
 @NgModule({
   declarations: [
-    AppComponent,StudentComponent,DepartmentComponent, LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent],
-  imports: [
-    BrowserModule,FormsModule,CoreModule,SharedModule,StudentModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,CategoryModule , ProductModule
-   
+    AppComponent,LibrariesComponent, HomeComponent, ContactUsComponent, 
+    AboutUsComponent, NotFoundComponent, SpinnerComponent 
   ],
-  providers: [],
+  imports: [
+    BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
+    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule,MatCheckboxModule
+  ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

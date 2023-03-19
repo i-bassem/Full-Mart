@@ -156,9 +156,9 @@ namespace FullMart.Core.Helper.AutoMapper
 
 
             CreateMap<Category, ProductsInCategoryDto>()
-                .ForMember(dsc => dsc.categoryID, src => src.MapFrom(src => src.Id))
+                .ForMember(dsc => dsc.Id, src => src.MapFrom(src => src.Id))
                 .ForMember(dsc => dsc.categoryName, src => src.MapFrom(src => src.CategoryName))
-                .ForMember(dsc => dsc.categoryImageURL, src => src.MapFrom(src => src.ImageUrl))
+                .ForMember(dsc => dsc.ImageUrl, src => src.MapFrom(src => src.ImageUrl))
                 .ReverseMap();
 
             CreateMap<Category, NewCategoryDto>().ReverseMap();
