@@ -15,6 +15,7 @@ import { ProductEditComponent } from './Full-mart-modules/Products/product-edit/
 import { ProductDetailsComponent } from './Full-mart-modules/Products/product-details/product-details.component';
 import { ProductListComponent } from './Full-mart-modules/Products/product-list/product-list.component';
 import { ErrorsComponent } from './errors/errors.component';
+import { BrandListComponent } from './Full-mart-modules/brand/brand-list/brand-list.component';
 
 
 const routes:Routes=[
@@ -32,6 +33,9 @@ const routes:Routes=[
   {path:"product/add",component:ProductAddComponent},
   {path:"product/edit/:id",component:ProductEditComponent},
   {path:"product/details/:id",component:ProductDetailsComponent},
+  //brand
+  {path:"Brand",component:BrandListComponent},
+
 
 
 

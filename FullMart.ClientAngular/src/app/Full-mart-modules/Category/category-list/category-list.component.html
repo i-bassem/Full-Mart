@@ -3,25 +3,18 @@
 
 <a routerLink="/category/add" class="btn btn-primary" style="float:right;">ADD</a>
 
-<table class="table table-bordered table-dark" >
-    <thead>
-        <th>#</th>
-        <th>NAME</th>
-        <th>Image</th>
-        <th>Delete</th>
-        <th>Details</th>
-    </thead>
-  <tbody>
+<div class="row">
+  <div class="col-4" *ngFor="let cat of catList; let x=index">
 
-    <tr *ngFor="let cat of catList; let x=index ">
-        <td>{{x+1}}</td>
-        <td> {{cat.categoryName}}</td>
-        <td> <img [src]= "createImagepath(cat.imageUrl)" alt=""></td> 
-        <td><a class="nav-link" routerLink="/category/details/{{cat.id}}">Details</a></td>
-        <td><a class="nav-link" routerLink="/category/edit/{{cat.id}}"><mat-icon>edit</mat-icon>Edit</a></td> 
-        <td><button (click)="delete(cat.id)" routerLink="/category" class="btn btn-danger"><mat-icon>delete</mat-icon></button></td>
-    </tr>
-  </tbody>
-</table>
+    <div class="card">
+      <a class="btn btn-secondary" routerLink="/category/edit/{{ cat.id }}" >Edit</a>
 
+      <img class="card-img-top" [src]="createImagepath(cat.imageUrl)" alt="" width="100%"routerLink="/category/details/{{ cat.id }}">
+      <div class="card-body">
+        <h3 class="card-title"><p>{{ cat.categoryName }}</p></h3>
+        <button class="btn btn-danger" (click)="delete(cat.id)" routerLink="/category">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IBrandDTO } from 'src/app/_models/Ibranddto';
 import { ICategory } from 'src/app/_models/ICategory';
+import { BrandService } from 'src/app/_services/Brand/Brands.service';
 import { CategoriesService } from 'src/app/_services/Categories/categories.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -18,16 +20,28 @@ export class CategoryDetailsComponent {
   protected category:ICategory|null=null;
   // protected products:ICatProduct[]= [];
   protected serverURL = `${environment.ImgURL}`
- 
+  catList: ICategory[] = [];
+  categorys: ICategory|null=null;
+  brands: IBrandDTO[] = [];
 
-constructor( private catservice: CategoriesService, private ac:ActivatedRoute){}
+
+constructor( private catservice: CategoriesService, private b :BrandService, private ac:ActivatedRoute){}
 
 ngOnInit():void{
   this.catID=this.ac.snapshot.params["id"];
   this.catservice.getCategoryByID(this.catID).subscribe(cat=>this.category=cat);
-
+  this.catservice.getAllCategories()
+                  .subscribe((cat) => (this.catList = cat));
+                  this.b.getBrands()
+                  .subscribe((cat) => (this.brands = cat));
   
     
+}
+
+ngOnChanges(): void {
+   this.catservice.getAllCategories()
+                  .subscribe((cat) => (this.catList = cat));
+
 }
  
 
