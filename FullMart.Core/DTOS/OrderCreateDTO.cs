@@ -8,7 +8,6 @@ namespace FullMart.Core.DTOS
 {
     public class OrderCreateDTO
     {
-        public string UserId { get; set; }
         public List<OrderProductCreateDTO> OrderProducts { get; set; }
     }
 
