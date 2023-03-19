@@ -7,15 +7,10 @@ using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
-using FullMart.Core.Helper.JWT;
-using FullMart.Core.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Microsoft.OpenApi.Models;
-
-using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
+using FullMart.Core.Interfaces;
+using System.Net;
 
 namespace FullMart.Api
 {
@@ -108,49 +103,8 @@ namespace FullMart.Api
             #endregion
 
 
-            #region Configuration of JWT
-
-            builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 
 
-            builder.Services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-              .AddJwtBearer(o =>
-              {
-                     o.RequireHttpsMetadata = false;
-                     o.SaveToken = false;
-                     o.TokenValidationParameters = new TokenValidationParameters
-                     {
-                        ValidateIssuerSigningKey = true,
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidIssuer = builder.Configuration["JWT:Issuer"],
-                        ValidAudience = builder.Configuration["JWT:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
-                        ClockSkew = TimeSpan.Zero
-                     };
-            });
-
-
-
-            #endregion
-
-
-
-            #region CORS Policy
-            builder.Services.AddCors(p => p.AddPolicy("corspolicy",
-                   builder =>
-                   {
-                       builder.AllowAnyOrigin();
-                       builder.AllowAnyMethod();
-                       builder.AllowAnyHeader();
-                   }
-                   )); 
-            #endregion
 
 
             var app = builder.Build();

@@ -16,17 +16,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { LibrariesimportModule } from './librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryModule } from './Category/category.module';
+import { WishlistModule } from './wishlist/wishlist.module';
+import { WishlistproductsComponent } from './wishlist/wishlistproducts/wishlistproducts.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,StudentComponent,DepartmentComponent, LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent
+    AppComponent,StudentComponent,DepartmentComponent, LibrariesComponent, HomeComponent, ContactUsComponent,
+    AboutUsComponent, NotFoundComponent 
   ],
   imports: [
     BrowserModule,FormsModule,CoreModule,SharedModule,StudentModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,CategoryModule
-   
+    LibrariesimportModule, BrowserAnimationsModule,CategoryModule,WishlistModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,7 @@ import { StudentAddComponent } from './Student/student-add/student-add.component
 import { LibrariesComponent } from './libraries/libraries.component';
 import { StudentEditComponent } from './Student/student-edit/student-edit.component';
 import { CategoryListComponent } from './Category/category-list/category-list.component';
+import { WishlistproductsComponent } from './wishlist/wishlistproducts/wishlistproducts.component';
 
 
 const routes:Routes=[
@@ -21,7 +22,7 @@ const routes:Routes=[
   {path:"student", component:StudentListComponent,
     children:[
             {path:"details/:id", component:StudentDetailsComponent}
-     ] 
+     ]
   },
   // {path:"student/details/:id", component:StudentDetailsComponent },
   {path:"student/add",component:StudentAddComponent},
@@ -32,7 +33,9 @@ const routes:Routes=[
   {path:"libraries", component:LibrariesComponent},
 
   {path:"", redirectTo:"/home", pathMatch:"full"},
-  
+
+  {path:"wishlist" , component:WishlistproductsComponent},
+
 
 
 

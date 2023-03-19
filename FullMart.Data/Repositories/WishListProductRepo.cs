@@ -21,13 +21,25 @@ namespace FullMart.Data.Repositories
         public void AddProductToUserWishList(string userId, int ProductId)
         {
             var list = _context.WishLists.Include("AppUser").SingleOrDefault(w => w.AppUser.Id == userId);
-            int UserList = list.Id;
-            WishListProduct WishList = new WishListProduct()
+            try
             {
-                WishlistId = UserList,
-                ProductId = ProductId
-            };
-            _context.WishListProducts.Add(WishList);
+
+
+                if (list is not null)
+                {
+                    int UserList = list.Id;
+                    WishListProduct WishList = new WishListProduct()
+                    {
+                        WishlistId = UserList,
+                        ProductId = ProductId
+                    };
+                    _context.WishListProducts.Add(WishList);
+                }
+            }
+            catch (Exception ex)
+            {
+                object[] args = { ex };
+            }
         }
 
         public void DeleteProductFromUserCartAsync(string userId, int productId)

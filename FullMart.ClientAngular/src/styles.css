@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "../node_modules/bootstrap/scss/bootstrap.scss" */
 /* "node_modules/bootstrap/scss/bootstrap.scss", */
-
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+/* @import "./assets/images/style.css"; */
 .active{
     background-color: red;
 }
