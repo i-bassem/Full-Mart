@@ -9,8 +9,12 @@ using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Diagnostics;
+<<<<<<< HEAD
 using FullMart.Core.Interfaces;
 using System.Net;
+=======
+using Microsoft.AspNetCore.Http.Features;
+>>>>>>> c0a9d29075954acd4ea2d0ce1bb0621582ae9dbb
 
 namespace FullMart.Api
 {
@@ -23,7 +27,7 @@ namespace FullMart.Api
             // Add services to the container.
 
             builder.Services.AddControllers()
-                .AddNewtonsoftJson(options =>
+                            .AddNewtonsoftJson(options =>
                                  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -105,6 +109,56 @@ namespace FullMart.Api
 
 
 
+<<<<<<< HEAD
+=======
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+              .AddJwtBearer(o =>
+              {
+                     o.RequireHttpsMetadata = false;
+                     o.SaveToken = false;
+                     o.TokenValidationParameters = new TokenValidationParameters
+                     {
+                        ValidateIssuerSigningKey = true,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidIssuer = builder.Configuration["JWT:Issuer"],
+                        ValidAudience = builder.Configuration["JWT:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+                        ClockSkew = TimeSpan.Zero
+                     };
+            });
+
+
+
+            #endregion
+
+
+
+            #region CORS Policy
+            builder.Services.AddCors(p => p.AddPolicy("corspolicy",
+                   builder =>
+                   {
+                       builder.AllowAnyOrigin();
+                       builder.AllowAnyMethod();
+                       builder.AllowAnyHeader();
+                   }
+                   ));
+            #endregion
+>>>>>>> c0a9d29075954acd4ea2d0ce1bb0621582ae9dbb
+
+            //UPLOADING FILES(prevent the multipart body length error)
+            builder.Services.Configure<FormOptions>(o =>
+            {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit= int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
+
 
 
             var app = builder.Build();
@@ -136,9 +190,9 @@ namespace FullMart.Api
             }
 
             app.UseHttpsRedirection();
-
+            //All the files in (wwwroot) are servable for client apllications by adding this line
             app.UseStaticFiles();
-
+            //Using CORS policy
             app.UseCors("corspolicy");
 
             app.UseAuthentication();

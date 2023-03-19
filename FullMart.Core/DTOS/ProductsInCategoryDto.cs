@@ -9,16 +9,15 @@ namespace FullMart.Core.DTOS
 {
     public class ProductsInCategoryDto
     {
-        public int categoryID { get; set; }
+        public int Id { get; set; }
         public string categoryName { get; set; }
-        public string categoryImageURL { get; set; }
+        public string ImageUrl { get; set; }
 
 
         public List<ProductDTO> Products { get; set; } = new List<ProductDTO>();
 
         public class ProductDTO 
         { 
-
         public int productID { get; set; }
         public string productName { get; set; }
 

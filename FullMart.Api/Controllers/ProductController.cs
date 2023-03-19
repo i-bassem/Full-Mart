@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FullMart.Core.DTOS;
-using FullMart.Core.Helper.UploadImages;
+
 using FullMart.Core.Models;
 using FullMart.Core.UnitOfWork;
 using Microsoft.AspNetCore.Http;
@@ -19,24 +19,23 @@ namespace FullMart.Api.Controllers
     {
 
         #region Properites
-        private readonly List<string> _allowedExtensions = new() { ".jpg", ".png" };
-
-        private readonly long _maxAllowedImageSize = 1048576;
+       
 
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        
+     
 
 
         #endregion
 
 
         #region Ctor
-        public ProductController(IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductController(IUnitOfWork unitOfWork, IMapper mapper )
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+          
            
         }
         #endregion
@@ -57,8 +56,11 @@ namespace FullMart.Api.Controllers
 
             var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(products);
 
+
             if (result.Any())
             {
+
+               
                 return Ok(result);
             }
             else
@@ -82,8 +84,9 @@ namespace FullMart.Api.Controllers
                     return BadRequest($"The Product With this Id = {id} Not Found..");
                 }
 
+              
                 var result = _mapper.Map<ProductCategoryBrandDto>(product);
-
+              
 
                 return Ok(result);
 
@@ -211,26 +214,17 @@ namespace FullMart.Api.Controllers
 
             try
             {
-                string ImageUrl = ImageUpload.UploadFile("Files/Images/Product", dto.ImageUrl);
+               
 
                
 
 
-                if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
-                {
-                    return BadRequest("Only .jpg and .png  images  are allowed");
-
-                }
-
-                if (dto.ImageUrl.Length > _maxAllowedImageSize)
-                {
-                    return BadRequest("Max allowed Image Size is 1MB");
-                }
+               
 
                 var product = _mapper.Map<Product>(dto);
 
 
-                product.ImageUrl = ImageUrl;
+                
 
                 _unitOfWork.Products.Create(product);
 
@@ -256,7 +250,7 @@ namespace FullMart.Api.Controllers
             try
             {
 
-                string ImageUrl = "";
+                
                 var product = await _unitOfWork.Products.GetById(p => p.Id == id);
 
                 if (product == null)
@@ -264,34 +258,13 @@ namespace FullMart.Api.Controllers
 
 
 
-                if (dto.ImageUrl != null)
-                {
-
-
-                    ImageUpload.RemoveFile("Files/Images/Product/", product.ImageUrl);
-
-
-                     ImageUrl = ImageUpload.UploadFile("Files/Images/Product", dto.ImageUrl);
-
-                    if (!_allowedExtensions.Contains(Path.GetExtension(dto.ImageUrl.FileName).ToLower()))
-                    {
-                        return BadRequest("Only .jpg and .png  images  are allowed");
-
-                    }
-                    if (dto.ImageUrl.Length > _maxAllowedImageSize)
-                    {
-                        return BadRequest("Max allowed Image Size is 1MB");
-                    }
-
-
-                    product.ImageUrl = ImageUrl;
-                }
+                
 
                 //Map(dto,product) => dto it's My Dto we can called it my Form
                 // product => it's my Model 
 
                 var result = _mapper.Map(dto, product);
-                product.ImageUrl = ImageUrl;
+                
 
 
                 _unitOfWork.Products.Update(result);
@@ -327,7 +300,7 @@ namespace FullMart.Api.Controllers
                 if (product == null)
                     return NotFound($"No Product was found with Id = {id}");
 
-                ImageUpload.RemoveFile("Files/Images/Product/", product.ImageUrl);
+              
 
 
                 _unitOfWork.Products.Delete(product);

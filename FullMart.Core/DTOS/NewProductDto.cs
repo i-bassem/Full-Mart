@@ -27,10 +27,8 @@ namespace FullMart.Core.DTOS
         public int Quantity { get; set; }
 
 
-        [Required]
-
-        //[IFormFile => Name Of File , Size Of File , Kind Of File]
-        public IFormFile ImageUrl { get; set; }
+      
+        public string ImageUrl { get; set; }
         public int CategoryId { get; set; }
     
         public int BrandId { get; set; }
