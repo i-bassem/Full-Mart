@@ -9,8 +9,10 @@ import { RouterModule } from '@angular/router';
 import { LibrariesimportModule } from '../../Libraries/librariesimport.module';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { RatingModule } from 'primeng/rating';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
+
+
 
 
 
@@ -29,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CategoryAddComponent, CategoryDetailsComponent, CategoryListComponent,CategoryEditComponent
       ],
   imports: [
-    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
+    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule,MatCheckboxModule,MatSliderModule
 
   ]
 })
