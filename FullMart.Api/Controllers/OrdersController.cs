@@ -22,27 +22,49 @@ public class OrderController : ControllerBase
     }
 
 
-
     [HttpGet("{username}")]
-    public async Task<ActionResult<IReadOnlyList<OrderDTO>>> GetOrdersByUsernameAsync(string username)
+    public async Task<IActionResult> GetOrdersByUserId( string username)
     {
-        if (username == null)
-        {
-            throw new ArgumentNullException("username");
-        }
         var orders = await unitOfWork.Orders.GetOrdersByUsernameAsync(username);
 
-        var orderDTOs = mapper.Map<IReadOnlyList<OrderDTO>>(orders);
+        var orderDTOs = new List<OrderDTO>();
+        foreach (var order in orders)
+        {
+            var orderDTO = new OrderDTO
+            {
+                Id = order.Id,
+                OrderProductDTOs = new List<OrderProductDTO>()
+            };
+
+            foreach (var orderProduct in order.OrderProducts)
+            {
+                var orderProductDTO = new OrderProductDTO
+                {
+                    ProductId = orderProduct.ProductId,
+                    PName = orderProduct.Product.PName, // manual mapping to product name
+                    Price = orderProduct.Product.Price,
+                    Quantity = orderProduct.Product.Quantity,
+                    
+                };
+
+                orderDTO.OrderProductDTOs.Add(orderProductDTO);
+            }
+
+            orderDTOs.Add(orderDTO);
+        }
 
         return Ok(orderDTOs);
     }
-   
- 
+
+
     [HttpPost("{userId}")]
     public async Task<IActionResult> CreateOrderAsync(string userId, [FromBody] OrderCreateDTO orderDTO)
     {
+        // Map the order products from the DTO to the model
+        var orderProducts = mapper.Map<List<OrderProduct>>(orderDTO.OrderProducts);
+
         // Create the order
-        var order = await unitOfWork.Orders.CreateOrderAsync(userId, mapper.Map<List<OrderProduct>>(orderDTO.OrderProducts));
+        var order = await unitOfWork.Orders.CreateOrderAsync(userId, orderProducts);
 
         // Map the order to an OrderDTO
         var orderDTOs = mapper.Map<OrderDTO>(order);
@@ -50,13 +72,6 @@ public class OrderController : ControllerBase
         // Return the OrderDTO in the response
         return Ok(orderDTOs);
     }
-
-
-
-
-
-
-
 
     [HttpPost("{orderId}/products/{productId}")]
     public async Task<ActionResult<OrderDTO>> AddProductToOrder(int orderId, int productId)
