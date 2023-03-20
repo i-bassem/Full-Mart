@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FullMart.Core.DTOS;
 using FullMart.Core.UnitOfWork;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ namespace FullMart.Api.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("corspolicy")]
     public class CartProductsController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -23,7 +25,7 @@ namespace FullMart.Api.Controllers
             _mapper = mapper;
             _environment = environment;
         }
-        [HttpGet]
+        [HttpGet("{userId}")]
         public IActionResult getProductByUserId(string userId)
         {
             try
@@ -36,7 +38,7 @@ namespace FullMart.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPost]
+        [HttpPost("{userId}")]
         public IActionResult AddProductToCart(string userId,int productId)
         {
             try

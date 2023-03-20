@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LibrariesimportModule } from './librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryModule } from './Category/category.module';
+import { CartModule } from './Cart/cart/cart.module';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { CategoryModule } from './Category/category.module';
   ],
   imports: [
     BrowserModule,FormsModule,CoreModule,SharedModule,StudentModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,CategoryModule
+    LibrariesimportModule, BrowserAnimationsModule,CategoryModule,CartModule
    
   ],
   providers: [],
