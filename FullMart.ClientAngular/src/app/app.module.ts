@@ -12,8 +12,6 @@ import { NotFoundComponent } from './Not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LibrariesimportModule } from './Libraries/librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WishlistModule } from './wishlist/wishlist.module';
-import { WishlistproductsComponent } from './wishlist/wishlistproducts/wishlistproducts.component';
 import { FullMartModulesModule } from './Full-mart-modules/full-mart-modules.module';
 import { SpinnerComponent } from './Spinner/spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -26,13 +24,8 @@ import { LoadingInterceptor } from './Interceptor/loading.interceptor';
   ],
   imports: [
     BrowserModule,FormsModule,CoreModule,SharedModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,WishlistModule,
-
-    AppComponent,LibrariesComponent, HomeComponent, ContactUsComponent,
-    AboutUsComponent, NotFoundComponent, SpinnerComponent,
-
-    BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,
-    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule
+    LibrariesimportModule, BrowserAnimationsModule,
+    ReactiveFormsModule,FullMartModulesModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true

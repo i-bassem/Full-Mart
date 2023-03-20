@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { IWishlist } from 'src/app/_models/iwishlist';
-import { WishlistProductService } from 'src/app/_services/wishlist-product.service';
+import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 
 
 @Component({
@@ -11,7 +11,8 @@ import { WishlistProductService } from 'src/app/_services/wishlist-product.servi
 export class WishlistproductsComponent implements OnChanges {
 
  @Output() TotalProductsCount :EventEmitter<number>;
- productCount :number = 0;
+ productCount :number = 5;
+
 constructor(public wishlistservice : WishlistProductService){
   this.TotalProductsCount = new EventEmitter<number>();
 
