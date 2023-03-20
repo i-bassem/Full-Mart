@@ -9,9 +9,10 @@ namespace FullMart.Core.Interfaces
 {
     public interface IWishListProductRepo : IBaseRepo<WishListProduct>
     {
-        public Task<IReadOnlyList<WishList>> GetProductByUserIdAsync(string UserName);
+        public  Task<IEnumerable<Product>> GetProductByUserIdAsync(string UserId);
         public void AddProductToUserWishList(string userId, int ProductId);
-        public void DeleteProductFromUserCart(string userId, int productId);
+        public void DeleteProductFromUserCartAsync(string userId, int productId);
+        public Task<int> GetProductCount(string UserId);
 
     }
 }

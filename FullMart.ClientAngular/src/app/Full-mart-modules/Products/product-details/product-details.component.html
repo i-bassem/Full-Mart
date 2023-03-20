@@ -1,0 +1,136 @@
+<!-- show details -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="main-img">
+                <img class="img-fluid" src="{{serverURL+product.imageUrl}}" alt="ProductS"> </div>
+        </div>
+        <!-- show category details -->
+        <div class="col-md-7">
+
+            <div class="main-description px-2">
+                <div class="category text-bold">
+                    <h2>{{product.productName}}</h2>
+                </div>
+            <div class="main-description px-2">
+                <div class=><strong>Category:</strong> <br> <i>{{product.categoryName}}</i> </div>
+                    <br>
+                <div class="main-description">
+                    <div class=><strong>Description:</strong> <br> <i>{{product.productDescription}}</i> </div>
+                       <!-- description -->
+           
+                <!-- price -->
+                <div class="product-details my-4">
+                    <span class="details-title text-color mb-1">price :</span>
+                    <span class="details-title text-color mb-1"><strong>{{product.price|currency|uppercase}}</strong> </span>
+                </div>                 <!-- add to cart , add to wish list ,use onvlikc to use it  -->
+                <div class="buttons d-flex my-5">
+                    <div class="block">
+                        <button class="btn btn-primary" style="height: 50px;"> add to cart</button>
+                    </div>
+                    <div class="block">
+                        <button mat-fab><mat-icon>favorite</mat-icon></button></div>
+                    <div class="block quantity">
+                        <input type="number" class="form-control" id="cart_quantity" value="{{product.quantity}}" min="0" max="5" placeholder="Enter email" name="cart_quantity"></div>
+                </div>
+                </div>
+                
+            <div class="product-details my-4">
+                <p class="details-title text-color mb-1">Product Stars</p>
+                <p class="description"> <i class="fa fa-star rating-color"></i>{{product.rate}}</p>
+            </div>
+                     <div class="row questions bg-light p-3">
+                <div class="col-md-1 icon">
+                    <i class="fa-brands fa-rocketchat questions-icon"></i>
+                </div>
+
+                <div class="col-md-11 text">
+                    Have a question about our products at E-Store? Feel free to contact our representatives via live chat or email.
+                </div>
+            </div>
+
+            <div class="delivery my-4">
+                <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span>   &nbsp;
+                    <b>Delivery done in 3 days from date of purchase</b> </p>
+                <p class="text-secondary">Order now to get this product delivery</p>
+            </div>
+            <div class="delivery-options my-4">
+                <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-filter"></i></span>    &nbsp;<b>Delivery options</b> </p>
+                <p class="text-secondary">View delivery options here</p>
+            </div>
+             <!-- user comments -->
+            <div class="delivery-options my-4" *ngFor="let item of product.comment">
+                Comments
+                <div class="card ">
+                    <div class="card-body">
+                        <i class="fa-solid fa-comment"></i>
+                        UserName:
+                      <h3 class="card-title" >User name</h3>
+                      comment:
+                      <p class="card-text bold">{{item}}</p>
+                      <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{product.rate}}</a>
+                    </div>
+                  </div>
+            </div>
+<!-- add comment section -->
+            <div class="delivery-options my-4">
+                <div class="comment-box ml-2">
+                          
+                    <h4>Add a comment</h4>
+                    
+                    <div class="rating"> 
+                        <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                        <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                        <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                        <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                        <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                    </div>
+                    
+                    <div class="comment-area">
+                        
+                        <textarea class="form-control" placeholder="what is your view?" rows="4"></textarea>
+                    
+                    </div>
+                    
+                    <div class="comment-btns mt-2">
+                        
+                        <div class="row">
+                            
+                            <div class="col-6">
+                                
+                                <div class="pull-left">
+                                
+                                <button class="btn btn-danger btn-sm">Cancel</button>      
+                                    
+                                </div>
+                            
+                            </div>
+                            
+                            <div class="col-6">
+                                
+                                <div class="pull-right">
+                                
+                                <button class="btn btn-success">Send <i class="fa fa-long-arrow-right ml-1"></i></button>      
+                                    
+                                </div>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+                
+                
+                </div>
+            
+            </div>
+
+        </div>
+        </div>
+      </div>
+      <div >
+      </div>
+
+
+   
+  

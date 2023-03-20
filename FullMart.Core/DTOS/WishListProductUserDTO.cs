@@ -21,6 +21,5 @@ namespace FullMart.Core.DTOS
 
         public string ImageUrl { get; set; }
 
-        public string UserName { get; set; }
     }
 }
