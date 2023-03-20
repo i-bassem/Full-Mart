@@ -19,12 +19,14 @@ import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { MatPseudoCheckbox } from '@angular/material/core';
+import { SortingPipe } from './Pipes/sorting.pipe';
+import { RatingPipe } from './Pipes/rating.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent, SpinnerComponent 
+    AboutUsComponent, NotFoundComponent, SpinnerComponent,  RatingPipe 
   ],
   imports: [
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
