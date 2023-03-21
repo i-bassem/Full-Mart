@@ -11,6 +11,6 @@ export class CartService {
   constructor(private httpClient:HttpClient ) { }
   getProductsFromCart():Observable<CartProducts[]>
   {
-    return this.httpClient.get<CartProducts[]>(`${environment.APIURL}/CartProducts/1`);
+    return this.httpClient.get<CartProducts[]>(`${environment.APIURL}/CartProducts/0f37a869-3c0d-407f-bd8d-5fa476a45593`);
   }
 }

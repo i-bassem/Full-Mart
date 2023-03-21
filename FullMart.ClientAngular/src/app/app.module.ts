@@ -23,13 +23,14 @@ import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { MatPseudoCheckbox } from '@angular/material/core';
+import { LoginComponent } from './Login/login/login.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent, SpinnerComponent 
+    AboutUsComponent, NotFoundComponent, SpinnerComponent, LoginComponent 
   ],
   imports: [
 
