@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace FullMart.Core.DTOS
 {
-    public class OrderProductCreateDTO
+    public class OrderProductDTO
     {
-
         public int ProductId { get; set; }
-        public int Quantity { get; set; }
-        
-    }
+        public string PName { get; set; }
 
+        public decimal Price { get; set; }
+
+        public int Quantity { get; set; }
+    }
 }
