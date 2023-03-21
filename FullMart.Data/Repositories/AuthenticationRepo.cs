@@ -15,6 +15,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+
+
 
 namespace FullMart.Data.Repositories
 {
@@ -24,12 +27,14 @@ namespace FullMart.Data.Repositories
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IMapper _mapper;
         private readonly JWT _jwt;
-        public AuthenticationRepo(UserManager<AppUser> userManager , RoleManager<IdentityRole> roleManager, IMapper mapper , IOptions<JWT> jwt)
+
+        public AuthenticationRepo(UserManager<AppUser> userManager , RoleManager<IdentityRole> roleManager, IMapper mapper, IOptions<JWT> jwt)
+
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _mapper = mapper;
-            _jwt = jwt.Value;
+            _jwt = jwt.Value; 
         }
 
 
@@ -64,6 +69,7 @@ namespace FullMart.Data.Repositories
             var JwtSecurityToken = await CreateJwtToken(user);
             return new AuthModel
             {
+                id = user.Id,
                 Email = user.Email,
                 ExpiresOn = JwtSecurityToken.ValidTo,
                 IsAuthenticated = true,
@@ -84,17 +90,17 @@ namespace FullMart.Data.Repositories
                 Authmodel.Message = "Email or Password Is Incorrect";
                 return Authmodel;
             }
-
+          
             var jwtSecurityToken = await CreateJwtToken(user);
             var rolesList = await _userManager.GetRolesAsync(user);
-
+           
             Authmodel.IsAuthenticated = true;
             Authmodel.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
             Authmodel.Email = user.Email;
             Authmodel.Username = user.UserName;
             Authmodel.ExpiresOn = jwtSecurityToken.ValidTo;
             Authmodel.Roles = rolesList.ToList();
-
+            Authmodel.id = user.Id;
             if (user.RefreshTokens.Any(t => t.IsActive))
             {
                 var ActiveRefreshTokens = user.RefreshTokens.FirstOrDefault(t => t.IsActive);
