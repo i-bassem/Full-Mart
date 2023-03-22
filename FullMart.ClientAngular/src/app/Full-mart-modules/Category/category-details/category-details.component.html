@@ -94,7 +94,10 @@
               <h5 class="card-title"><a class="nav-link" routerLink="/product/details/{{prd.productID}}">{{prd.productName}}</a></h5>
               <p-rating  ngModel="{{prd.productRating}}" [readonly]="true" [cancel]="false"></p-rating>
               <p class="card-text">{{prd.productPrice|currency}}</p>
-              <button class="btn btn-primary"> add to cart</button>
+              <p>{{prd.productID}}</p>
+               <button class="btn btn-primary" (click)="addToCart(prd.productID)"> add to cart</button>
+               <!-- <app-add-to-cart></app-add-to-cart>  -->
+                
               <button mat-fab style="float: right;"><mat-icon>favorite</mat-icon></button>
             </div>
             </div>

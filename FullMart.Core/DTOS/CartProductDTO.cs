@@ -18,6 +18,7 @@ namespace FullMart.Core.DTOS
 
         public byte Rate { get; set; }
 
+        public string ImageUrl { get; set; }
 
 
 
