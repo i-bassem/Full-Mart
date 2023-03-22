@@ -17,6 +17,7 @@ import { MatSliderModule } from '@angular/material/slider';
 
 
 
+
 @NgModule({
   providers:[ RatingModule],
   declarations: [

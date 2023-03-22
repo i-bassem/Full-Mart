@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.development';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent  {
+export class IndexComponent implements OnChanges   {
 
   constructor(private cartService:CartService){
 
@@ -18,7 +18,28 @@ export class IndexComponent  {
   serverImageFile:string=environment.ImgURL;
   
   ngOnInit(){
-    this.cartService.getProductsFromCart().subscribe(cartItem=>this.cartProductList=cartItem)
+    const userId=localStorage.getItem("id");
+    console.log(userId);
+    if(userId!=null){
+    this.cartService.getProductsFromCart(userId).subscribe(cartItem=>this.cartProductList=cartItem);
+    }
   }
+  ngOnChanges(){
+    const userId=localStorage.getItem("id");
+    console.log(userId);
+    if(userId!=null){
+    this.cartService.getProductsFromCart(userId).subscribe(cartItem=>this.cartProductList=cartItem);
+    }
+  }
+  deleteFromCart(productId:number){
+    const userId=localStorage.getItem("id");
+    console.log(userId);
+    if(userId!=null){
+      
+    this.cartService.deleteProductFromCart(productId,userId) .subscribe();
+    window.location.reload();
+    }
+  }
+   
 
 }

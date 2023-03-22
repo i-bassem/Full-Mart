@@ -21,16 +21,15 @@ import { SpinnerComponent } from './Spinner/spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
 import { MatPseudoCheckbox } from '@angular/material/core';
-import { LoginComponent } from './Login/login/login.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent, SpinnerComponent, LoginComponent 
+    AboutUsComponent, NotFoundComponent, SpinnerComponent
   ],
   imports: [
 
@@ -38,7 +37,11 @@ import { LoginComponent } from './Login/login/login.component';
     LibrariesimportModule, BrowserAnimationsModule,CartModule,
 
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
+
     BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule,MatCheckboxModule
+
+
+   
 
   ],
   providers: [{

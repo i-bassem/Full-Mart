@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IBrandDTO } from 'src/app/_models/Ibranddto';
 import { ICategory } from 'src/app/_models/ICategory';
 import { BrandService } from 'src/app/_services/Brand/Brands.service';
+import { CartService } from 'src/app/_services/Cart/cart.service';
 import { CategoriesService } from 'src/app/_services/Categories/categories.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -25,7 +26,7 @@ export class CategoryDetailsComponent {
   brands: IBrandDTO[] = [];
 
 
-constructor( private catservice: CategoriesService, private b :BrandService, private ac:ActivatedRoute){}
+constructor( private catservice: CategoriesService, private b :BrandService, private ac:ActivatedRoute,private cartService:CartService){}
 
 ngOnInit():void{
   this.catID=this.ac.snapshot.params["id"];
@@ -42,6 +43,13 @@ ngOnChanges(): void {
    this.catservice.getAllCategories()
                   .subscribe((cat) => (this.catList = cat));
 
+}
+addToCart(productId:number){
+  const userId=localStorage.getItem("id");
+  console.log(userId);
+  if(userId!=null){
+  this.cartService.addProductToCart(productId,userId) .subscribe();
+  }
 }
  
 

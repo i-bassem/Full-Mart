@@ -1,0 +1,59 @@
+
+
+<h1>Login</h1>
+
+<form (ngSubmit)="login()">
+
+<label for="emaill" class="label ">Email</label>
+<input type="text" class="form-control mb-3" id="email" name="email" [(ngModel)]="email"/>
+
+<label for="password"  class="label ">Password</label>
+<input type="password" class="form-control mb-3" id="password"  name="password" [(ngModel)]="password" />
+
+
+<button type="submit"  class="btn btn-primary mb-3"> Submit</button>
+
+</form>
+
+<p>  abc@abc.com
+     Taa12@!</p>
+
+     <!-- <p>{{res }}</p>
+     <p>{{res?.token}}</p>
+     [(ngModel)]="res?.token" -->
+
+
+
+     <!-- 03198c6d-ed4d-419f-9050-6aa6a6bba653   	 -->
+<!-- Response body
+Download
+{
+  "message": null,
+  "isAuthenticated": true,
+  "username": "string",
+  "email": "string",
+  "roles": [
+    "user"
+  ],
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdHJpbmciLCJqdGkiOiJlZWVmOTgwZS1iNmYxLTQwZmMtOWU4ZS00YzY0NWJjNWNkNDQiLCJlbWFpbCI6InN0cmluZyIsInVpZCI6ImU3ZjVjYjY0LWM3ODQtNDk2Ni05NmQ1LWQ5Mzc1NTZmZmFhOCIsInJvbGVzIjoiVXNlciIsImV4cCI6MTY3OTQyMTU2NywiaXNzIjoiU2VjdXJlQXBpIiwiYXVkIjoiU2VjdXJlQXBpVXNlciJ9.V369agulYC3OXwjDCoiQVmsnAvyrfwwsHklLjILSGnk",
+  "expiresOn": "2023-03-21T17:59:27Z",
+  "refreshToken": null,
+  "refreshTokenExpiration": "0001-01-01T00:00:00"
+} -->
+
+	
+<!-- Response body
+Download
+{
+  "message": null,
+  "isAuthenticated": true,
+  "username": "str@ingggg",
+  "email": "strin@g",
+  "roles": [
+    "user"
+  ],
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdHJAaW5nZ2dnIiwianRpIjoiMWU2NGEzOWQtYjVhZi00ZWE5LTk0NTMtZjIwZjc2YTgyOTFkIiwiZW1haWwiOiJzdHJpbkBnIiwidWlkIjoiZWI2MjNiZDAtZWIzZC00ODJkLTliMDUtYjNhODA3YTRkNjZkIiwicm9sZXMiOiJVc2VyIiwiZXhwIjoxNjc5NDIxODAwLCJpc3MiOiJTZWN1cmVBcGkiLCJhdWQiOiJTZWN1cmVBcGlVc2VyIn0.j-IgRtt9Gj2XVG2rRdytEPjsTiYfOjqsyis0P3u6_sI",
+  "expiresOn": "2023-03-21T18:03:20Z",
+  "refreshToken": null,
+  "refreshTokenExpiration": "0001-01-01T00:00:00"
+} -->

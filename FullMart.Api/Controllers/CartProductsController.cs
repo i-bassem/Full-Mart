@@ -38,7 +38,7 @@ namespace FullMart.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPost("{userId}")]
+        [HttpPost]
         public IActionResult AddProductToCart(string userId,int productId)
         {
             try

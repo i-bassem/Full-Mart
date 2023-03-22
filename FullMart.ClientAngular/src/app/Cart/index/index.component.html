@@ -13,7 +13,7 @@
                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                   <!-- Image -->
                   <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                    <img src="{{serverImageFile}}/Files/Images/{{item.imageUrl}}"
+                    <img src="{{serverImageFile}}/{{item.imageUrl}}"
                       class="w-100" alt="{{item.imageUrl}}" />
                     <a href="#!">
                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
@@ -28,7 +28,7 @@
                   <p>{{item.pDescription}}</p>
                  
                   <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                    title="Remove item">
+                    title="Remove item" (click)="deleteFromCart(item.id)">
                     <i class="fas fa-trash"></i>
                   </button>
                   <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
@@ -134,21 +134,3 @@
       </div>
     </div>
   </section>
-<table class="table table-hover">
-    <thead>
-        <th>index</th>
-        <th>id</th>
-        <th>name</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of cartProductList;let idx=index">
-            <td>{{idx}}</td>
-            <td>{{item.id}}</td>
-            <td>{{item.pName}}</td>
-            <td>{{item.pDescription}}</td>
-            
-        </tr>
-        
-    </tbody>
-</table>
