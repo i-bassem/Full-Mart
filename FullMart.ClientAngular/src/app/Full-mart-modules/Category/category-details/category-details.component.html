@@ -4,23 +4,16 @@
     <img src="{{ serverURL + category?.imageUrl }}" alt="Shoes Category" style="width: 100%;height:40vh;" />
     </div>
 </div>
-<div class="row">
-   <!-- Start Sorting -->
-    <h1>Sort By</h1>
-   
-    <select class="form-control w-25"  [(ngModel)]="selectedSortOption" (change)=" sortProducts()">
-      <option value="random"selected>Random</option> 
-      
-      <option value="priceAsc">Price (Low to High)</option>
-      <option value="priceDesc">Price (High to Low)</option>
-      <option value="nameAsc">Name (A to Z)</option>
-      <option value="nameDesc">Name (Z to A)</option>
+<div class="row " >
+  <div class="col6">
+    sortby:
+    <select name="sort">
+      <option value="price">Price</option>
+      <option value="date">Date</option>
+      <option value="name">Name</option>
     </select>
-
-     <!-- End Sorting -->
-    <pre>
-
-    </pre>
+  </div>
+ 
   
 <!-- stars -->
 
@@ -35,9 +28,7 @@
       <!-- sort by rating -->
 <div>
   <h1>Shop by Rate</h1>
-
-  <ngb-rating [max]="5" [formControl]="rating" (click)="getProductsByRating()"></ngb-rating>
-<!-- <mat-checkbox ></mat-checkbox>
+<mat-checkbox></mat-checkbox>
 <mat-icon >star</mat-icon>
 <mat-icon >star</mat-icon>
 <mat-icon >star</mat-icon>
@@ -67,32 +58,18 @@
       <mat-icon >star_border</mat-icon>
       <mat-icon >star_border</mat-icon>
       <mat-icon >star_border</mat-icon>
-      <mat-icon >star_border</mat-icon> -->
+      <mat-icon >star_border</mat-icon>
        </div>
        <!-- end sort by rating -->
 
       <pre>
 
       </pre>
-
-      <!-- Start Shop By Brand -->
       <h1>Shop by Brand</h1>
-        <select class="form-control" (change)="getProductsByBrandName($event)">
-          <option value="All" selected>All</option>
-          <option value="{{option.brandName}}" *ngFor="let option of brands">{{option.brandName}} </option>
-        
-        </select>
-      </div>
-      <!-- End Shop By Brand -->
-
-      
-       
-      
-        
-
-
-
-        
+      <!-- sorty by cat -->
+       <div  *ngFor="let cat of brands; let x=index">
+        <mat-checkbox class="custom-checkbox" value="{{cat.brandName}}">{{ cat.brandName }}</mat-checkbox>
+        </div>
       <!-- end sorty by cat -->
 
        <!-- stars end -->
@@ -107,17 +84,16 @@
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
       <span class="fa fa-star"></span> -->
-          <!-- </div> -->
+          </div>
     <div class="col-10">
       <div class="row">
-        <div class="col-sm-4" *ngFor="let prd of products; let i = index">
+        <div class="col-sm-4" *ngFor="let prd of category?.products; let i = index">
           <div class="card" style="margin-bottom: 20px; ">
-            <img class="card-img-top" src="{{serverURL + prd.imageUrl }}" alt="Card image cap" width="200px" height="250px">
+            <img class="card-img-top" src="{{serverURL + prd.productImageURL }}" alt="Card image cap" width="200px" height="250px">
             <div class="card-body">
-              <h5 class="card-title"><a class="nav-link" routerLink="/product/details/{{prd.id}}">{{prd.productName}}</a></h5>
-              <p-rating  ngModel="{{prd.rate}}" [readonly]="true" [cancel]="false"></p-rating>
-              <p class="card-text">{{prd.price|currency}}</p>
-              <p class="card-text">{{prd.productDescription}}</p>
+              <h5 class="card-title"><a class="nav-link" routerLink="/product/details/{{prd.productID}}">{{prd.productName}}</a></h5>
+              <p-rating  ngModel="{{prd.productRating}}" [readonly]="true" [cancel]="false"></p-rating>
+              <p class="card-text">{{prd.productPrice|currency}}</p>
               <button class="btn btn-primary"> add to cart</button>
               <button mat-fab style="float: right;"><mat-icon>favorite</mat-icon></button>
             </div>
@@ -127,9 +103,6 @@
         </div>
       </div>
     </div>
-
-    
-
    
-  
+  </div>
    

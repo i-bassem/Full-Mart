@@ -1,4 +1,3 @@
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryAddComponent } from './category-add/category-add.component';
@@ -32,8 +31,7 @@ import { MatSliderModule } from '@angular/material/slider';
         CategoryAddComponent, CategoryDetailsComponent, CategoryListComponent,CategoryEditComponent
       ],
   imports: [
-    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
-    ,MatCheckboxModule,MatSliderModule,NgbModule
+    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule,MatCheckboxModule,MatSliderModule
 
   ]
 })

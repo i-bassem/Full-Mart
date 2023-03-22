@@ -1,4 +1,3 @@
-import { SortingPipe } from './../Pipes/sorting.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsModule } from './Products/products.module';
@@ -9,9 +8,7 @@ import { UserModule } from './User/user.module';
 
 
 @NgModule({
-  declarations: [
-    SortingPipe
-  ],
+  declarations: [],
   imports: [
     CommonModule, ProductsModule, CategoryModule, BrandModule, UserModule
   ],
