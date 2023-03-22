@@ -7,6 +7,7 @@ import { ICategory } from 'src/app/_models/ICategory';
 import { BrandService } from 'src/app/_services/Brand/Brands.service';
 import { CategoriesService } from 'src/app/_services/Categories/categories.service';
 import { environment } from 'src/environments/environment.development';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-category-details',
@@ -19,41 +20,40 @@ export class CategoryDetailsComponent {
   protected products: IProduct[] = [];
   protected serverURL = `${environment.ImgURL}`;
   catList: ICategory[] = [];
-  categorys: ICategory | null = null;
+  // categorys: ICategory | null = null;
   brands: IBrandDTO[] = [];
   selectedSortOption: string;
-  sortBy: string;
-  constructor(
-    private catservice: CategoriesService,
-    private productServices: ProductsService,
-    private b: BrandService,
-    private ac: ActivatedRoute
-  ) {
-    this.sortBy = 'name';
+   rating = new FormControl(0);
+
+
+  constructor(private catservice: CategoriesService,private productServices: ProductsService,
+    private b: BrandService,private ac: ActivatedRoute) {
     this.selectedSortOption = "Random";
   }
 
   ngOnInit(): void {
-    this.catID = this.ac.snapshot.params['id'];
-    this.catservice.getCategoryByID(this.catID)
-      .subscribe((cat) => (this.category = cat));
-
-    this.productServices.getAllProducts()
-      .subscribe((cat: any) => (this.products = cat));
-
-    this.b.getBrands()
-      .subscribe((cat) => (this.brands = cat));
-
-    this.getBrands();
-    this.sortProducts();
+    this.catID=this.ac.snapshot.params["id"];
+  this.catservice.getCategoryByID(this.catID).subscribe(cat=>this.category=cat);
+  this.catservice.getAllCategories()
+                  .subscribe((cat) => (this.catList = cat));
+                  this.b.getBrands()
+                  .subscribe((cat) => (this.brands = cat));
+  
+  
+       this.productServices.getProductByCategoryId(this.catID)
+       .subscribe((res:IProduct[])=>{
+          this.products = res;
+       });            
+    // this.getBrands();
+    
   }
 
   ngOnChanges(): void {
-    this.productServices.getAllProducts()
-      .subscribe((cat: any) => (this.products = cat));
+    this.catservice.getAllCategories()
+                  .subscribe((cat) => (this.catList = cat));
 
 
-    this.sortProducts();
+  
   }
 
   getBrands() {
@@ -70,31 +70,39 @@ export class CategoryDetailsComponent {
 
   
 
-  filterCategory(event: any) {
+ getProductsByRating(){
+  let val = this.rating.value;
+
+   console.log(val);
+   
+
+  this.productServices.getProductByRating(val).subscribe((res)=>{
+     this.products =res;
+  });
+  
+ }
+
+  getProductsByBrandName(event:any, brandName?: string) {
+
+
     let val = event.target.value; //Nike
 
     if (val == 'All') {
-      this.productServices.getAllProducts()
+      this.productServices.getProductByCategoryId(this.catID)
         .subscribe((cat: any) => (this.products = cat));
     } else {
-      this.getProductsByBrandName(val);
+      this.productServices.getProductByBrandName(val).subscribe((res: any) => {
+            this.products = res;
+         });
     }
-    console.log(val);
-  }
-
-  getProductsByBrandName(brandName: string) {
-    this.productServices
-      .getProductByBrandName(brandName)
-      .subscribe((res: any) => {
-        this.products = res;
-      });
+   
   }
 
 
   sortProducts() {
 
     if (this.selectedSortOption === 'random') {
-      this.productServices.getAllProducts()
+      this.productServices.getProductByCategoryId(this.catID)
         .subscribe((cat: any) => (this.products = cat));
     }
     else if (this.selectedSortOption === 'priceAsc') {

@@ -20,6 +20,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPseudoCheckbox } from '@angular/material/core';
 import { SortingPipe } from './Pipes/sorting.pipe';
 import { RatingPipe } from './Pipes/rating.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { RatingPipe } from './Pipes/rating.pipe';
   ],
   imports: [
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
-    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule, MatCheckboxModule
+    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
+     FullMartModulesModule, MatCheckboxModule,NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true

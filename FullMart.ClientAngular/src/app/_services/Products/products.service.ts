@@ -27,10 +27,26 @@ export class ProductsService {
     return this.productService.get<IProduct[]>(`${environment.APIURL}/Product/GetProductByBrandName?name=${brandName}`)
 
   }
+  //https://localhost:7191/api/Product/GetProductByCategoryId?id=1
+
+  public getProductByCategoryId(id:number){
+   
   
+    return this.productService.get<IProduct[]>(`${environment.APIURL}/Product/GetProductByCategoryId?id=${id}`)
+
+  }
 
   //https://localhost:7191/api/Product/GetAllProduct
   public getAllProducts(){
     return this.productService.get<IProduct[]>(`${environment.APIURL}/Product/GetAllProduct`);
   }
+
+  //https://localhost:7191/api/Product/GetProductsByRating?rate=1
+  public getProductByRating(rate:number|null){
+   
+  
+    return this.productService.get<IProduct[]>(`${environment.APIURL}/Product/GetProductsByRating?rate=${rate}`)
+
+  }
+
 }
