@@ -59,6 +59,24 @@ namespace FullMart.Data.Repositories
 
           
         }
+
+        public async Task<IEnumerable<Product>> GetProductByCategoryId(int categoryId)
+        {
+            return await context.Products
+                    .Include("Category")
+                .Include("Brand")
+                .Include("Reviews")
+               .Where(p => p.Category.Id == categoryId).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsByRating(int rate)
+        {
+            return await context.Products
+                   .Include("Category")
+               .Include("Brand")
+               .Include("Reviews")
+              .Where(p => p.Rate == rate).ToListAsync();
+        }
     }
 
 

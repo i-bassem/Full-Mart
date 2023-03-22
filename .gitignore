@@ -10,9 +10,9 @@
 *.userosscache
 *.sln.docstates
 
-FullMart.Api/obj/
-FullMart.Core/obj/
-FullMart.Data/obj/
+/FullMart.Api/obj/
+/FullMart.Core/obj/
+/FullMart.Data/obj/
 
 .vs\FullMart\config\applicationhost.config
 .vs/FullMart/DesignTimeBuild/.dtbcache.v2

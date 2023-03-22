@@ -145,10 +145,77 @@ namespace FullMart.Api.Controllers
 
         }
 
-        [HttpGet("GetProductByCategoryName")]
+
+
+        //https://localhost:7191/api/Product/GetProductByCategoryId?id=1
+        [HttpGet("GetProductByCategoryId")]
+
+        public async Task<IActionResult> GetProductByCategory(int id)
+        {
+            try
+            {
+
+                
+
+                var product = await _unitOfWork.Products
+                  .GetProductByCategoryId(id);
+
+                if (product == null)
+                {
+                    return BadRequest($"The Product With Category Id = {id} Not Found..");
+                }
+
+                var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(product);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+
+
+
+       // https://localhost:7191/api/Product/GetProductsByRating?rate=1
+        [HttpGet("GetProductsByRating")]
+        public async Task<IActionResult> GetProductsByRating(int rate)
+        {
+            try
+            {
+                if(rate >5 || rate <= 0)
+                {
+                    return BadRequest("Rate Must Be Greater Than 0 Or LessThan or Equal 5");
+                }
+
+
+                var product = await _unitOfWork.Products
+                  .GetProductsByRating(rate);
+
+                if (product == null)
+                {
+                    return BadRequest($"The Product With Rate = {rate} Not Found..");
+                }
+
+                var result = _mapper.Map<IEnumerable<ProductCategoryBrandDto>>(product);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+        }
+
 
 
         //https://localhost:7191/api/Product/GetProductByCategoryName?name=Electronics
+        [HttpGet("GetProductByCategoryName")]
         public async Task<IActionResult> GetProductByCategory(string name)
         {
             try
