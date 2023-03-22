@@ -17,7 +17,6 @@ import { SpinnerComponent } from './Spinner/spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
 import { MatPseudoCheckbox } from '@angular/material/core';
 import { SortingPipe } from './Pipes/sorting.pipe';
 import { RatingPipe } from './Pipes/rating.pipe';
@@ -30,7 +29,7 @@ import { RatingPipe } from './Pipes/rating.pipe';
   ],
   imports: [
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
-    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule,MatCheckboxModule
+    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule, MatCheckboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true

@@ -28,7 +28,7 @@ namespace FullMart.Api.Controllers
             if (!result.IsAuthenticated)
                 return BadRequest(result.Message);
 
-            SetRefreshTokenInCookie(result.RefreshToken, result.RefreshTokenExpiration);
+            //SetRefreshTokenInCookie(result.RefreshToken, result.RefreshTokenExpiration);
 
             return Ok(result);
         }
@@ -115,8 +115,10 @@ namespace FullMart.Api.Controllers
                 HttpOnly = true,
                 Expires = expires.ToLocalTime()
             };
+           
+           Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+          
 
-            Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
         }
     }
 }
