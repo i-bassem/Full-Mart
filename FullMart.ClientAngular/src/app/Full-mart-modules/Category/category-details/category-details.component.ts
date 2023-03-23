@@ -23,7 +23,7 @@ export class CategoryDetailsComponent {
   // categorys: ICategory | null = null;
   brands: IBrandDTO[] = [];
   selectedSortOption: string;
-   rating = new FormControl(0);
+  rating = new FormControl(0);
 
 
   constructor(private catservice: CategoriesService,private productServices: ProductsService,

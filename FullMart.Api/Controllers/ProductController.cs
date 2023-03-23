@@ -276,7 +276,7 @@ namespace FullMart.Api.Controllers
 
         //https://localhost:7191/api/Product
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromForm] NewProductDto dto)
+        public async Task<IActionResult> AddProduct( NewProductDto dto)
         {
 
             try
@@ -312,7 +312,7 @@ namespace FullMart.Api.Controllers
         //https://localhost:7191/api/Product/18
         [HttpPut("{id}")]
 
-        public async Task<IActionResult> UpdateProduct(int id, [FromForm] NewProductDto dto)
+        public async Task<IActionResult> UpdateProduct(int id, NewProductDto dto)
         {
             try
             {

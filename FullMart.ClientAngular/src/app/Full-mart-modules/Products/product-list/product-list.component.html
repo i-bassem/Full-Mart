@@ -1,1 +1,19 @@
 <p>product-list works!</p>
+
+<a routerLink="/product/add" class="btn btn-primary" style="float:right;">Add New Product</a>
+
+
+<div class="row">
+    <div class="col-4" *ngFor="let prd of productList; let x=index">
+  
+      <div class="card">
+        <a class="btn btn-secondary" routerLink="/product/edit/{{prd.id }}">Edit</a>
+  
+        <img class="card-img-top" [src]="createImagepath(prd.imageUrl)" alt="" width="100%"routerLink="/product/details/{{ prd.id }}">
+        <div class="card-body">
+          <h3 class="card-title"><p>{{ prd.categoryName }}</p></h3>
+          <button class="btn btn-danger" (click)="delete(prd.id)" routerLink="/product">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
