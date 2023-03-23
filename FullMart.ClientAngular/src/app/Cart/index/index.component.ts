@@ -57,6 +57,13 @@ export class IndexComponent implements OnChanges   {
         productId: cartProduct.id,
       };
       orderProductDTOs.push(orderProductDTO);
+  
+      // Delete the product from the cart
+      if(userId!= null)
+      this.cartService.deleteProductFromCart(cartProduct.id, userId)
+        .subscribe(() => {
+          console.log('Product deleted from cart:', cartProduct);
+        });
     }
   
     // Create the order DTO with the order product DTOs array
