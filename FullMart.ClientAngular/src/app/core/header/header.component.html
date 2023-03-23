@@ -66,12 +66,20 @@
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
-          <i class="fas fa-shopping-cart"></i>
+        <a class=" me-3" routerLink="/Cart">
+          <img src="assets/Cart.png">
         </a>
+<<<<<<< HEAD
 
+=======
+            
+
+       
+
+        
+>>>>>>> f3db643141a87531ff5409fbeef735921f9c8253
         <!-- Notifications -->
-        <div class="dropdown">
+      <!-- <div class="dropdown">
           <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
             role="button" data-mdb-toggle="dropdown" aria-expanded="false">
             <i class="fas fa-bell"></i>
@@ -88,16 +96,35 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </li>
           </ul>
+
         </div>
+
+        </div> -->
+
+        <i class="fa-duotone fa-cart-circle-plus"></i>
+
+        <!-- Sign UP -->
+        <a  style="text-decoration: none;" routerLink="/userRegister">
+          Sign Up
+        </a>
+
+        <a class="me-3"  [hidden]="isUserLogged" (click)="login()"routerLink="/userLogin" style="text-decoration: none;">
+
+          Login
+        </a>
+        <a class="me-3"   (click)="logout()" style="text-decoration: none;">
+          Logout
+        </a>
         <!-- Avatar -->
+          <!-- id="navbarDropdownMenuAvatar"  data-mdb-toggle="dropdown" -->
         <div class="dropdown">
-          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
-            id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown"
+          <a class="dropdown-toggle btn btn-secondry" href="#" role="button" id="navbarDropdownMenuAvatar"
+            data-bs-toggle="dropdown"
             aria-expanded="false">
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
               height="25" alt="Black and White Portrait of a Man" loading="lazy" />
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAvatar">
             <li>
               <a class="dropdown-item" href="#">My profile</a>
             </li>

@@ -146,8 +146,10 @@ namespace FullMart.Api.Controllers
                 HttpOnly = true,
                 Expires = expires.ToLocalTime()
             };
+           
+           Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+          
 
-            Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
         }
     }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { UserAuthService } from 'src/app/_services/UserAuthentication/UserAuthService';
 
 
 @Component({
@@ -15,8 +16,28 @@ export class HeaderComponent {
   onScrollEvent(){
   this.progress = (window.pageYOffset/ (document.body.scrollHeight-window.innerHeight) *100)
   } 
+  
+  isUserLogged:boolean =false;
+  constructor(private userAuth : UserAuthService){}
+  
 
- 
 
+  ngOnInit(){
+
+    this.userAuth.getLoggedStatus().subscribe(status=>
+      this.isUserLogged=status
+      )
+
+      
+  }
+
+  login(){
+    console.log(this.isUserLogged)
+  }
+
+  logout(){
+    
+    this.userAuth.logout();
+  }
 
 }

@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { IProduct } from 'src/app/_models/IProduct';
 import { IWishlist } from 'src/app/_models/iwishlist';
 import { Iwishlistproducts } from 'src/app/_models/iwishlistproducts';
 import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';

@@ -41,7 +41,7 @@ namespace FullMart.Data.Repositories
          public IEnumerable<Product> GetProductsByUserId(string userId)
          {
              var cart=context.Carts.Include("AppUser").FirstOrDefault(a=>a.AppUser.Id==userId);
-             int cartId = cart.Id;
+             int? cartId = cart.Id;
              return context.CartProducts.Include("Product").Where(a=>a.CartId==cartId).Select(a=>a.Product).ToList();
 
 

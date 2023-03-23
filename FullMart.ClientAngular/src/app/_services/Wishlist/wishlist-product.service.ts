@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { IWishlist } from 'src/app/_models/iwishlist';
-import { IProduct } from 'src/app/_models/IProduct';
 import { Iwishlistproducts } from 'src/app/_models/iwishlistproducts';
 
 @Injectable({

@@ -4,7 +4,6 @@ import { RouterModule,Routes }from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { NotFoundComponent } from './Not-found/not-found.component';
 import { LibrariesComponent } from './Libraries/libraries.component';
 import { CategoryListComponent } from './Full-mart-modules/Category/category-list/category-list.component';
 import { WishlistproductsComponent } from './Full-mart-modules/wishlist/wishlistproducts/wishlistproducts.component';
@@ -18,9 +17,14 @@ import { ProductAddComponent } from './Full-mart-modules/Products/product-add/pr
 import { ProductEditComponent } from './Full-mart-modules/Products/product-edit/product-edit.component';
 import { ProductDetailsComponent } from './Full-mart-modules/Products/product-details/product-details.component';
 import { ProductListComponent } from './Full-mart-modules/Products/product-list/product-list.component';
-
+import { NotFoundComponent } from './Not-found/not-found.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { BrandListComponent } from './Full-mart-modules/brand/brand-list/brand-list.component';
+import { UserRegisterComponent } from './Full-mart-modules/User/user-register/user-register.component';
+import { UserAuthenticationComponent } from './Full-mart-modules/User/user-authentication/user-authentication.component';
+import { IndexComponent } from './Cart/index/index.component';
+import { AddProductToCartComponent } from './Cart/add-product-to-cart/add-product-to-cart.component';
+
 
 
 const routes:Routes=[
@@ -53,8 +57,17 @@ const routes:Routes=[
 
 
 
+  //Cart
+  {path:"Cart",component:IndexComponent},
 
-// statics
+
+
+
+
+  //User
+  {path:"userRegister", component:UserRegisterComponent},
+  {path:"userLogin", component: UserAuthenticationComponent},
+  // statics
   {path:"aboutus",component:AboutUsComponent},
   {path:"contact",component:ContactUsComponent},
   {path:"libraries", component:LibrariesComponent},
@@ -69,6 +82,8 @@ const routes:Routes=[
   {path:"**", component:NotFoundComponent}
 //   {path:"**", component:ErrorsComponent
 // }
+  ,{path:"**", component:ErrorsComponent}
+
 ];
 @NgModule({
   declarations: [],

@@ -1,0 +1,89 @@
+
+
+<h1 class="font-weight-bold text-center">Create account</h1>
+
+<form [formGroup]="userRegistrationForm">
+  
+    <div class="mb-3">
+        <label class="form-label"  for="fName">First Name</label>
+        <input type="text" class="form-control" formControlName="firstName" id="fName" [class.is-valid]="firstName?.valid">
+    </div>
+    <!-- Errors Either in html or ts-->
+    <div class="alert alert-danger" [hidden]="firstName?.valid || firstName?.untouched">
+        <!-- html -->
+         <!-- <small>{{userRegistrationForm.get("firstName")?.errors | json}}</small>  -->
+         <!-- ts -->
+         <small *ngIf=" firstName?.errors?.['required']"> This field is required </small> 
+    </div>
+
+    <div class="mb-3">
+        <label for="lName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" id="lName" [class.is-valid]="lastName?.valid">
+    </div>
+     <!-- Errors -->
+    <div class="alert alert-danger" [hidden]="lastName?.valid || lastName?.untouched">
+         <small *ngIf=" lastName?.errors?.['required']"> This field is required </small> 
+    </div>
+      
+    <div class="mb-3">
+        <label for="userName" class="form-label">User Name</label>
+        <input type="text" class="form-control" formControlName="username" id="userName" [class.is-valid]="username?.valid">
+    </div>
+     <!-- Errors -->
+     <div class="alert alert-danger" [hidden]="username?.valid || username?.untouched">
+        <small *ngIf=" username?.errors?.['required']"> This field is required </small> 
+    </div>
+
+
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control"  formControlName="email" id="Email" [class.is-invalid]="email?.invalid && email?.touched">
+    </div>
+    <!-- Errors -->
+    <div class="alert alert-danger" [hidden]="email?.valid || email?.untouched">
+        <small *ngIf=" email?.errors?.['required']"> This field is required </small> 
+   </div>
+
+    <!-- Taa12@! -->
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password"  id="Password"  [class.is-valid]="password?.valid">
+    </div>
+    <div class="alert alert-danger" *ngIf="(password?.touched && password?.errors?.['required'])">
+        <!-- *ngIf="password?.errors?.['required']" -->
+         <small *ngIf="password?.errors?.['required']"> 
+            Password must be at least 6 characters.,
+            Password must have at least one non alphanumeric character.,
+            Password must have at least one lowercase ('a'-'z').,
+            Password must have at least one uppercase ('A'-'Z').,  
+        </small> 
+    </div> 
+    
+    <div class="mb-3">
+        <label for="CPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword" id="CPassword" [class.is-invalid]="confirmPassword?.invalid && confirmPassword?.touched">
+    </div>
+     <!-- Errors div-->
+    <div class="alert alert-danger" *ngIf="(password?.touched && confirmPassword?.touched) && (confirmPassword?.invalid || userRegistrationForm?.errors?.['UnmatchedPassword'])">
+        <!-- Custom Validation (cross Field) -->
+         <small *ngIf="userRegistrationForm.errors?.['UnmatchedPassword']"> Unmatched Password</small> 
+         <small *ngIf="confirmPassword?.errors?.['required']"> This field is required </small> 
+    </div> 
+    
+
+   <button type="submit" class="btn btn-primary mb-3"   (click)="submit()">Submit</button>
+</form>
+<!-- [disabled]="userRegistrationForm.invalid" -->
+
+<!-- debug -->
+<!-- <div>
+    {{userRegistrationForm.value | json}}
+    <br>
+    <p>Cross validation {{userRegistrationForm.errors?.['UnmatchedPassword'] | json }} </p>
+</div> -->
+
+
+<!-- Errors div-->
+<!-- <div class="alert alert-danger" [hidden]="firstName?.valid || firstName?.untouched">
+     <small *ngIf=" firstName?.errors?.['required']"> This field is required </small> 
+</div> -->
