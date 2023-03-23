@@ -13,8 +13,8 @@
       <option value="name">Name</option>
     </select>
   </div>
- 
-  
+
+
 <!-- stars -->
 
   <div class="row">
@@ -23,7 +23,7 @@
       <pre>
 
 
-    
+
       </pre>
       <!-- sort by rating -->
 <div>
@@ -97,8 +97,8 @@
               <p>{{prd.productID}}</p>
                <button class="btn btn-primary" (click)="addToCart(prd.productID)"> add to cart</button>
                <!-- <app-add-to-cart></app-add-to-cart>  -->
-                
-              <button mat-fab style="float: right;"><mat-icon>favorite</mat-icon></button>
+
+              <button mat-fab style="float: right;" (click)="addTowishlist(prd.productID)"><mat-icon>favorite</mat-icon></button>
             </div>
             </div>
             </div>
@@ -106,6 +106,6 @@
         </div>
       </div>
     </div>
-   
+
   </div>
-   
+

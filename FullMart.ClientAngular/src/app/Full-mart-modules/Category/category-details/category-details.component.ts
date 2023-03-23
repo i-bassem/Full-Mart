@@ -6,7 +6,7 @@ import { BrandService } from 'src/app/_services/Brand/Brands.service';
 import { CartService } from 'src/app/_services/Cart/cart.service';
 import { CategoriesService } from 'src/app/_services/Categories/categories.service';
 import { environment } from 'src/environments/environment.development';
-
+import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 
 
 
@@ -26,7 +26,7 @@ export class CategoryDetailsComponent {
   brands: IBrandDTO[] = [];
 
 
-constructor( private catservice: CategoriesService, private b :BrandService, private ac:ActivatedRoute,private cartService:CartService){}
+constructor( private catservice: CategoriesService, private b :BrandService, private ac:ActivatedRoute,private cartService:CartService , private wishlistserv : WishlistProductService){}
 
 ngOnInit():void{
   this.catID=this.ac.snapshot.params["id"];
@@ -35,8 +35,8 @@ ngOnInit():void{
                   .subscribe((cat) => (this.catList = cat));
                   this.b.getBrands()
                   .subscribe((cat) => (this.brands = cat));
-  
-    
+
+
 }
 
 ngOnChanges(): void {
@@ -51,7 +51,17 @@ addToCart(productId:number){
   this.cartService.addProductToCart(productId,userId) .subscribe();
   }
 }
- 
+
+
+addTowishlist(productID : number){
+  const userID = localStorage.getItem("id");
+  console.log(userID + "from wishlist");
+  if(userID != null){
+    this.wishlistserv.AddProductToWishlist(productID , userID).subscribe( p => {
+      alert("product added successfully to your list")
+    })
+  }
+}
 
 
 
