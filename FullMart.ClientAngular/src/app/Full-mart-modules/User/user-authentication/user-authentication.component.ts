@@ -12,11 +12,11 @@ export class UserAuthenticationComponent {
  password="";
  userAuth:any;
 
- constructor( private userAuthenticationService: UserAuthService ){ 
+ constructor( private userAuthenticationService: UserAuthService ){
  }
 
   login(){
-   
+
    this.userAuth= (
     {
     email :this.email,
@@ -28,19 +28,16 @@ export class UserAuthenticationComponent {
      localStorage.setItem("token", response?.token),
      localStorage.setItem("id", response?.id),
      console.log(response)
-     
-
-     
      )
     );
   }
-   
 
 
-  
+
+
 }
 
-//response 
+//response
 // email: "abc@abc.com"
 // expiresOn:"2023-03-21T12:55:29Z"
 // isAuthenticated: true

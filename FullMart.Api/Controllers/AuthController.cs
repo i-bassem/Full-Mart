@@ -68,7 +68,11 @@ namespace FullMart.Api.Controllers
             //    expireson = result.ExpiresOn,
             //    user_Email = result.Email,
             //    user_name = result.Username
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> 7bffb594990bb75e9b266cd8ee339bd8eaf4b004
             //});
         }
 
