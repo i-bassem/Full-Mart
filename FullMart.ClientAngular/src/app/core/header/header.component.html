@@ -44,16 +44,17 @@
           </li>
           <li class="nav-item">
 
-            <a routerLink="/libraries" class="nav-link" routerLinkActive="active">Libraries</a>
+            <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a>
 
           </li>
+          
           <li class="nav-item">
 
             <a routerLink="/wishlist" class="nav-link" routerLinkActive="active">wishlist</a>
 
           </li>
           <form class="d-flex">
-            <input class="form-control mx-4" size="70px" type="search" placeholder="Search by product,category,brand,etc" aria-label="Search">
+            <input class="form-control mx-4" size="40%" type="search" placeholder="Search by product,category,brand,etc" aria-label="Search">
             <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
           </form>
         </ul>
@@ -67,17 +68,17 @@
       <div class="d-flex align-items-center">
         <!-- Icon -->
         <a class=" me-3" routerLink="/Cart">
-          <img src="assets/Cart.png">
+          <!-- <img width="50%" src="assets/Cart.png"> -->
+          <i class="fa-solid fa-cart-shopping fa-bounce fa-xl" style="color: #ffc800;"></i>
         </a>
-<<<<<<< HEAD
 
-=======
-            
+
+
+          
 
        
 
         
->>>>>>> f3db643141a87531ff5409fbeef735921f9c8253
         <!-- Notifications -->
       <!-- <div class="dropdown">
           <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
@@ -104,15 +105,14 @@
         <i class="fa-duotone fa-cart-circle-plus"></i>
 
         <!-- Sign UP -->
-        <a  style="text-decoration: none;" routerLink="/userRegister">
+        <a  class="me-3" style="text-decoration: none; color: white;" routerLink="/userRegister">
           Sign Up
         </a>
 
-        <a class="me-3"  [hidden]="isUserLogged" (click)="login()"routerLink="/userLogin" style="text-decoration: none;">
-
+        <a class="me-3"  [hidden]="isUserLogged" (click)="login()"routerLink="/userLogin" style="text-decoration: none; color: white;">
           Login
         </a>
-        <a class="me-3"   (click)="logout()" style="text-decoration: none;">
+        <a class="me-3 log"   (click)="logout()" style="text-decoration: none; color: white;">
           Logout
         </a>
         <!-- Avatar -->
@@ -141,6 +141,7 @@
     </div>
     <!-- Container wrapper -->
   </nav>
+  <!-- Navbar -->
   <!-- Navbar -->
 
 

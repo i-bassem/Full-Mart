@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddProductToCartComponent } from '../add-product-to-cart/add-product-to-cart.component';
 import { RemoveProductFromCartComponent } from '../remove-product-from-cart/remove-product-from-cart.component';
 import { IndexComponent } from '../index/index.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ import { IndexComponent } from '../index/index.component';
     IndexComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,RouterModule
   ]
 })
 export class CartModule { }

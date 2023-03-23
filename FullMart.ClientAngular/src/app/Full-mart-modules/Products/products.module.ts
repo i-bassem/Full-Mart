@@ -7,19 +7,37 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RatingModule } from 'primeng/rating';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
+import { LibrariesimportModule } from 'src/app/Libraries/librariesimport.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
+import { UploadComponent } from 'src/app/shared/upload/upload.component';
 
 
 
 @NgModule({
+  providers:[ RatingModule],
   declarations: [
     ProductAddComponent,
     ProductDetailsComponent,
     ProductEditComponent,
-    ProductListComponent
+    ProductListComponent,
+    UploadComponent,
+    
   ],
+  exports:[
+    ProductAddComponent,
+     ProductDetailsComponent, 
+     ProductEditComponent,
+     ProductListComponent
+  ],
+ 
   imports: [
-    CommonModule,RatingModule,MatButtonModule,
-    MatIconModule
+    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
+    ,MatCheckboxModule,MatSliderModule,
+
+
   ]
 })
 export class ProductsModule { }

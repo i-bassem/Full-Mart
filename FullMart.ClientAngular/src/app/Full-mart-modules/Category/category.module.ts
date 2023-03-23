@@ -25,11 +25,14 @@ import { MatSliderModule } from '@angular/material/slider';
             CategoryDetailsComponent,
             CategoryListComponent,
             CategoryEditComponent,
-            UploadComponent,
+            //  UploadComponent,
                    
   ],
   exports:[
-        CategoryAddComponent, CategoryDetailsComponent, CategoryListComponent,CategoryEditComponent
+          CategoryAddComponent,
+         CategoryDetailsComponent, 
+         CategoryListComponent,
+         CategoryEditComponent
       ],
   imports: [
     CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule,MatCheckboxModule,MatSliderModule
