@@ -13,46 +13,43 @@ import { environment } from 'src/environments/environment.development';
 })
 export class WishlistproductsComponent implements OnChanges , OnInit{
 
- @Output() TotalProductsCount :EventEmitter<number>;
- productCount! :number;
- userID="4bb78fc2-e42e-4dbf-845d-ab15fd3580d0";
- products! : Iwishlistproducts[];
- prdid :number= 5 ;
+productCount! :number;
+
+products! : Iwishlistproducts[];
+prdid :number= 5 ;
 
 constructor(public wishlistservice : WishlistProductService , public router:Router){
-  this.TotalProductsCount = new EventEmitter<number>();
 }
   ngOnInit(): void {
-
-      this.wishlistservice.GetProductByUserID(this.userID).subscribe(p => {
-        this.products = p;
+      const userID :any=localStorage.getItem('id');
+      this.wishlistservice.GetProductByUserID(userID).subscribe(products => {
+        this.products = products;
       }, er => alert(er.message))
 
-      this.wishlistservice.getProductsCount(this.userID).subscribe(c => {
-        this.productCount = c;
+      this.wishlistservice.getProductsCount(userID).subscribe(count => {
+        this.productCount = count;
       })
     }
 
   ngOnChanges(): void {
-    // this.wishlistservice.DeleteProductById(this.userID , this.prdid).subscribe(p => {
-    //   console.log(p);
-    //   this.router.navigate(["wishlist"]);
-    // })
+    const userID :any=localStorage.getItem('id');
+    this.wishlistservice.GetProductByUserID(userID).subscribe(products => {
+      this.products = products;
+    }, er => alert(er.message))
+
+    this.wishlistservice.getProductsCount(userID).subscribe(count => {
+      this.productCount = count;
+    })
   }
 
-// getProductsCount(userID : string){
-// this.wishlistservice.getProductsCount(this.userID).subscribe(c => {
-//   this.productCount = c ;
-// })
-// this.TotalProductsCount.emit(this.productCount);
-// }
-
 removeprd(productID : number){
-  if(confirm("Are you sure you want to remove this product from your wishlist ?"))
-  this.wishlistservice.DeleteProductById(this.userID,productID).subscribe(p => {
-    console.log(p);
-    this.router.navigate(["wishlist"])
-  })
+  const userID :any=localStorage.getItem('id');
+  if(confirm("Are you sure you want to remove this product from your wishlist ?")){
+  this.wishlistservice.DeleteProductById(userID,productID).subscribe( product => {
+    this.router.navigate(["wishlist"]);
+  });
+    // window.location.reload();
+  }
 }
 createImagepath(serverPath: string){
   return `${environment.ImgURL+serverPath}`
