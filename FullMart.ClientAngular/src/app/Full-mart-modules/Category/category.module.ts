@@ -25,7 +25,7 @@ import { MatSliderModule } from '@angular/material/slider';
             CategoryDetailsComponent,
             CategoryListComponent,
             CategoryEditComponent,
-            // UploadComponent,
+            //  UploadComponent,
                    
   ],
   exports:[

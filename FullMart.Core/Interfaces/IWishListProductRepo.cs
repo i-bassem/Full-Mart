@@ -13,6 +13,7 @@ namespace FullMart.Core.Interfaces
         public void AddProductToUserWishList(string userId, int ProductId);
         public void DeleteProductFromUserCartAsync(string userId, int productId);
         public Task<int> GetProductCount(string UserId);
-
+        public WishList CreateWishlist(string UserId);
+        
     }
 }

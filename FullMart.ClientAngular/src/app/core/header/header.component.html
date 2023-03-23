@@ -11,7 +11,7 @@
         aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-  
+
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar brand -->
@@ -23,7 +23,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
 
-            <a [routerLink]="['home']" class="nav-link" [routerLinkActive]="'active'">Home</a> 
+            <a [routerLink]="['home']" class="nav-link" [routerLinkActive]="'active'">Home</a>
 
           </li>
           <li class="nav-item">
@@ -33,37 +33,47 @@
           </li>
           <li class="nav-item">
 
-            <a routerLink="/aboutus" class="nav-link" [routerLinkActive]="'active'">About Us</a> 
+            <a routerLink="/aboutus" class="nav-link" [routerLinkActive]="'active'">About Us</a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a routerLink="/category" class="nav-link" routerLinkActive="active">category</a>
 
           </li>
           <li class="nav-item">
 
-            <a routerLink="/category" class="nav-link" routerLinkActive="active">category</a> 
+            <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a>
 
-          </li>    
+          </li>
+          
           <li class="nav-item">
 
-            <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a> 
+            <a routerLink="/wishlist" class="nav-link" routerLinkActive="active">wishlist</a>
 
-          </li> 
+          </li>
           <form class="d-flex">
             <input class="form-control mx-4" size="70px" type="search" placeholder="Search by product,category,brand,etc" aria-label="Search">
             <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
           </form>
         </ul>
-       
+
         <!-- Left links -->
       </div>
-    
+
       <!-- Collapsible wrapper -->
-  
+
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
         <a class=" me-3" routerLink="/Cart">
           <img src="assets/Cart.png">
         </a>
-            
+
+
+
+          
 
        
 
@@ -132,9 +142,8 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
-  
 
 
 
-  
-  
+
+

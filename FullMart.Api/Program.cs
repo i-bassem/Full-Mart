@@ -7,16 +7,15 @@ using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
-using FullMart.Core.Helper.JWT;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Diagnostics;
 using FullMart.Core.Interfaces;
+using System.Net;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.OpenApi.Models;
-
-using System.Net;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http.Features;
+using FullMart.Core.Helper.JWT;
 
 namespace FullMart.Api
 {
@@ -109,10 +108,9 @@ namespace FullMart.Api
             #endregion
 
 
-            #region Configuration of JWT
+            #region JWT config
 
             builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
-
 
             builder.Services.AddAuthentication(options =>
             {
@@ -137,8 +135,9 @@ namespace FullMart.Api
             });
 
 
-
             #endregion
+
+
 
 
 

@@ -21,13 +21,37 @@ namespace FullMart.Data.Repositories
         public void AddProductToUserWishList(string userId, int ProductId)
         {
             var list = _context.WishLists.Include("AppUser").SingleOrDefault(w => w.AppUser.Id == userId);
-            int UserList = list.Id;
-            WishListProduct WishList = new WishListProduct()
+            try
             {
-                WishlistId = UserList,
-                ProductId = ProductId
-            };
-            _context.WishListProducts.Add(WishList);
+
+
+                if (list is not null)
+                {
+                    int UserList = list.Id;
+                    WishListProduct WishList = new WishListProduct()
+                    {
+                        WishlistId = UserList,
+                        ProductId = ProductId
+                    };
+                    _context.WishListProducts.Add(WishList);
+                }
+            }
+            catch (Exception ex)
+            {
+                object[] args = { ex };
+            }
+        }
+
+        public WishList CreateWishlist(string UserId)
+        {
+            AppUser user = _context.AppUsers.Find(UserId);
+
+            WishList list = new WishList()
+            {
+                AppUserId = user.Id
+        };
+            _context.WishLists.Add(list);
+            return list;
         }
 
         public void DeleteProductFromUserCartAsync(string userId, int productId)
@@ -43,9 +67,7 @@ namespace FullMart.Data.Repositories
                 {
                     _context.WishListProducts.Remove(product);
                 }
-            }
-            throw new NotImplementedException();
-           
+            }           
         }
 
         public async Task<IEnumerable<Product>> GetProductByUserIdAsync(string UserId)
@@ -76,5 +98,6 @@ namespace FullMart.Data.Repositories
                     .Where(w => w.WishlistId == wishListId)
                     .Count();
         }
+
     }
 }

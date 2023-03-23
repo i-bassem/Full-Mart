@@ -9,7 +9,7 @@
       <div class="card">
         <a class="btn btn-secondary" routerLink="/product/edit/{{prd.id }}">Edit</a>
   
-        <img class="card-img-top" [src]="createImagepath(prd.imageUrl)" alt="" width="100%"routerLink="/product/details/{{ prd.id }}">
+        <img class="card-img-top" [src]="createImagepath(prd.imageUrl)" alt="" routerLink="/product/details/{{ prd.id }}">
         <div class="card-body">
           <h3 class="card-title"><p>{{ prd.categoryName }}</p></h3>
           <button class="btn btn-danger" (click)="delete(prd.id)" routerLink="/product">Delete</button>

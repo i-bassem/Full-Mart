@@ -12,37 +12,29 @@ import { NotFoundComponent } from './Not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LibrariesimportModule } from './Libraries/librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 import { CartModule } from './Cart/cart/cart.module';
-
 import { FullMartModulesModule } from './Full-mart-modules/full-mart-modules.module';
 import { SpinnerComponent } from './Spinner/spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPseudoCheckbox } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
-    AppComponent,LibrariesComponent, HomeComponent, ContactUsComponent, 
-    AboutUsComponent, NotFoundComponent, SpinnerComponent
+    AppComponent, LibrariesComponent, HomeComponent, ContactUsComponent,
+    AboutUsComponent, NotFoundComponent , SpinnerComponent
   ],
   imports: [
 
-    BrowserModule,FormsModule,CoreModule,SharedModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,CartModule,
+    BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,
+    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
+    FullMartModulesModule,MatCheckboxModule ,CommonModule
 
-    BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
-
-    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule,MatCheckboxModule
-
-
-   
-
+    ,CartModule, FullMartModulesModule,MatCheckboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
