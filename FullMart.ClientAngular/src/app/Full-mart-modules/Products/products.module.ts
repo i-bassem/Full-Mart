@@ -12,7 +12,6 @@ import { LibrariesimportModule } from 'src/app/Libraries/librariesimport.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UploadComponent } from 'src/app/shared/upload/upload.component';
 
 
@@ -36,7 +35,7 @@ import { UploadComponent } from 'src/app/shared/upload/upload.component';
  
   imports: [
     CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
-    ,MatCheckboxModule,MatSliderModule,NgbModule,
+    ,MatCheckboxModule,MatSliderModule,
 
 
   ]
