@@ -69,6 +69,8 @@ namespace FullMart.Api.Controllers
             //    user_Email = result.Email,
             //    user_name = result.Username
 
+
+
             //});
         }
 

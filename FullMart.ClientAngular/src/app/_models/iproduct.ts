@@ -13,7 +13,7 @@ constructor(
   public quantity: number,
   public imageUrl: string,
   public categoryName: string,
-  public brandId: number,
+  public brandName: string,
   public comment: [],
   public isFree: null
 ){}}
