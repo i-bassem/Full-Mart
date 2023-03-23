@@ -1,7 +1,12 @@
-<p>wishlistproducts works!</p>
+<pre>
 
+</pre>
+<p style="font-size: 40px;"><strong>welcome to your wishlist</strong></p>
+<pre>
 
-<h3>You have {{productCount}} product in your list</h3>
+</pre>
+
+<h2>You have <b>{{productCount}}</b> products in your list</h2>
 <div *ngFor="let prd of products; let x=index">
   <div class="mb-5">
     <div class="card d-flex flex-row w-75">
@@ -16,7 +21,7 @@
           <p>product Price : {{prd.price}}</p>
           <p>product rate : {{prd.rate}} </p>
           <div class="d-flex flex-row p-2 m-2 justify-content-end">
-            <a href="#" class="btn btn-primary m-2">Add to cart</a>
+            <button class="btn btn-primary m-2" (click)="addToCart(prd.id)">Add To Cart</button>
             <button class="btn btn-danger m-2" (click)="removeprd(prd.id)">remove</button>
           </div>
         </div>
