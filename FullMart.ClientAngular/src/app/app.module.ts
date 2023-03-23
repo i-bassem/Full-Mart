@@ -12,6 +12,10 @@ import { NotFoundComponent } from './Not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LibrariesimportModule } from './Libraries/librariesimport.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { CartModule } from './Cart/cart/cart.module';
+
 import { FullMartModulesModule } from './Full-mart-modules/full-mart-modules.module';
 import { SpinnerComponent } from './Spinner/spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -28,9 +32,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AboutUsComponent, NotFoundComponent, SpinnerComponent
   ],
   imports: [
+
+    BrowserModule,FormsModule,CoreModule,SharedModule,AppRoutingModule,
+    LibrariesimportModule, BrowserAnimationsModule,CartModule,
+
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule, 
-    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
-     FullMartModulesModule, MatCheckboxModule,NgbModule
+
+    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule, FullMartModulesModule,MatCheckboxModule
+
+
+   
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true

@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsModule } from './Products/products.module';
@@ -8,10 +7,9 @@ import { UserModule } from './User/user.module';
 
 
 
+
 @NgModule({
-  declarations: [
-   
-  ],
+  declarations: [],
   imports: [
     CommonModule, ProductsModule, CategoryModule, BrandModule, UserModule
   ],

@@ -1,4 +1,3 @@
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryAddComponent } from './category-add/category-add.component';
@@ -12,6 +11,7 @@ import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { RatingModule } from 'primeng/rating';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
+
 
 
 
@@ -35,8 +35,7 @@ import { MatSliderModule } from '@angular/material/slider';
          CategoryEditComponent
       ],
   imports: [
-    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
-    ,MatCheckboxModule,MatSliderModule,NgbModule
+    CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule,MatCheckboxModule,MatSliderModule
 
   ]
 })

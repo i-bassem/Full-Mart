@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 
@@ -10,37 +10,72 @@ import { environment } from 'src/environments/environment.development';
 export class UserAuthService {
 
   httpOption;
+  isloggedsubject : BehaviorSubject<boolean> ;
+
   constructor(private userAuthService:HttpClient) {
+
     this.httpOption = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       //  Authorization :'my-auth-token'
       }),
-    }; 
-    
-    
+    };  
+
+    this.isloggedsubject= new BehaviorSubject<boolean>(false);
  }
 
 
+   //#region Function for handling errors
+  //Function for handling errors
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `,
+        error.error
+      );
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(
+      () => new Error('Something bad happened; please try again later.')
+    );
+  }
+  //#endregion
+
   // https://localhost:7191/api/Auth/Login
   login(userAuth:any){
-   
-   return this.userAuthService.post(`${environment.APIURL}/Auth/Login`, JSON.stringify(userAuth), this.httpOption)
-  //  .pipe(
-  //   map((res:Iresponse)=>{return res.token}   ))
 
-   
-// pipe(
-//     tap((receivedData: Foo) => console.log(receivedData)),
-//     map((receivedData: Foo) => {
-//         return new RegularUser(
-//             receivedData.uid, 
-//             receivedData.first_name, 
-//             receivedData.last_name, 
-//             receivedData.token);
-//     })
-// );
+    
+    return this.userAuthService.post(`${environment.APIURL}/Auth/Login`, JSON.stringify(userAuth), this.httpOption)
+            .pipe(
+                  catchError(this.handleError)
+                )
+
+             this.isloggedsubject.next(true) 
+        
+            
   }
 
+  logout(){
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+
+    this.isloggedsubject.next(false);
+  }
+
+  get isUserLogged(){
+
+    return (localStorage.getItem("token"))? true : false
+  }
+  
+  getLoggedStatus(): Observable<boolean>{
+
+    return this.isloggedsubject.asObservable();
+  }
 
 }

@@ -48,12 +48,12 @@ export class ProductAddComponent {
   this.response = event;
   console.log(this.response); 
 }
-addProduct(){
-  //DB path for image
-  this.product.imageUrl=this.response.dbPath;
-   console.log(this.product);
-  this.productService.addProduct(this.product).subscribe(this.observer)  
-  setTimeout(()=>this.router.navigateByUrl("/product"),1500) 
-}
+// addProduct(){
+//   //DB path for image
+//   this.product.imageUrl=this.response.dbPath;
+//    console.log(this.product);
+//   this.productService.addProduct(this.product).subscribe(this.observer)  
+//   setTimeout(()=>this.router.navigateByUrl("/product"),1500) 
+// }
 
 }

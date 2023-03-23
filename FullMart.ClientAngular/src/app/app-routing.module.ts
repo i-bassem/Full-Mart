@@ -17,6 +17,8 @@ import { ErrorsComponent } from './errors/errors.component';
 import { BrandListComponent } from './Full-mart-modules/brand/brand-list/brand-list.component';
 import { UserRegisterComponent } from './Full-mart-modules/User/user-register/user-register.component';
 import { UserAuthenticationComponent } from './Full-mart-modules/User/user-authentication/user-authentication.component';
+import { IndexComponent } from './Cart/index/index.component';
+import { AddProductToCartComponent } from './Cart/add-product-to-cart/add-product-to-cart.component';
 
 
 
@@ -37,6 +39,13 @@ const routes:Routes=[
   {path:"product/details/:id",component:ProductDetailsComponent},
   //brand
   {path:"Brand",component:BrandListComponent},
+
+
+
+
+  //Cart
+  {path:"Cart",component:IndexComponent},
+ 
 
 
 
