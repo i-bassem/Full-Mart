@@ -48,11 +48,6 @@
 
           </li>
           
-          <li class="nav-item">
-
-            <a routerLink="/wishlist" class="nav-link" routerLinkActive="active">wishlist</a>
-
-          </li>
           <form class="d-flex">
             <input class="form-control mx-4" size="40%" type="search" placeholder="Search by product,category,brand,etc" aria-label="Search">
             <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
@@ -69,16 +64,9 @@
         <!-- Icon -->
         <a class=" me-3" routerLink="/Cart">
           <!-- <img width="50%" src="assets/Cart.png"> -->
-          <i class="fa-solid fa-cart-shopping fa-bounce fa-xl" style="color: #ffc800;"></i>
+          <i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffc800;"></i>
         </a>
 
-
-
-          
-
-       
-
-        
         <!-- Notifications -->
       <!-- <div class="dropdown">
           <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
@@ -101,14 +89,14 @@
         </div>
 
         </div> -->
-
-        <i class="fa-duotone fa-cart-circle-plus"></i>
-
+        <!-- fa-cart-circle-plus -->
+        <!-- <i class="fa-duotone fa-cart-circle-plus"></i> -->
+        <!-- fa-shake -->
+        <a routerLink="/wishlist" class="nav-link me-3" routerLinkActive="active"><i class="fa-solid fa-heart  fa-xl" style="color: #ffc800;"></i></a>
         <!-- Sign UP -->
         <a  class="me-3" style="text-decoration: none; color: white;" routerLink="/userRegister">
           Sign Up
         </a>
-
         <a class="me-3"  [hidden]="isUserLogged" (click)="login()"routerLink="/userLogin" style="text-decoration: none; color: white;">
           Login
         </a>

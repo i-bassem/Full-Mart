@@ -24,8 +24,6 @@
 
     </pre>
 
-
-
     <div class="row">
       <div class="col-2">
         <pre></pre>
@@ -61,7 +59,7 @@
                 <p class="card-text">{{ prd.price | currency }}</p>
                 <p class="card-text">{{ prd.productDescription }}</p>
                 <button class="btn btn-primary" (click)="addToCart(prd.id)">add to cart</button>
-                <button mat-fab style="float: right">
+                <button mat-fab style="float: right" (click)="addTowishlist(prd.id)">
                   <mat-icon>favorite</mat-icon>
                 </button>
               </div>
