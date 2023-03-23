@@ -60,7 +60,7 @@
                 <p-rating ngModel="{{ prd.rate }}" [readonly]="true" [cancel]="false"></p-rating>
                 <p class="card-text">{{ prd.price | currency }}</p>
                 <p class="card-text">{{ prd.productDescription }}</p>
-                <button class="btn btn-primary">add to cart</button>
+                <button class="btn btn-primary" (click)="addToCart(prd.id)">add to cart</button>
                 <button mat-fab style="float: right">
                   <mat-icon>favorite</mat-icon>
                 </button>
