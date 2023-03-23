@@ -2,7 +2,7 @@
 
 
 
-<form #prdFrm="ngForm"  class="m-3 form-group">
+<form #prdFrm="ngForm" (ngSubmit)="addProduct()" class="m-3 form-group">
 
     <!-- ProductName -->
     <div class="mb-3 w-25">
