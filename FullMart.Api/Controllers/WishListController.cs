@@ -38,7 +38,7 @@ namespace FullMart.Api.Controllers
         }
 
 
-        //https://localhost:7191/api/WishList/GetProductCount
+        //https://localhost:7191/api/WishList/GetProductCount?UserId=1
         [HttpGet("GetProductCount")]
         public async Task<int> GetProductCount(string UserId)
         {
@@ -46,7 +46,7 @@ namespace FullMart.Api.Controllers
         }
 
 
-        //https://localhost:7191/api/WishList/AddProductToWishlist
+        //https://localhost:7191/api/WishList/AddProductToWishlist?UserId=1&ProductId=1
         [HttpPost("AddProductToWishlist")]
         public async Task<IActionResult> AddProductToWishlist(string UserId , int ProductId)
         {
@@ -71,7 +71,7 @@ namespace FullMart.Api.Controllers
         }
 
 
-        //https://localhost:7191/api/WishList/DeleteByProductId
+        //https://localhost:7191/api/WishList/DeleteByProductId?UserId=1&ProductId=1
         [HttpDelete("DeleteByProductId")]
         public async Task<IActionResult> DeleteByProductId(string UserId , int ProductId)
         {

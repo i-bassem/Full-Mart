@@ -22,8 +22,6 @@ namespace FullMart.Core.Models.JwtModels
 
         public DateTime RefreshTokenExpiration { get; set; }
 
-
-
         public string id { get; set; }
     }
 }

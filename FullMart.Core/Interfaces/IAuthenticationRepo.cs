@@ -15,7 +15,7 @@ namespace FullMart.Core.Interfaces
         Task<string> AddRoleAsync(AddRoleModel model);
         Task<AuthModel> RefreshTokenAsync(string token);
         Task<bool> RevokeTokenAsync(string token);
-
-
+        public Task<bool> GetUserByNameAsync(string UserName);
+        public Task<bool> GetUserByEmailAsync(string UserEmail);
     }
 }
