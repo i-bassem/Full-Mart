@@ -1,4 +1,4 @@
-
+<!-- 
 
 
 <a routerLink="/category/add" class="btn btn-primary" style="float:right;">ADD</a>
@@ -17,4 +17,25 @@
     </div>
   </div>
 </div>
+ -->
+ <a routerLink="/category/add" class="btn btn-primary" style="float:right;">ADD</a>
+
+ <table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of catList; let x=index">
+      <td>{{ cat.categoryName }}</td>
+      <td><img [src]="createImagepath(cat.imageUrl)" alt="" width="60%"></td>
+      <td><a class="btn btn-secondary" routerLink="/category/edit/{{ cat.id }}">Edit</a></td>
+      <td><button class="btn btn-danger" (click)="delete(cat.id)" routerLink="/category">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
 
