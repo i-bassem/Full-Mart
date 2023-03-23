@@ -16,6 +16,10 @@ import { FullMartModulesModule } from './Full-mart-modules/full-mart-modules.mod
 import { SpinnerComponent } from './Spinner/spinner.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './Interceptor/loading.interceptor';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+import { MatPseudoCheckbox } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,9 +27,10 @@ import { LoadingInterceptor } from './Interceptor/loading.interceptor';
     AboutUsComponent, NotFoundComponent , SpinnerComponent
   ],
   imports: [
-    BrowserModule,FormsModule,CoreModule,SharedModule,AppRoutingModule,
-    LibrariesimportModule, BrowserAnimationsModule,
-    ReactiveFormsModule,FullMartModulesModule
+
+    BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,
+    BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
+    FullMartModulesModule,MatCheckboxModule ,CommonModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true

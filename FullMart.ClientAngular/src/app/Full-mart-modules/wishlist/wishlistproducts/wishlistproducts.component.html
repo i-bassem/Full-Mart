@@ -2,26 +2,27 @@
 
 
 <h3>You have {{productCount}} product in your list</h3>
-<div>
-  <div class="card d-flex flex-row w-75">
-    <img
-      src="https://www.footlocker.com.eg/assets/styles/FootLocker/image-thumb__78861__product_zoom_large_800x800/316774898304_01.jpg"
-      class="card-img-top w-25" alt="product image">
-    <div class="card-body d-flex flex-row w-75">
-      <div class="w-50 m-2">
-        <h5 class="card-title">product name</h5>
-        <p class="card-text">product description Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla illum maxime
-          temporibus dolor delectus dolorem similique repudiandae cumque, dignissimos animi quaerat ullam quibusdam
-          deleniti atque aspernatur. Neque animi nihil maiores.</p>
-      </div>
-      <div class="w-50 m-2 text-center">
-        <p>product Price </p>
-        <p>product rate </p>
-        <div class="d-flex flex-row p-2 m-2 justify-content-end">
-          <a href="#" class="btn btn-primary m-2">Add to cart</a>
-          <a href="#" class="btn btn-danger m-2">remove</a>
+<div *ngFor="let prd of products; let x=index">
+  <div class="mb-5">
+    <div class="card d-flex flex-row w-75">
+      <img [src]="createImagepath(prd.imageUrl)"
+        class="card-img-top w-25" alt="product image">
+      <div class="card-body d-flex flex-row w-75">
+        <div class="w-50 m-2">
+          <h5 class="card-title"> product name : {{prd.productName}}</h5>
+          <p class="card-text">product description : {{prd.productDescription}}</p>
+        </div>
+        <div class="w-50 m-2 text-center">
+          <p>product Price : {{prd.price}}</p>
+          <p>product rate : {{prd.rate}} </p>
+          <div class="d-flex flex-row p-2 m-2 justify-content-end">
+            <a href="#" class="btn btn-primary m-2">Add to cart</a>
+            <button class="btn btn-danger m-2" (click)="removeprd(prd.id)">remove</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+

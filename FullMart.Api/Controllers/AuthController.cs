@@ -1,6 +1,10 @@
 ﻿using FullMart.Core.Interfaces;
+using FullMart.Core.Models;
 using FullMart.Core.Models.JwtModels;
+using FullMart.Core.UnitOfWork;
+using FullMart.Data.Database;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FullMart.Api.Controllers
@@ -10,13 +14,17 @@ namespace FullMart.Api.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthenticationRepo _authRepo;
-        public AuthController(IAuthenticationRepo authRepo)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly UserManager<AppUser> _userManager;
+        public AuthController(IAuthenticationRepo authRepo, IUnitOfWork unitOfWork ,UserManager<AppUser> userManager)
         {
             _authRepo = authRepo;
+            _unitOfWork = unitOfWork;
+            _userManager = userManager;
         }
 
 
-        //https://localhost:44308/api/Auth/Register
+        //https://localhost:7191/api/Auth/Register
         [HttpPost("Register")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterModel model)
         {
@@ -28,12 +36,18 @@ namespace FullMart.Api.Controllers
             if (!result.IsAuthenticated)
                 return BadRequest(result.Message);
 
-            SetRefreshTokenInCookie(result.RefreshToken, result.RefreshTokenExpiration);
+            //SetRefreshTokenInCookie(result.RefreshToken, result.RefreshTokenExpiration);
+            var user = await _userManager.FindByEmailAsync(model.Email);
+
+            _unitOfWork.wishListProductRepo.CreateWishlist(user.Id);
+            _unitOfWork.Carts.AddCart(user.Id);
+
+            _unitOfWork.Complete();
 
             return Ok(result);
         }
 
-        //https://localhost:44308/api/Auth/Login
+        //https://localhost:7191/api/Auth/Login
         [HttpPost("Login")]
         public async Task<IActionResult> LoginAsync([FromBody] TokenRequestModel model)
         {
@@ -45,19 +59,20 @@ namespace FullMart.Api.Controllers
             if (!string.IsNullOrEmpty(result.RefreshToken))
                 SetRefreshTokenInCookie(result.RefreshToken, result.RefreshTokenExpiration);
 
-            return Ok(result);
-            //return Ok(new
-            //{
+            //return Ok(result);
+            return Ok(new
+            {
 
-            //    token = result.Token,
-            //    expireson = result.ExpiresOn,
-            //    user_Email = result.Email,
-            //    user_name = result.Username
-            //});
+                token = result.Token,
+                expireson = result.ExpiresOn,
+                user_Email = result.Email,
+                user_name = result.Username
+                
+            });
         }
 
 
-        //https://localhost:44308/api/Auth/AddRole
+        //https://localhost:7191/api/Auth/AddRole
         [HttpPost("AddRole")]
         public async Task<IActionResult> AddRoleAsync([FromBody] AddRoleModel model)
         {
@@ -72,7 +87,6 @@ namespace FullMart.Api.Controllers
             }
             return Ok(model);
         }
-
 
         [HttpGet("refreshToken")]
         public async Task<IActionResult> RefreshToken()
@@ -107,6 +121,23 @@ namespace FullMart.Api.Controllers
 
             return Ok();
         }
+
+
+
+        //https://localhost:7191/api/Auth/GetUserByName?UserName=string
+        [HttpGet("GetUserByName")]
+        public async Task<IActionResult> GetUserByName(string UserName)
+        {
+            return Ok(_authRepo.GetUserByNameAsync(UserName).Result);
+        }
+
+        //https://localhost:7191/api/Auth/GetUserByEmail?Useremail=string
+        [HttpGet("GetUserByEmail")]
+        public async Task<IActionResult> GetUserByEmail(string Useremail)
+        {
+            return Ok(_authRepo.GetUserByEmailAsync(Useremail).Result);
+        }
+
 
         private void SetRefreshTokenInCookie(string refreshToken, DateTime expires)
         {

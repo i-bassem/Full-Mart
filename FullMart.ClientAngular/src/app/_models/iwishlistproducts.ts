@@ -1,8 +1,8 @@
 export interface Iwishlistproducts {
-  productID:number,
-  productImageURL:string,
+  id:number,
+  imageUrl:string,
   productName:string,
   productDescription: string,
-  productPrice:number,
-  productRating:number,
+  price:number,
+  rate:number,
 }

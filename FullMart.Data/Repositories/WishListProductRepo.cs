@@ -42,6 +42,18 @@ namespace FullMart.Data.Repositories
             }
         }
 
+        public WishList CreateWishlist(string UserId)
+        {
+            AppUser user = _context.AppUsers.Find(UserId);
+
+            WishList list = new WishList()
+            {
+                AppUserId = user.Id
+        };
+            _context.WishLists.Add(list);
+            return list;
+        }
+
         public void DeleteProductFromUserCartAsync(string userId, int productId)
         {
             var list = _context.WishLists.Include("AppUser").FirstOrDefault(w => w.AppUser.Id == userId);
@@ -55,9 +67,7 @@ namespace FullMart.Data.Repositories
                 {
                     _context.WishListProducts.Remove(product);
                 }
-            }
-            throw new NotImplementedException();
-           
+            }           
         }
 
         public async Task<IEnumerable<Product>> GetProductByUserIdAsync(string UserId)
@@ -88,5 +98,6 @@ namespace FullMart.Data.Repositories
                     .Where(w => w.WishlistId == wishListId)
                     .Count();
         }
+
     }
 }

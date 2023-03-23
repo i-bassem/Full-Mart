@@ -9,12 +9,13 @@ using Microsoft.AspNetCore.Identity;
 using FullMart.Core.Helper.AutoMapper;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Diagnostics;
-<<<<<<< HEAD
 using FullMart.Core.Interfaces;
 using System.Net;
-=======
 using Microsoft.AspNetCore.Http.Features;
->>>>>>> c0a9d29075954acd4ea2d0ce1bb0621582ae9dbb
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using FullMart.Core.Helper.JWT;
 
 namespace FullMart.Api
 {
@@ -107,10 +108,10 @@ namespace FullMart.Api
             #endregion
 
 
+            #region JWT config
 
+            builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 
-<<<<<<< HEAD
-=======
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -134,8 +135,9 @@ namespace FullMart.Api
             });
 
 
-
             #endregion
+
+
 
 
 
@@ -149,7 +151,6 @@ namespace FullMart.Api
                    }
                    ));
             #endregion
->>>>>>> c0a9d29075954acd4ea2d0ce1bb0621582ae9dbb
 
             //UPLOADING FILES(prevent the multipart body length error)
             builder.Services.Configure<FormOptions>(o =>

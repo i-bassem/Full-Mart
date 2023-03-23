@@ -242,5 +242,20 @@ namespace FullMart.Data.Repositories
 
             return true;
         }
+
+        public async Task<bool> GetUserByNameAsync(string UserName)
+        {
+            //var user = await _userManager.Users.SingleOrDefaultAsync(u => u.UserName == UserName);
+            //if (user is not null)
+            //{
+            //    return true;
+            //}
+            //return false;
+            return await _userManager.Users.AnyAsync(u => u.UserName == UserName);
+        }
+        public async Task<bool> GetUserByEmailAsync(string UserEmail)
+        {
+            return await _userManager.Users.AnyAsync(u => u.Email == UserEmail);
+        }
     }
 }

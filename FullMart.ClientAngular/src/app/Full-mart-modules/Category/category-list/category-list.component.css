@@ -1,4 +1,14 @@
+.card{
+    width: 400px;
+    height: fit-content;
+}
 img{
-    width: 100px;
-    height: 100px;
+    height: 200px;
+}
+.btn-danger{
+    float: right;
+}
+.btn-secondary{
+    width: 20%;
+    margin-bottom: 4px;
 }

@@ -175,22 +175,24 @@ namespace FullMart.Core.Helper.AutoMapper
 
 
             #region order maping
-    
+
+            CreateMap<OrderProduct, OrderProductDTO>()
+      .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
+      .ForMember(dest => dest.PName, opt => opt.MapFrom(src => src.Product.PName))
+      .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Product.Price))
+      .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Product.Quantity));
 
             CreateMap<Order, OrderDTO>()
-        .ForMember(dest => dest.ProductNames,
-               src => src.MapFrom(src => src.OrderProducts.
-               Select(a => a.Product.PName).ToList()));
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.OrderProductDTOs, opt => opt.MapFrom(src => src.OrderProducts));
 
-            CreateMap<OrderProductCreateDTO, OrderProduct>()
-      .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
+            CreateMap<OrderProductDTO, OrderProduct>().ReverseMap();
 
-      .ForMember(dest => dest.Order, opt => opt.Ignore()).ReverseMap();
 
-            CreateMap<OrderCreateDTO, Order>()
-                .ForMember(dest => dest.OrderProducts, opt => opt.MapFrom(src => src.OrderProducts))
-                .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.AppUser, opt => opt.Ignore()).ReverseMap();
+            CreateMap<OrderCreateDTO, Order>().ForMember(dest => dest.OrderProducts, opt => opt.MapFrom(src => src.OrderProducts)).ReverseMap();
+
+            CreateMap<OrderProduct, OrderProductCreateDTO>()
+                .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId)).ReverseMap();
 
             #endregion
 
