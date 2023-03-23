@@ -1,22 +1,4 @@
 <div class="container-fluid">
-  <div  class="row "  >
-    <div class="col mb-5" >
-    <img src="{{ serverURL + category?.imageUrl }}" alt="Shoes Category" style="width: 100%;height:40vh;" />
-    </div>
-</div>
-<div class="row " >
-  <div class="col6">
-    sortby:
-    <select name="sort">
-      <option value="price">Price</option>
-      <option value="date">Date</option>
-      <option value="name">Name</option>
-    </select>
-  </div>
-
-
-<!-- stars -->
-
   <div class="row">
     <div class="col mb-5">
       <img src="{{ serverURL + category?.imageUrl }}" alt="Shoes Category" style="width: 100%; height: 40vh" />
@@ -65,83 +47,6 @@
 
 
 
-      <!-- sort by rating -->
-<div>
-  <h1>Shop by Rate</h1>
-<mat-checkbox></mat-checkbox>
-<mat-icon >star</mat-icon>
-<mat-icon >star</mat-icon>
-<mat-icon >star</mat-icon>
-<mat-icon >star</mat-icon>
-<mat-icon >star_border</mat-icon>
- </div>
- <div>
-  <mat-checkbox></mat-checkbox>
-  <mat-icon >star</mat-icon>
-  <mat-icon >star</mat-icon>
-  <mat-icon >star</mat-icon>
-  <mat-icon >star_border</mat-icon>
-  <mat-icon >star_border</mat-icon>
-
-   </div>
-   <div>
-    <mat-checkbox></mat-checkbox>
-    <mat-icon >star</mat-icon>
-    <mat-icon >star</mat-icon>
-    <mat-icon >star_border</mat-icon>
-    <mat-icon >star_border</mat-icon>
-    <mat-icon >star_border</mat-icon>
-     </div>
-     <div>
-      <mat-checkbox class="custom-checkbox"></mat-checkbox>
-      <mat-icon >star</mat-icon>
-      <mat-icon >star_border</mat-icon>
-      <mat-icon >star_border</mat-icon>
-      <mat-icon >star_border</mat-icon>
-      <mat-icon >star_border</mat-icon>
-       </div>
-       <!-- end sort by rating -->
-
-      <pre>
-
-      </pre>
-      <h1>Shop by Brand</h1>
-      <!-- sorty by cat -->
-       <div  *ngFor="let cat of brands; let x=index">
-        <mat-checkbox class="custom-checkbox" value="{{cat.brandName}}">{{ cat.brandName }}</mat-checkbox>
-        </div>
-      <!-- end sorty by cat -->
-
-       <!-- stars end -->
-<!-- stars using bootstrap -->
-      <!-- <h2>Star Rating</h2>
-      <span>
-        <input type="checkbox" id="checkboxId" name="checkboxName">
-        <label for="checkboxId"></label>
-      </span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span> -->
-          </div>
-    <div class="col-10">
-      <div class="row">
-        <div class="col-sm-4" *ngFor="let prd of category?.products; let i = index">
-          <div class="card" style="margin-bottom: 20px; ">
-            <img class="card-img-top" src="{{serverURL + prd.productImageURL }}" alt="Card image cap" width="200px" height="250px">
-            <div class="card-body">
-              <h5 class="card-title"><a class="nav-link" routerLink="/product/details/{{prd.productID}}">{{prd.productName}}</a></h5>
-              <p-rating  ngModel="{{prd.productRating}}" [readonly]="true" [cancel]="false"></p-rating>
-              <p class="card-text">{{prd.productPrice|currency}}</p>
-              <p>{{prd.productID}}</p>
-               <button class="btn btn-primary" (click)="addToCart(prd.productID)"> add to cart</button>
-               <!-- <app-add-to-cart></app-add-to-cart>  -->
-
-              <button mat-fab style="float: right;" (click)="addTowishlist(prd.productID)"><mat-icon>favorite</mat-icon></button>
-            </div>
-            </div>
-
       <div class="col-10">
         <div class="row">
           <div class="col-sm-4" *ngFor="let prd of products; let i = index">
@@ -165,8 +70,5 @@
         </div>
       </div>
     </div>
-
-  </div>
-
   </div>
 </div>
