@@ -1,5 +1,5 @@
 import { ProductsService } from 'src/app/_services/Products/products.service';
-import { IProduct } from 'src/app/_models/IProduct';
+import { IProduct } from 'src/app/_models/iproduct';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
@@ -15,11 +15,11 @@ export class ProductListComponent {
   constructor(private productsService: ProductsService, public router :Router){}
   ngOnInit(): void {
     this.productsService.getAllProducts()
-                    .subscribe((prd) => (this.productList = prd));                    
+                    .subscribe((prd) => (this.productList = prd));
 }
 ngOnChanges(): void {
   this.productsService.getAllProducts()
-  .subscribe((prd) => (this.productList = prd));  
+  .subscribe((prd) => (this.productList = prd));
 
 }
 
@@ -29,8 +29,8 @@ createImagepath(serverPath: string){
 
 delete(prdId:number){
   this.productsService.deleteProduct(prdId).subscribe(data=>console.log(data));;
-   
+
   window.location.reload();
-  
+
 }
 }
