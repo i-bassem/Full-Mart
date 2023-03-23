@@ -48,7 +48,7 @@ removeprd(productID : number){
   this.wishlistservice.DeleteProductById(userID,productID).subscribe( product => {
     this.router.navigate(["wishlist"]);
   });
-    // window.location.reload();
+   window.location.reload();
   }
 }
 createImagepath(serverPath: string){

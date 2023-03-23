@@ -18,10 +18,9 @@ export class HeaderComponent {
   } 
   
   isUserLogged:boolean =false;
+
   constructor(private userAuth : UserAuthService){}
   
-
-
   ngOnInit(){
 
     this.userAuth.getLoggedStatus().subscribe(status=>
