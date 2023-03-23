@@ -16,6 +16,8 @@ namespace FullMart.Core.Interfaces
         Task<Order> GetOrderByIdAsync(int id);
         Task<Order> DeleteProductFromOrderAsync(int orderId, int productId);
         Task<Order> CreateOrderAsync(string userId, List<OrderProduct> orderProducts);
+        public Order CreateOrder(string UserId);
+
 
 
 

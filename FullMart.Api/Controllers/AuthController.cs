@@ -41,6 +41,7 @@ namespace FullMart.Api.Controllers
 
             _unitOfWork.wishListProductRepo.CreateWishlist(user.Id);
             _unitOfWork.Carts.AddCart(user.Id);
+            _unitOfWork.Orders.CreateOrder(user.Id);
 
             _unitOfWork.Complete();
 
@@ -59,16 +60,16 @@ namespace FullMart.Api.Controllers
             if (!string.IsNullOrEmpty(result.RefreshToken))
                 SetRefreshTokenInCookie(result.RefreshToken, result.RefreshTokenExpiration);
 
-            //return Ok(result);
-            return Ok(new
-            {
+            return Ok(result);
+            //return Ok(new
+            //{
 
-                token = result.Token,
-                expireson = result.ExpiresOn,
-                user_Email = result.Email,
-                user_name = result.Username
+            //    token = result.Token,
+            //    expireson = result.ExpiresOn,
+            //    user_Email = result.Email,
+            //    user_name = result.Username
                 
-            });
+            //});
         }
 
 

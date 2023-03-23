@@ -26,7 +26,11 @@ export class UserAuthenticationComponent {
    this.userAuthenticationService.login(this.userAuth).subscribe( (response:any)=>
      (
      localStorage.setItem("token", response?.token),
-     localStorage.setItem("id", response?.id)
+     localStorage.setItem("id", response?.id),
+     console.log(response)
+     
+
+     
      )
     );
   }
