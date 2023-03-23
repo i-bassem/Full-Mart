@@ -41,7 +41,7 @@ namespace FullMart.Api.Controllers
 
             _unitOfWork.wishListProductRepo.CreateWishlist(user.Id);
             _unitOfWork.Carts.AddCart(user.Id);
-            _unitOfWork.Orders.CreateOrder(user.Id);
+            //_unitOfWork.Orders.CreateOrder(user.Id);
 
             _unitOfWork.Complete();
 
@@ -68,6 +68,8 @@ namespace FullMart.Api.Controllers
             //    expireson = result.ExpiresOn,
             //    user_Email = result.Email,
             //    user_name = result.Username
+
+
 
             //});
         }
