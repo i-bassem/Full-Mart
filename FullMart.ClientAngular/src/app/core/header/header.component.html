@@ -1,85 +1,73 @@
 <!-- Scroll progress bar -->
-<div  (scroll)="onScrollEvent()"><mat-progress-bar mode="determinate" value={{progress}} style="position: fixed;"></mat-progress-bar></div>
+<div (scroll)="onScrollEvent()"><mat-progress-bar mode="determinate" value={{progress}}
+    style="position: fixed;"></mat-progress-bar></div>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Navbar brand -->
-        <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          <img src="assets/FullMartLogo.png" height="40"
-            alt="Logo" loading="lazy" />
-        </a>
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img src="assets/FullMartLogo.png" height="40" alt="Logo" loading="lazy" />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
 
-            <a [routerLink]="['home']" class="nav-link" [routerLinkActive]="'active'">Home</a>
+          <a [routerLink]="['home']" class="nav-link" [routerLinkActive]="'active'">Home</a>
 
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
 
-            <a routerLink="/contactus" class="nav-link" [routerLinkActive]="'active'">Contact Us</a>
+          <a routerLink="/contactus" class="nav-link" [routerLinkActive]="'active'">Contact Us</a>
 
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
 
-            <a routerLink="/aboutus" class="nav-link" [routerLinkActive]="'active'">About Us</a>
+          <a routerLink="/aboutus" class="nav-link" [routerLinkActive]="'active'">About Us</a>
 
-          </li>
+        </li>
 
-          <li class="nav-item">
+        <li class="nav-item">
 
-            <a routerLink="/category" class="nav-link" routerLinkActive="active">category</a>
+          <a routerLink="/category" class="nav-link" routerLinkActive="active">category</a>
 
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
 
-            <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a>
+          <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a>
 
-          </li>
-          
-          <li class="nav-item">
+        </li>
 
-            <a routerLink="/wishlist" class="nav-link" routerLinkActive="active">wishlist</a>
+        <form class="d-flex">
+          <input class="form-control mx-4" size="40%" type="search" placeholder="Search by product,category,brand,etc"
+            aria-label="Search">
+          <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </ul>
 
-          </li>
-          <form class="d-flex">
-            <input class="form-control mx-4" size="40%" type="search" placeholder="Search by product,category,brand,etc" aria-label="Search">
-            <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </ul>
+      <!-- Left links -->
+    </div>
 
-        <!-- Left links -->
-      </div>
+    <!-- Collapsible wrapper -->
 
-      <!-- Collapsible wrapper -->
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class=" me-3" routerLink="/Cart">
+        <!-- <img width="50%" src="assets/Cart.png"> -->
+        <i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffc800;"></i>
+      </a>
 
-      <!-- Right elements -->
-      <div class="d-flex align-items-center">
-        <!-- Icon -->
-        <a class=" me-3" routerLink="/Cart">
-          <!-- <img width="50%" src="assets/Cart.png"> -->
-          <i class="fa-solid fa-cart-shopping fa-bounce fa-xl" style="color: #ffc800;"></i>
-        </a>
-
-
-
-          
-
-       
-
-        
-        <!-- Notifications -->
+      <!-- Notifications -->
       <!-- <div class="dropdown">
           <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
             role="button" data-mdb-toggle="dropdown" aria-expanded="false">
@@ -101,50 +89,46 @@
         </div>
 
         </div> -->
-
-        <i class="fa-duotone fa-cart-circle-plus"></i>
-
-        <!-- Sign UP -->
-        <a  class="me-3" style="text-decoration: none; color: white;" routerLink="/userRegister">
-          Sign Up
+      <!-- fa-cart-circle-plus -->
+      <!-- <i class="fa-duotone fa-cart-circle-plus"></i> -->
+      <!-- fa-shake -->
+      <a routerLink="/wishlist" class="nav-link me-3" routerLinkActive="active"><i class="fa-solid fa-heart  fa-xl"
+          style="color: #ffc800;"></i></a>
+      <!-- Sign UP -->
+      <a class="me-3" style="text-decoration: none; color: white;" routerLink="/userRegister">
+        Sign Up
+      </a>
+      <a class="me-3" [hidden]="isUserLogged" (click)="login()" routerLink="/userLogin"
+        style="text-decoration: none; color: white;">
+        Login
+      </a>
+      <a class="me-3 log" (click)="logout()" style="text-decoration: none; color: white;">
+        Logout
+      </a>
+      <!-- Avatar -->
+      <!-- id="navbarDropdownMenuAvatar"  data-mdb-toggle="dropdown" -->
+      <div class="dropdown">
+        <a class="dropdown-toggle btn btn-secondry" href="#" role="button" id="navbarDropdownMenuAvatar"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+            alt="Black and White Portrait of a Man" loading="lazy" />
         </a>
-
-        <a class="me-3"  [hidden]="isUserLogged" (click)="login()"routerLink="/userLogin" style="text-decoration: none; color: white;">
-          Login
-        </a>
-        <a class="me-3 log"   (click)="logout()" style="text-decoration: none; color: white;">
-          Logout
-        </a>
-        <!-- Avatar -->
-          <!-- id="navbarDropdownMenuAvatar"  data-mdb-toggle="dropdown" -->
-        <div class="dropdown">
-          <a class="dropdown-toggle btn btn-secondry" href="#" role="button" id="navbarDropdownMenuAvatar"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
-              height="25" alt="Black and White Portrait of a Man" loading="lazy" />
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAvatar">
-            <li>
-              <a class="dropdown-item" href="#">My profile</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Settings</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Logout</a>
-            </li>
-          </ul>
-        </div>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
       </div>
-      <!-- Right elements -->
     </div>
-    <!-- Container wrapper -->
-  </nav>
-  <!-- Navbar -->
-  <!-- Navbar -->
-
-
-
-
-
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+<!-- Navbar -->

@@ -3,7 +3,7 @@ import { CategoriesService } from 'src/app/_services/Categories/categories.servi
 import { IBrandDTO } from 'src/app/_models/Ibranddto';
 import { ICategory } from 'src/app/_models/ICategory';
 import { ProductsService } from 'src/app/_services/Products/products.service';
-import { IProduct } from 'src/app/_models/iproduct';
+import { IProduct } from 'src/app/_models/IProduct';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';

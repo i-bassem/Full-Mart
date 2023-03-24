@@ -4,7 +4,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { IProduct } from 'src/app/_models/iproduct';
+import { IProduct } from 'src/app/_models/IProduct';
 import { IProductAdded } from 'src/app/_models/iproduct-added';
 
 import { environment } from 'src/environments/environment.development';

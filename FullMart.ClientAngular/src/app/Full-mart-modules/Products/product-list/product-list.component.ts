@@ -1,5 +1,5 @@
 import { ProductsService } from 'src/app/_services/Products/products.service';
-import { IProduct } from 'src/app/_models/iproduct';
+import { IProduct } from 'src/app/_models/IProduct';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';

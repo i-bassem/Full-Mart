@@ -64,6 +64,7 @@ namespace FullMart.Data.Repositories
             var JwtSecurityToken = await CreateJwtToken(user);
             return new AuthModel
             {
+                id = user.Id,//ID of user sent on regiseration
                 Email = user.Email,
                 ExpiresOn = JwtSecurityToken.ValidTo,
                 IsAuthenticated = true,
@@ -94,7 +95,7 @@ namespace FullMart.Data.Repositories
             Authmodel.Username = user.UserName;
             Authmodel.ExpiresOn = jwtSecurityToken.ValidTo;
             Authmodel.Roles = rolesList.ToList();
-
+            Authmodel.id = user.Id;//ID of User sent on getting his token
             if (user.RefreshTokens.Any(t => t.IsActive))
             {
                 var ActiveRefreshTokens = user.RefreshTokens.FirstOrDefault(t => t.IsActive);

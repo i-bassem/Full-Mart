@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IBrandDTO } from 'src/app/_models/Ibranddto';
 import { ICategory } from 'src/app/_models/ICategory';
-import { IProduct } from 'src/app/_models/iproduct';
+import { IProduct } from 'src/app/_models/IProduct';
 import { BrandService } from 'src/app/_services/Brand/Brands.service';
 import { CartService } from 'src/app/_services/Cart/cart.service';
 import { CategoriesService } from 'src/app/_services/Categories/categories.service';
@@ -37,7 +37,8 @@ export class CategoryDetailsComponent {
 
 
   ngOnInit(): void {
-    this.catID=this.ac.snapshot.params["id"];
+
+  this.catID=this.ac.snapshot.params["id"];
   this.catservice.getCategoryByID(this.catID).subscribe(cat=>this.category=cat);
   this.catservice.getAllCategories()
                   .subscribe((cat) => (this.catList = cat));
@@ -73,8 +74,8 @@ export class CategoryDetailsComponent {
       }
     );
   }
-  getProductsByBrandName(event:any, brandName?: string) {
 
+  getProductsByBrandName(event:any, brandName?: string) {
 
     let val = event.target.value; //Nike
 
@@ -86,8 +87,9 @@ export class CategoryDetailsComponent {
             this.products = res;
          });
     }
-
   }
+
+
   sortProducts() {
 
     if (this.selectedSortOption === 'random') {
