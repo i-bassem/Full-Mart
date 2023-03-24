@@ -25,9 +25,7 @@ export class HeaderComponent {
 
     this.userAuth.getLoggedStatus().subscribe(status=>
       this.isUserLogged=status
-      )
-
-      
+      )  
   }
 
   login(){

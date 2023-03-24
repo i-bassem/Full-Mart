@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
@@ -31,7 +31,12 @@ export class UserAuthService {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
-    } else {
+    } 
+    else if(error.status === 400){
+        console.log("400");
+    return throwError( () => new Error('Username or Password is incorrect '))
+    } 
+    else  {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(
@@ -49,22 +54,25 @@ export class UserAuthService {
   // https://localhost:7191/api/Auth/Login
   login(userAuth:any){
 
-    
     return this.userAuthService.post(`${environment.APIURL}/Auth/Login`, JSON.stringify(userAuth), this.httpOption)
-            .pipe(
-                  catchError(this.handleError)
+            .pipe( 
+                    map((res) => 
+                    {
+                      this.isloggedsubject.next(true)
+                      //console.log(res)
+                      //Change logged Status
+                      return res
+                    }),
+                   catchError(this.handleError),
                 )
-
-             this.isloggedsubject.next(true) 
-        
-            
+            // this.isloggedsubject.next(true)        
   }
 
   logout(){
 
     localStorage.removeItem("token");
     localStorage.removeItem("id");
-
+    //Change logged Status
     this.isloggedsubject.next(false);
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CategoryListComponent } from '../Full-mart-modules/Category/category-list/category-list.component';
 
 
 @Component({
