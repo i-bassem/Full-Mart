@@ -72,6 +72,9 @@ export class UserAuthService {
 
     localStorage.removeItem("token");
     localStorage.removeItem("id");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
     //Change logged Status
     this.isloggedsubject.next(false);
   }

@@ -29,6 +29,10 @@ export class UserAuthenticationComponent {
      
      localStorage.setItem("token", response?.token),
      localStorage.setItem("id", response?.id),
+     localStorage.setItem("username", response?.username),
+     localStorage.setItem("email", response?.email),
+     localStorage.setItem("role", response?.roles[0]),
+    
      console.log(response)
      this.router.navigateByUrl("/home")
      },

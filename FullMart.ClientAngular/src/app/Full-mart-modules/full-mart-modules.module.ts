@@ -17,7 +17,7 @@ import { CategoryListComponent } from './Category/category-list/category-list.co
   declarations: [],
   
   imports: [
-    CommonModule, CategoryModule , WishlistModule, BrandModule, UserModule,OrdesModule,ProductsModule,
+    CommonModule, CategoryModule , WishlistModule, BrandModule, UserModule, OrdesModule, ProductsModule
   ],
   exports:[
     CategoryListComponent
