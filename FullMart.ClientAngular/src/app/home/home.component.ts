@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 import { CategoryListComponent } from '../Full-mart-modules/Category/category-list/category-list.component';
+import { IProduct } from '../_models/iproduct';
+import { ProductsService } from '../_services/Products/products.service';
 
 
 @Component({
@@ -8,5 +11,11 @@ import { CategoryListComponent } from '../Full-mart-modules/Category/category-li
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
+
+
+
+
+
 
 }

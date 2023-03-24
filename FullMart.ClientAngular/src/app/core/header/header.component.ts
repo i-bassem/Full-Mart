@@ -34,10 +34,9 @@ export class HeaderComponent {
 
    //Search
    this.productService.getAllProducts().subscribe(product=>
-      
     this.productList=product
-
    )
+
 
 
   }
