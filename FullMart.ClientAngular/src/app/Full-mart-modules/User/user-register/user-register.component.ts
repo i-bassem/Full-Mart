@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { passwordMatch } from 'src/app/CustomValidator/PasswordMatch.Validator';
 import { IUser } from 'src/app/_models/IUser';
 import { UserRegistrationService } from 'src/app/_services/UserRegistration/user-registration.service';
@@ -11,9 +12,11 @@ import { UserRegistrationService } from 'src/app/_services/UserRegistration/user
 })
 export class UserRegisterComponent {
    
+
+  validationErrors:any;
   userRegistrationForm;
 
-  constructor(private formBuilder:FormBuilder, private userService:UserRegistrationService){
+  constructor(private formBuilder:FormBuilder, private userService:UserRegistrationService, private router:Router ){
    
     this.userRegistrationForm = formBuilder.group(
       {
@@ -49,20 +52,23 @@ export class UserRegisterComponent {
   }
 
 
- 
- 
-
-
-
- 
 
   submit(){
  
     let newUser = this.userRegistrationForm.value as IUser;
     console.log(newUser);
     //Send User Data to API
-    this.userService.registerUser(newUser).subscribe();
-  }
+    this.userService.registerUser(newUser).subscribe((response:any)=>{
+     
+      console.log(response)
+      this.router.navigateByUrl("/userLogin")
+      },
+        (errors)=>{
+         // if(error instanceof HttpErrorResponse){
+         //   if(error.status==400){
+        this.validationErrors = errors}
+       //  console.log(this.validationErrors);
+    )}
 
 
 

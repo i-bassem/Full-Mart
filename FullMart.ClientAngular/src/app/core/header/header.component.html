@@ -42,10 +42,9 @@
             <a routerLink="/category" class="nav-link" routerLinkActive="active">category</a>
 
           </li>
+          
           <li class="nav-item">
-
-            <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a>
-
+            <a routerLink="/product" class="nav-link" routerLinkActive="active">Admin Dashboard</a>
           </li>
           
           <form class="d-flex">
@@ -100,7 +99,7 @@
         <a class="me-3"  [hidden]="isUserLogged" (click)="login()"routerLink="/userLogin" style="text-decoration: none; color: white;">
           Login
         </a>
-        <a class="me-3 log"   (click)="logout()" style="text-decoration: none; color: white;">
+        <a class="me-3 log" [hidden]="!isUserLogged"  (click)="logout()" style="text-decoration: none; color: white;">
           Logout
         </a>
         <!-- Avatar -->

@@ -2,6 +2,11 @@
 
 <h1 class="font-weight-bold text-center">Create account</h1>
 
+<!-- Incorrect password or email -->
+<div class="text-danger"  [hidden]=" userRegistrationForm.untouched">
+    <small>{{validationErrors}}</small>
+</div>
+
 <form [formGroup]="userRegistrationForm">
   
     <div class="mb-3">
@@ -73,6 +78,8 @@
 
    <button type="submit" class="btn btn-primary mb-3"   (click)="submit()">Submit</button>
 </form>
+
+<p>Taa12@!</p>
 <!-- [disabled]="userRegistrationForm.invalid" -->
 
 <!-- debug -->
