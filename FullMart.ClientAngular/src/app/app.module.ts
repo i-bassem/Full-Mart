@@ -29,7 +29,6 @@ import { CommonModule } from '@angular/common';
     AboutUsComponent, NotFoundComponent , SpinnerComponent
   ],
   imports: [
-
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,
     BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
     FullMartModulesModule, MatCheckboxModule , CommonModule, CartModule
