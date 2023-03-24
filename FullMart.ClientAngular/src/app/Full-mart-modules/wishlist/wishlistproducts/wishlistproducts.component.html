@@ -10,8 +10,7 @@
 <div *ngFor="let prd of products; let x=index">
   <div class="mb-5">
     <div class="card d-flex flex-row w-75">
-      <img [src]="createImagepath(prd.imageUrl)"
-        class="card-img-top w-25" alt="product image">
+      <img [src]="createImagepath(prd.imageUrl)" class="card-img-top w-25" alt="product image">
       <div class="card-body d-flex flex-row w-75">
         <div class="w-50 m-2">
           <h5 class="card-title"> product name : {{prd.productName}}</h5>
@@ -29,5 +28,3 @@
     </div>
   </div>
 </div>
-
-
