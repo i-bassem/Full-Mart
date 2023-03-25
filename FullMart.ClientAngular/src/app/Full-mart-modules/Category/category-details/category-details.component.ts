@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IBrandDTO } from 'src/app/_models/Ibranddto';
 import { ICategory } from 'src/app/_models/ICategory';
-import { IProduct } from 'src/app/_models/IProduct';
+import { IProduct } from 'src/app/_models/iproduct';
 import { BrandService } from 'src/app/_services/Brand/Brands.service';
 import { CartService } from 'src/app/_services/Cart/cart.service';
 import { CategoriesService } from 'src/app/_services/Categories/categories.service';
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { environment } from 'src/environments/environment.development';
-
+import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 
 
 
@@ -30,28 +30,29 @@ export class CategoryDetailsComponent {
   selectedSortOption: string;
 
 
-  constructor(private catservice: CategoriesService,
-    private cartService:CartService,private productServices: ProductsService,
-    private b: BrandService,private ac: ActivatedRoute) {
+  constructor(private catservice: CategoriesService,private cartService:CartService,private productServices: ProductsService,
+    private b: BrandService,private ac: ActivatedRoute ,private wishlistserv : WishlistProductService) {
     this.selectedSortOption = "Random";
   }
 
 
   ngOnInit(): void {
-    this.catID=this.ac.snapshot.params["id"];
+
+  this.catID=this.ac.snapshot.params["id"];
   this.catservice.getCategoryByID(this.catID).subscribe(cat=>this.category=cat);
   this.catservice.getAllCategories()
                   .subscribe((cat) => (this.catList = cat));
                   this.b.getBrands()
                   .subscribe((cat) => (this.brands = cat));
-  
-  
+
+
+
        this.productServices.getProductByCategoryId(this.catID)
        .subscribe((res:IProduct[])=>{
           this.products = res;
-       });            
+       });
     // this.getBrands();
-    
+
   }
 
 
@@ -60,7 +61,7 @@ export class CategoryDetailsComponent {
                   .subscribe((cat) => (this.catList = cat));
 
 
-  
+
   }
   getBrands() {
     this.b.getBrands().subscribe( (res: any) => {
@@ -73,8 +74,8 @@ export class CategoryDetailsComponent {
       }
     );
   }
-  getProductsByBrandName(event:any, brandName?: string) {
 
+  getProductsByBrandName(event:any, brandName?: string) {
 
     let val = event.target.value; //Nike
 
@@ -86,8 +87,9 @@ export class CategoryDetailsComponent {
             this.products = res;
          });
     }
-   
   }
+
+  
   sortProducts() {
 
     if (this.selectedSortOption === 'random') {
@@ -112,7 +114,17 @@ addToCart(productId:number){
   this.cartService.addProductToCart(productId,userId) .subscribe();
   }
 }
- 
+
+
+addTowishlist(productID : number){
+  const userID = localStorage.getItem("id");
+  console.log(userID + "from wishlist");
+  if(userID != null){
+    this.wishlistserv.AddProductToWishlist(productID , userID).subscribe( p => {
+      alert("product added successfully to your list")
+    })
+  }
+}
 
 
 

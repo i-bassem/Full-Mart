@@ -2,14 +2,26 @@
 
 <h1>Login</h1>
 
+<!-- Incorrect password or email -->
+<div class="text-danger"  [hidden]=" passwordinput.untouched && emailinput.untouched">
+  <small>{{validationErrors}}</small>
+</div>
+
 <form (ngSubmit)="login()">
 
 <label for="emaill" class="label ">Email</label>
-<input type="text" class="form-control mb-3" id="email" name="email" [(ngModel)]="email"/>
+<input #emailinput="ngModel" type="text" class="form-control mb-3" id="email" name="email" [(ngModel)]="email" required/>
+
+<div class="text-danger"  [hidden]="emailinput.valid || emailinput.untouched">
+  <small>This Field is Required</small>
+</div>
 
 <label for="password"  class="label ">Password</label>
-<input type="password" class="form-control mb-3" id="password"  name="password" [(ngModel)]="password" />
+<input #passwordinput="ngModel" type="password" class="form-control mb-3" id="password"  name="password" [(ngModel)]="password" required pattern="[A-Za-z]{6,}"/>
 
+<div class="text-danger" [hidden]="passwordinput.valid || passwordinput.untouched">
+  <small>Must be at least 6 characters </small>
+</div>
 
 <button type="submit"  class="btn btn-primary mb-3"> Login </button>
 
@@ -18,9 +30,7 @@
 <p>  abc@abc.com
      Taa12@!</p>
 
-     <!-- <p>{{res }}</p>
-     <p>{{res?.token}}</p>
-     [(ngModel)]="res?.token" -->
+   
 
 
 

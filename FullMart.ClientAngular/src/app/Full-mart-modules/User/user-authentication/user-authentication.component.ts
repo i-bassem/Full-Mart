@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserAuthService } from 'src/app/_services/UserAuthentication/UserAuthService';
 
 @Component({
@@ -11,8 +12,9 @@ export class UserAuthenticationComponent {
  email="";
  password="";
  userAuth:any;
+ validationErrors:any;
 
- constructor( private userAuthenticationService: UserAuthService ){
+ constructor( private userAuthenticationService: UserAuthService ,private router:Router){
  }
 
   login(){
@@ -23,13 +25,25 @@ export class UserAuthenticationComponent {
     password : this.password
     })
 
-   this.userAuthenticationService.login(this.userAuth).subscribe( (response:any)=>
-     (
+   this.userAuthenticationService.login(this.userAuth).subscribe( (response:any)=>{
+     
      localStorage.setItem("token", response?.token),
      localStorage.setItem("id", response?.id),
+     localStorage.setItem("username", response?.username),
+     localStorage.setItem("email", response?.email),
+     localStorage.setItem("role", response?.roles[0]),
+    
      console.log(response)
-     )
-    );
+     this.router.navigateByUrl("/home")
+     },
+       (errors)=>{
+        // if(error instanceof HttpErrorResponse){
+        //   if(error.status==400){
+       this.validationErrors = errors
+      //  console.log(this.validationErrors);
+      }
+   
+    )//subscribe
   }
 
 

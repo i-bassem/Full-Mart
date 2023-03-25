@@ -27,7 +27,13 @@ export class UserRegistrationService {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
-    } else {
+    }
+
+    else if(error.status === 400){
+      console.log("400");
+     return throwError( () => new Error(error.error))}
+
+    else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(

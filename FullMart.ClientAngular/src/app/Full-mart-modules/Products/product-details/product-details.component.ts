@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from 'src/app/_models/IProduct';
+import { IProduct } from 'src/app/_models/iproduct';
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -15,7 +15,7 @@ export class ProductDetailsComponent {
   protected product:any
   protected serverURL = `${environment.ImgURL}`
 
-  constructor(private ac: ActivatedRoute, private productService:ProductsService) {  
+  constructor(private ac: ActivatedRoute, private productService:ProductsService) {
   }
 
   ngOnInit():void{

@@ -60,7 +60,7 @@
   
                   <!-- Price -->
                   <p class="text-start text-md-center">
-                    <strong>{{item.price}}</strong>
+                    <strong>{{item.id}}</strong>
                   </p>
                   <!-- Price -->
                 </div>
@@ -124,10 +124,12 @@
                   <span><strong>$53.98</strong></span>
                 </li>
               </ul>
-  
-              <button type="button" class="btn btn-primary btn-lg btn-block">
+
+
+              <button type="button" class="btn btn-primary btn-lg btn-block" (click)="createOrder()" routerLink="/order" >
                 Go to checkout
               </button>
+              
             </div>
           </div>
         </div>
