@@ -25,6 +25,7 @@ import { UserAuthenticationComponent } from './Full-mart-modules/User/user-authe
 import { IndexComponent } from './Cart/index/index.component';
 import { AddProductToCartComponent } from './Cart/add-product-to-cart/add-product-to-cart.component';
 import { OrdersListComponent } from './Full-mart-modules/ordes/orders-list/orders-list.component';
+import { UserProfileComponent } from './Full-mart-modules/User/user-profile/user-profile.component';
 
 
 
@@ -71,6 +72,7 @@ const routes:Routes=[
   //User
   {path:"userRegister", component:UserRegisterComponent},
   {path:"userLogin", component: UserAuthenticationComponent},
+  {path:"userProfile", component: UserProfileComponent},
   // statics
   {path:"aboutus",component:AboutUsComponent},
   {path:"contact",component:ContactUsComponent},

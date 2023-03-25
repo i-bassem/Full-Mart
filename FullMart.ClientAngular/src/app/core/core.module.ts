@@ -7,6 +7,8 @@ import { LibrariesimportModule } from '../Libraries/librariesimport.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { ProductsModule } from '../Full-mart-modules/Products/products.module';
 
 
 @NgModule({
@@ -15,10 +17,11 @@ import { MatButtonModule } from '@angular/material/button';
     FooterComponent
   ],
   exports:[
-    HeaderComponent,FooterComponent
+    HeaderComponent, FooterComponent
   ],
   imports: [
-    CommonModule,RouterModule,LibrariesimportModule,MatFormFieldModule,MatInputModule,MatButtonModule
+    FormsModule, CommonModule,RouterModule,LibrariesimportModule,MatFormFieldModule,MatInputModule,MatButtonModule,
+    ProductsModule
   ]
 })
 export class CoreModule { }

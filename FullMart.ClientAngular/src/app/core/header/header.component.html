@@ -47,17 +47,44 @@
 
         </li>
 
+          <li class="nav-item">
+            <a routerLink="/product" class="nav-link" routerLinkActive="active">Admin Dashboard</a>
+          </li>
+
+          <form class="d-flex">
+
+            <input  (keyup)="search()"   name="searchInput" [(ngModel)]="searchInput"   class="form-control ms-4" size="40%" type="search" placeholder="Search by product" aria-label="Search">
+            <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
+
+          </form>
+          <!-- #searchInput="ngModel" -->
+             <!-- <div *ngIf="searchInput.untouched"> -->
+              <!-- <ul  *ngFor="let prd of productList" style="list-style-type: none;">
+                <li> {{prd.productName}}</li>
+              </ul> -->
+            <!-- </div> -->
+
+
+
+
+
+
+        </ul>
+
         <form class="d-flex">
           <input class="form-control mx-4" size="40%" type="search" placeholder="Search by product,category,brand,etc"
             aria-label="Search">
           <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
         </form>
-      </ul>
 
       <!-- Left links -->
     </div>
 
     <!-- Collapsible wrapper -->
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+
+
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
@@ -124,11 +151,14 @@
             <a class="dropdown-item" href="#">Logout</a>
           </li>
         </ul>
+        <!-- fa-cart-circle-plus -->
+        <!-- <i class="fa-duotone fa-cart-circle-plus"></i> -->
+        <!-- fa-shake -->
+
       </div>
     </div>
     <!-- Right elements -->
   </div>
   <!-- Container wrapper -->
-</nav>
 <!-- Navbar -->
 <!-- Navbar -->

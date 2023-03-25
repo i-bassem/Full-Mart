@@ -8,6 +8,7 @@ import { BrandModule } from './brand/brand.module';
 import { UserModule } from './User/user.module';
 import { OrdesModule } from './ordes/ordes.module';
 import { ProductsModule } from './Products/products.module';
+import { CategoryListComponent } from './Category/category-list/category-list.component';
 
 
 
@@ -16,8 +17,11 @@ import { ProductsModule } from './Products/products.module';
   declarations: [],
   
   imports: [
-    CommonModule, CategoryModule , WishlistModule, BrandModule, UserModule,OrdesModule,ProductsModule,
+    CommonModule, CategoryModule , WishlistModule, BrandModule, UserModule, OrdesModule, ProductsModule
   ],
+  exports:[
+    CategoryListComponent
+  ]
 
 })
 export class FullMartModulesModule { }

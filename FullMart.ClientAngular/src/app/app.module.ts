@@ -29,12 +29,9 @@ import { CommonModule } from '@angular/common';
     AboutUsComponent, NotFoundComponent , SpinnerComponent
   ],
   imports: [
-
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,
     BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
-    FullMartModulesModule,MatCheckboxModule ,CommonModule
-
-    ,CartModule, FullMartModulesModule,MatCheckboxModule
+    FullMartModulesModule, MatCheckboxModule , CommonModule, CartModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
