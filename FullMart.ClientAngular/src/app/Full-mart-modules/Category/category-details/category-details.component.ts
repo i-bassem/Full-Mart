@@ -22,7 +22,7 @@ import { environment } from 'src/environments/environment.development';
 export class CategoryDetailsComponent {
   protected catID:number=0;
   protected category:ICategory|null=null;
-   protected products:IProduct[] = []
+  protected products:IProduct[] = []
   protected serverURL = `${environment.ImgURL}`
   catList: ICategory[] = [];
   categorys: ICategory|null=null;
@@ -30,7 +30,8 @@ export class CategoryDetailsComponent {
   selectedSortOption: string;
 
 
-  constructor(private catservice: CategoriesService,private cartService:CartService,private productServices: ProductsService,
+  constructor(private catservice: CategoriesService,
+    private cartService:CartService,private productServices: ProductsService,
     private b: BrandService,private ac: ActivatedRoute) {
     this.selectedSortOption = "Random";
   }
