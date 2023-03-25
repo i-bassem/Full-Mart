@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/_models/IProduct';
 import { ProductsService } from 'src/app/_services/Products/products.service';
+import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProductDetailsComponent {
   protected product:any
   protected serverURL = `${environment.ImgURL}`
 
-  constructor(private ac: ActivatedRoute, private productService:ProductsService) {
+  constructor(private ac: ActivatedRoute, private productService:ProductsService , private wishlistser : WishlistProductService) {
   }
 
   ngOnInit():void{
@@ -25,6 +26,9 @@ export class ProductDetailsComponent {
   }
 
 
-
+AddToWishlist(productID : number){
+  const userId : any = localStorage.getItem('id');
+  this.wishlistser.AddProductToWishlist(productID,userId).subscribe();
+}
 
 }

@@ -8,8 +8,7 @@ import { LibrariesimportModule } from 'src/app/Libraries/librariesimport.module'
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { RatingModule } from 'primeng/rating';
-
-
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
 
 @NgModule({
   providers:[ RatingModule],
@@ -18,7 +17,7 @@ import { RatingModule } from 'primeng/rating';
   ],
   imports: [
     CommonModule,RouterModule,LibrariesimportModule, FormsModule
-    , ReactiveFormsModule,MatCheckboxModule,MatSliderModule
+    , ReactiveFormsModule,MatCheckboxModule,MatSliderModule , ConfirmPopupModule
 
   ],
   exports: [

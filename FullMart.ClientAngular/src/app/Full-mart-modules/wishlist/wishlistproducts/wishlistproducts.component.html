@@ -6,22 +6,39 @@
 
 </pre>
 
-<h2>You have <b>{{productCount}}</b> products in your list</h2>
+<h2>Wishlisted items ({{productCount}}) </h2>
 <div *ngFor="let prd of products; let x=index">
-  <div class="mb-5">
-    <div class="card d-flex flex-row w-75">
-      <img [src]="createImagepath(prd.imageUrl)" class="card-img-top w-25" alt="product image">
-      <div class="card-body d-flex flex-row w-75">
-        <div class="w-50 m-2">
-          <h5 class="card-title"> product name : {{prd.productName}}</h5>
-          <p class="card-text">product description : {{prd.productDescription}}</p>
+  <div class="card d-flex justify-content-between mb-5 w-75" id="container">
+    <div class="d-flex">
+      <img [src]="createImagepath(prd.imageUrl)" routerLink="/product/details/{{ prd.id }}" class="card-img-top w-25" alt="product image">
+      <div class="card-body d-flex flex-row">
+        <div class="m-2">
+          <h4 class="card-title name" routerLink="/product/details/{{ prd.id }}"><strong>{{prd.productName}} </strong></h4>
+          <h4 class="card-text"><strong> {{prd.productDescription}} </strong></h4>
+          <h4><strong> Price : {{prd.price}} 	&euro; <sup style="color: gray;">+10 &euro; shipping</sup> </strong></h4>
         </div>
-        <div class="w-50 m-2 text-center">
-          <p>product Price : {{prd.price}}</p>
-          <p>product rate : {{prd.rate}} </p>
-          <div class="d-flex flex-row p-2 m-2 justify-content-end">
-            <button class="btn btn-primary m-2" (click)="addToCart(prd.id)">Add To Cart</button>
-            <button class="btn btn-danger m-2" (click)="removeprd(prd.id)">remove</button>
+      </div>
+      <div class="m-2 d-flex flex-row">
+        <div class="m-2">
+          <h4><strong> Rating</strong> </h4>
+          <p-rating [(ngModel)]="prd.rate" [readonly]="true">
+            <ng-template pTemplate="cancel">
+              <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px" height="25px" />
+            </ng-template>
+            <ng-template pTemplate="onicon">
+              <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px"
+                height="25px" />
+            </ng-template>
+            <ng-template pTemplate="officon">
+              <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px"
+                height="25px" />
+            </ng-template>
+          </p-rating>
+          <div class="pt-2 mt-2 d-flex">
+            <button class="btn btn-primary m-2" (click)="addToCart(prd.id)"><i class="pi pi-shopping-cart"
+                style="font-size: 1.5rem"></i><br>Buy now</button>
+            <button class="m-2" pButton pRipple label="Delete" icon="pi pi-trash"
+              (click)="removeprd(prd.id)"></button>
           </div>
         </div>
       </div>
