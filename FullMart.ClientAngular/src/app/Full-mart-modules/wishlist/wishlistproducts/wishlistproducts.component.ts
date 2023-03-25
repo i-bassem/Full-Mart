@@ -42,12 +42,12 @@ removeprd(productID : number){
   const userID :any=localStorage.getItem('id');
   if(confirm("Are you sure you want to remove this product from your wishlist ?")){
   this.wishlistservice.DeleteProductById(userID,productID).subscribe( product => {
-    // this.router.navigate(['Cart']);
+    this.router.navigate(['wishlist']);
     // window.location.reload();
     // this.ngOnInit();
 
   });
-  this.router.navigate(['wishlist']);
+  //this.router.navigate(['wishlist']);
   // window.location.reload();
   }
 }

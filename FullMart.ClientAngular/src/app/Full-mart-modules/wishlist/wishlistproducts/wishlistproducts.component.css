@@ -33,4 +33,24 @@ button{
   width: 120px;
   height: 60px;
 }
+p:first-of-type{
+  font-size: 40px;
+}
+#prdimg{
+  width: 25%;
+}
+@media (max-width : 991px) {
+.content{
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+p:first-of-type{
+  font-size: 30px;
+}
+#prdimg{
+  width: 100%;
+}
+
+}
 
