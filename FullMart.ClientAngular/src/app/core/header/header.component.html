@@ -49,8 +49,8 @@
           
           <form class="d-flex">
 
-            <input  (keyup)="search()"   name="searchInput" [(ngModel)]="searchInput"   class="form-control ms-4" size="40%" type="search" placeholder="Search by product" aria-label="Search">
-            <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
+            <input  (keyup)="search()"   name="searchInput" [(ngModel)]="searchInput"   class="form-control ms-4 me-3" size="40%" type="search" placeholder="Search by product" aria-label="Search">
+            <button class="btn btn-outline-warning me-3" type="submit"><i class="fas fa-search"></i></button>
           
           </form>
           <!-- #searchInput="ngModel" -->
@@ -129,6 +129,9 @@
             </li>
             <li>
               <a class="dropdown-item" (click)="logout()" >Logout</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/order" >ORDERS</a>
             </li>
           </ul>
         </div>
