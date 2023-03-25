@@ -57,7 +57,7 @@ import { Iorder } from 'src/app/_models/Iorder';
 })
 
 export class OrdersListComponent implements OnInit {
-
+user_name=localStorage.getItem('username');
   userId = localStorage.getItem('id');
   orders: Iorder[] | undefined;
 
