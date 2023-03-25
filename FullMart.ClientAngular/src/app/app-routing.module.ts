@@ -62,6 +62,8 @@ const routes:Routes=[
 
 
 
+
+
   //Cart
   {path:"Cart",component:IndexComponent},
 
