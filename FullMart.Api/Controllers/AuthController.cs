@@ -41,7 +41,7 @@ namespace FullMart.Api.Controllers
 
             _unitOfWork.wishListProductRepo.CreateWishlist(user.Id);
             _unitOfWork.Carts.AddCart(user.Id);
-            _unitOfWork.Orders.CreateOrder(user.Id);
+            //_unitOfWork.Orders.CreateOrder(user.Id);
 
             _unitOfWork.Complete();
 
