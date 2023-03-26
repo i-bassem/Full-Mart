@@ -23,6 +23,7 @@ export class HeaderComponent {
   } 
   
   isUserLogged:boolean =false;
+  numOfCartProduct:number=0;
 
   constructor(private userAuth : UserAuthService, private productService: ProductsService){}
   
