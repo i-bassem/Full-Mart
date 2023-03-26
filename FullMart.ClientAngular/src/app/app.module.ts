@@ -20,21 +20,19 @@ import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPseudoCheckbox } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
+import { ShipingDetailsComponent } from './shiping-details/shiping-details.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent, LibrariesComponent, HomeComponent, ContactUsComponent,
-    AboutUsComponent, NotFoundComponent , SpinnerComponent
+    AboutUsComponent, NotFoundComponent , SpinnerComponent, ShipingDetailsComponent
   ],
   imports: [
-
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,
     BrowserAnimationsModule, ReactiveFormsModule, LibrariesimportModule,
-    FullMartModulesModule,MatCheckboxModule ,CommonModule
-
-    ,CartModule, FullMartModulesModule,MatCheckboxModule
+    FullMartModulesModule, MatCheckboxModule , CommonModule, CartModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true

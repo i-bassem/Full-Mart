@@ -25,6 +25,8 @@ import { UserAuthenticationComponent } from './Full-mart-modules/User/user-authe
 import { IndexComponent } from './Cart/index/index.component';
 import { AddProductToCartComponent } from './Cart/add-product-to-cart/add-product-to-cart.component';
 import { OrdersListComponent } from './Full-mart-modules/ordes/orders-list/orders-list.component';
+import { UserProfileComponent } from './Full-mart-modules/User/user-profile/user-profile.component';
+import { ShipingDetailsComponent } from './shiping-details/shiping-details.component';
 
 
 
@@ -56,6 +58,9 @@ const routes:Routes=[
   {path:"Brand",component:BrandListComponent},
   //order
   {path:"order",component:OrdersListComponent},
+//shiping
+{path:"shiping",component:ShipingDetailsComponent},
+
 
 
 
@@ -71,6 +76,7 @@ const routes:Routes=[
   //User
   {path:"userRegister", component:UserRegisterComponent},
   {path:"userLogin", component: UserAuthenticationComponent},
+  {path:"userProfile", component: UserProfileComponent},
   // statics
   {path:"aboutus",component:AboutUsComponent},
   {path:"contact",component:ContactUsComponent},
@@ -82,11 +88,11 @@ const routes:Routes=[
 
 
 
+  {path:"**", component:ErrorsComponent},
 
-  {path:"**", component:NotFoundComponent}
+  // {path:"**", component:NotFoundComponent}
 //   {path:"**", component:ErrorsComponent
 // }
-  ,{path:"**", component:ErrorsComponent}
 
 ];
 @NgModule({
