@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/_models/iproduct';
-<<<<<<< HEAD
+
 import { CartService } from 'src/app/_services/Cart/cart.service';
-=======
+
 import { IReview } from 'src/app/_models/IReview';
->>>>>>> 42de1b47a14330bc5f7aed38bf41fd3f1cbae793
+
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { ReviewService } from 'src/app/_services/Review/review.service';
 import { environment } from 'src/environments/environment.development';
@@ -23,11 +23,9 @@ export class ProductDetailsComponent {
   public comment:string='comment';
   public numOfStars:number=1;
 
-<<<<<<< HEAD
-  constructor(private ac: ActivatedRoute, private productService:ProductsService,private cartService:CartService) {
-=======
-  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService) {
->>>>>>> 42de1b47a14330bc5f7aed38bf41fd3f1cbae793
+
+  constructor(private ac: ActivatedRoute,private cartService:CartService ,private productService:ProductsService,private reviewService:ReviewService) {
+
   }
 
   ngOnInit():void{
@@ -35,7 +33,6 @@ export class ProductDetailsComponent {
    console.log(this.productID);
    this.productService.getProductByID(this.productID).subscribe(data=> this.product = data);
   }
-<<<<<<< HEAD
 
   addToCart(productId:number){
     const userId=localStorage.getItem("id");
@@ -44,7 +41,7 @@ export class ProductDetailsComponent {
     this.cartService.addProductToCart(productId,userId) .subscribe();
     }
   }
-=======
+
   addReview(){
     const userID = localStorage.getItem("id");
     this.productID =this.ac.snapshot.params["id"];
@@ -61,7 +58,7 @@ export class ProductDetailsComponent {
   }
   
 
->>>>>>> 42de1b47a14330bc5f7aed38bf41fd3f1cbae793
+
 
 
 }
