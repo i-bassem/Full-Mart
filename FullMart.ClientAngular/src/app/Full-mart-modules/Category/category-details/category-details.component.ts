@@ -10,6 +10,7 @@ import { CategoriesService } from 'src/app/_services/Categories/categories.servi
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { environment } from 'src/environments/environment.development';
 import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
+import { ReviewService } from 'src/app/_services/Review/review.service';
 
 
 
@@ -28,6 +29,8 @@ export class CategoryDetailsComponent {
   categorys: ICategory|null=null;
   brands: IBrandDTO[] = [];
   selectedSortOption: string;
+
+
 
 
   constructor(private catservice: CategoriesService,private cartService:CartService,private productServices: ProductsService,

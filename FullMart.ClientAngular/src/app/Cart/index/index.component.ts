@@ -18,6 +18,7 @@ export class IndexComponent implements OnChanges   {
 
   }
   cartProductList:CartProducts[]=[];
+  totalPrice:number=0;
   serverImageFile:string=environment.ImgURL;
   orderDTO: OrderCreateDTO = {
     orderProducts: []
@@ -87,6 +88,16 @@ export class IndexComponent implements OnChanges   {
         });
     }
   }
+
+  getTotalPrice():number{
+    this.totalPrice=0;
+    this.cartProductList.forEach(element => {
+      this.totalPrice=this.totalPrice+element.price;
+    });
+    return this.totalPrice;
+  }
+
+
 
    
 
