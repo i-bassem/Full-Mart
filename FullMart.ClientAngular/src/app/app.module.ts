@@ -20,13 +20,14 @@ import { LoadingInterceptor } from './Interceptor/loading.interceptor';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPseudoCheckbox } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
+import { ShipingDetailsComponent } from './shiping-details/shiping-details.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent, LibrariesComponent, HomeComponent, ContactUsComponent,
-    AboutUsComponent, NotFoundComponent , SpinnerComponent
+    AboutUsComponent, NotFoundComponent , SpinnerComponent, ShipingDetailsComponent
   ],
   imports: [
     BrowserModule, FormsModule, CoreModule, SharedModule,AppRoutingModule,

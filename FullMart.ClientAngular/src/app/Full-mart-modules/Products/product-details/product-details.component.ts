@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/_models/iproduct';
+<<<<<<< HEAD
 import { CartService } from 'src/app/_services/Cart/cart.service';
+=======
+import { IReview } from 'src/app/_models/IReview';
+>>>>>>> 42de1b47a14330bc5f7aed38bf41fd3f1cbae793
 import { ProductsService } from 'src/app/_services/Products/products.service';
+import { ReviewService } from 'src/app/_services/Review/review.service';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -15,8 +20,14 @@ export class ProductDetailsComponent {
   // public product:IProduct=new IProduct(0,"","",0,0,0,"","",0,[],null)
   protected product:any
   protected serverURL = `${environment.ImgURL}`
+  public comment:string='comment';
+  public numOfStars:number=1;
 
+<<<<<<< HEAD
   constructor(private ac: ActivatedRoute, private productService:ProductsService,private cartService:CartService) {
+=======
+  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService) {
+>>>>>>> 42de1b47a14330bc5f7aed38bf41fd3f1cbae793
   }
 
   ngOnInit():void{
@@ -24,6 +35,7 @@ export class ProductDetailsComponent {
    console.log(this.productID);
    this.productService.getProductByID(this.productID).subscribe(data=> this.product = data);
   }
+<<<<<<< HEAD
 
   addToCart(productId:number){
     const userId=localStorage.getItem("id");
@@ -32,6 +44,24 @@ export class ProductDetailsComponent {
     this.cartService.addProductToCart(productId,userId) .subscribe();
     }
   }
+=======
+  addReview(){
+    const userID = localStorage.getItem("id");
+    this.productID =this.ac.snapshot.params["id"];
+    console.log(userID );
+    console.log(this.productID);
+    console.log(this.comment);
+    console.log(this.numOfStars);
+    if(userID != null){
+      const newReview=new IReview(this.comment,this.numOfStars,this.productID,userID);
+      this.reviewService.addProductToCart(newReview).subscribe( p => {
+        alert("review added successfully")
+      })
+    }
+  }
+  
+
+>>>>>>> 42de1b47a14330bc5f7aed38bf41fd3f1cbae793
 
 
 }
