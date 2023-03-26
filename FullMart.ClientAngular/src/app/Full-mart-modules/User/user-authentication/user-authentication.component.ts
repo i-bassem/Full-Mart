@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAuthService } from 'src/app/_services/UserAuthentication/UserAuthService';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-user-authentication',
@@ -14,7 +15,7 @@ export class UserAuthenticationComponent {
  userAuth:any;
  validationErrors:any;
 
- constructor( private userAuthenticationService: UserAuthService ,private router:Router){
+ constructor( private userAuthenticationService: UserAuthService ,private router:Router, public location:Location){
  }
 
   login(){
@@ -34,7 +35,14 @@ export class UserAuthenticationComponent {
      localStorage.setItem("role", response?.roles[0]),
     
      console.log(response)
-     this.router.navigateByUrl("/home")
+     if (window.history.length > 1) {
+      //console.log(window.history);
+      this.location.back()
+    } else {
+      this.router.navigate(['/home'])
+    }
+     
+     //this.router.navigateByUrl("/home")
      },
        (errors)=>{
         // if(error instanceof HttpErrorResponse){
