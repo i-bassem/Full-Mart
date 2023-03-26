@@ -42,7 +42,6 @@ export class ProductsService {
 
   public getProductByCategoryId(id:number){
 
-
     return this.productService.get<IProduct[]>(`${environment.APIURL}/Product/GetProductByCategoryId?id=${id}`)
 
   }
@@ -98,6 +97,16 @@ export class ProductsService {
     return throwError(
       () => new Error('Something bad happened; please try again later.')
     );
-  }
+  } 
+  // Add a new comment to a product
+addComment(productId: number, comment: string): Observable<IProduct> {
+  const url = `${environment.APIURL}/Product/${productId}/AddComment`;
+  const body = { comment };
+  return this.productService.post<IProduct>(url, body, this.httpOption)
+    .pipe(
+      catchError(this.handleError)
+    );
+}
+
 
 }

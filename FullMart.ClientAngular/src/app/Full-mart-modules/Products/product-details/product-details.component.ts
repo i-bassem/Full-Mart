@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from 'src/app/_models/IProduct';
-import { ProductsService } from 'src/app/_services/Products/products.service';
 import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
+import { IProduct } from 'src/app/_models/IProduct';
+import { IReview } from 'src/app/_models/IReview';
+import { ProductsService } from 'src/app/_services/Products/products.service';
+import { ReviewService } from 'src/app/_services/Review/review.service';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -15,14 +17,30 @@ export class ProductDetailsComponent {
   // public product:IProduct=new IProduct(0,"","",0,0,0,"","",0,[],null)
   protected product:any
   protected serverURL = `${environment.ImgURL}`
+  public comment:string='comment';
+  public numOfStars:number=1;
 
-  constructor(private ac: ActivatedRoute, private productService:ProductsService , private wishlistser : WishlistProductService) {
+  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService ,private wishlistser : WishlistProductService) {
   }
 
   ngOnInit():void{
    this.productID =this.ac.snapshot.params["id"];
    console.log(this.productID);
    this.productService.getProductByID(this.productID).subscribe(data=> this.product = data);
+  }
+  addReview(){
+    const userID = localStorage.getItem("id");
+    this.productID =this.ac.snapshot.params["id"];
+    console.log(userID );
+    console.log(this.productID);
+    console.log(this.comment);
+    console.log(this.numOfStars);
+    if(userID != null){
+      const newReview=new IReview(this.comment,this.numOfStars,this.productID,userID);
+      this.reviewService.addProductToCart(newReview).subscribe( p => {
+        alert("review added successfully")
+      })
+    }
   }
 
 
