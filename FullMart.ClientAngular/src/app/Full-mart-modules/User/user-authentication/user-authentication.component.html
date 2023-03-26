@@ -1,40 +1,45 @@
+<div class="container col-12 col-md-4">
+  <h1 class="text-center" style="font: 30px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    Login</h1>
 
+  <!-- Incorrect password or email -->
+  <div class="text-danger" [hidden]=" passwordinput.untouched && emailinput.untouched">
+    <small>{{validationErrors}}</small>
+  </div>
 
-<h1>Login</h1>
+  <form (ngSubmit)="login()" class="d-flex flex-column justify-content-between">
+    <div>
+      <label for="emaill" class="label ">Email</label>
+      <input #emailinput="ngModel" type="text" class="form-control mb-3" id="email" name="email" [(ngModel)]="email"
+        required />
+      <div class="text-danger" [hidden]="emailinput.valid || emailinput.untouched">
+        <small>This Field is Required</small>
+      </div>
 
-<!-- Incorrect password or email -->
-<div class="text-danger"  [hidden]=" passwordinput.untouched && emailinput.untouched">
-  <small>{{validationErrors}}</small>
+      <label for="password" class="label ">Password</label>
+      <input #passwordinput="ngModel" type="password" class="form-control mb-3" id="password" name="password"
+        [(ngModel)]="password" required pattern="[A-Za-z]{6,}" />
+
+      <div class="text-danger" [hidden]="passwordinput.valid || passwordinput.untouched">
+        <small>Must be at least 6 characters </small>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary mb-3"> Login </button>
+      <div class="vr"></div>
+      <button type="submit" class="btn btn-success mb-3" [routerLink]="['/userRegister']"
+        routerLinkActive="router-link-active"> Register </button>
+    </div>
+  </form>
 </div>
-
-<form (ngSubmit)="login()">
-
-<label for="emaill" class="label ">Email</label>
-<input #emailinput="ngModel" type="text" class="form-control mb-3" id="email" name="email" [(ngModel)]="email" required/>
-
-<div class="text-danger"  [hidden]="emailinput.valid || emailinput.untouched">
-  <small>This Field is Required</small>
-</div>
-
-<label for="password"  class="label ">Password</label>
-<input #passwordinput="ngModel" type="password" class="form-control mb-3" id="password"  name="password" [(ngModel)]="password" required pattern="[A-Za-z]{6,}"/>
-
-<div class="text-danger" [hidden]="passwordinput.valid || passwordinput.untouched">
-  <small>Must be at least 6 characters </small>
-</div>
-
-<button type="submit"  class="btn btn-primary mb-3"> Login </button>
-
-</form>
-
-<p>  abc@abc.com
-     Taa12@!</p>
-
-   
+<p> abc@abc.com
+  Taa12@!</p>
 
 
 
-     <!-- 03198c6d-ed4d-419f-9050-6aa6a6bba653   	 -->
+
+
+<!-- 03198c6d-ed4d-419f-9050-6aa6a6bba653   	 -->
 <!-- Response body
 Download
 {
@@ -51,7 +56,7 @@ Download
   "refreshTokenExpiration": "0001-01-01T00:00:00"
 } -->
 
-	
+
 <!-- Response body
 Download
 {
