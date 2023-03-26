@@ -49,6 +49,12 @@ export class IndexComponent implements OnChanges   {
   }
   createOrder(): void {
     const userId = localStorage.getItem('id');
+    
+    if (this.cartProductList.length === 0) {
+      console.log('Cart is empty. Cannot create order.');
+      return;
+    }
+    
     const orderProductDTOs: OrderProductCreateDTO[] = [];
   
     // Loop through the cart products and create an order product DTO for each one
@@ -81,7 +87,7 @@ export class IndexComponent implements OnChanges   {
         });
     }
   }
-  
+
    
 
 }

@@ -1,0 +1,82 @@
+<div class="container">
+    <h1>Shipping</h1>
+    <p>Please enter your shipping details.</p>
+    <hr />
+    <div class="form">
+      
+    <div class="fields fields--2">
+      <label class="field">
+        <span class="field__label" for="firstname">First name</span>
+        <input class="field__input" type="text" id="firstname" value="{{firstName}}" />
+      </label>
+      <label class="field">
+        <span class="field__label" for="lastname">Last name</span>
+        <input class="field__input" type="text" id="lastname" value="{{lastName}}" />
+      </label>
+    </div>
+    <label class="field">
+      <span class="field__label" for="address">Address</span>
+      <input class="field__input" type="text" id="address" value="{{address}}" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="country">Country</span>
+      <select class="field__input" id="country">
+        <option value=""></option>
+        <option value="unitedstates">United States</option>
+      </select>
+    </label>
+    <div class="fields fields--3">
+      <label class="field">
+        <span class="field__label" for="zipcode">Zip code</span>
+        <input class="field__input" type="text" id="zipcode" />
+      </label>
+      <label class="field">
+        <span class="field__label" for="city">City</span>
+        <input class="field__input" type="text" id="city" />
+      </label>
+      <label class="field">
+        <span class="field__label" for="state">State</span>
+        <select class="field__input" id="state">
+          <option value=""></option>
+        </select>
+      </label>
+    </div>
+    </div>
+    <hr>
+    <button class="button" >  Continue</button>
+  </div>
+
+  <!-- <h2>Shipping Details</h2>
+<form>
+  <label for="firstname">First Name:</label>
+  <input type="text" id="firstname" [(ngModel)]="firstName">
+
+  <label for="lastname">Last Name:</label>
+  <input type="text" id="lastname" [(ngModel)]="lastName">
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" [(ngModel)]="address">
+
+  <label for="country">Country:</label>
+  <select id="country" [(ngModel)]="country">
+    <option value="USA">USA</option>
+    <option value="Canada">Canada</option>
+  </select>
+
+  <label for="zipcode">Zip Code:</label>
+  <input type="text" id="zipcode" [(ngModel)]="zipCode">
+
+  <label for="city">City:</label>
+  <input type="text" id="city" [(ngModel)]="city">
+
+  <label for="state">State:</label>
+  <select id="state" [(ngModel)]="state">
+    <option value="CA">California</option>
+    <option value="NY">New York</option>
+  </select>
+
+  <button type="button" class="button">Continue</button>
+</form>
+
+<!-- <div *ngIf="firstName || lastName || address || country || zipCode || city || state">
+  <h2>Saved Shipping --> -->
