@@ -157,8 +157,17 @@ namespace FullMart.Data.Repositories
             return order;
         }
 
+        public Order CreateOrder(string UserId)
+        {
+            AppUser user = _context.AppUsers.Find(UserId);
 
-
+            Order order = new Order()
+            {
+                AppUser = user
+            };
+            _context.Orders.Add(order);
+            return order;
+        }
     }
 
 
