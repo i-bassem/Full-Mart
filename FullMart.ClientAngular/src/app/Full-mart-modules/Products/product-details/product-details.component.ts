@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/_models/iproduct';
+import { CartService } from 'src/app/_services/Cart/cart.service';
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -15,7 +16,7 @@ export class ProductDetailsComponent {
   protected product:any
   protected serverURL = `${environment.ImgURL}`
 
-  constructor(private ac: ActivatedRoute, private productService:ProductsService) {
+  constructor(private ac: ActivatedRoute, private productService:ProductsService,private cartService:CartService) {
   }
 
   ngOnInit():void{
@@ -24,7 +25,13 @@ export class ProductDetailsComponent {
    this.productService.getProductByID(this.productID).subscribe(data=> this.product = data);
   }
 
-
+  addToCart(productId:number){
+    const userId=localStorage.getItem("id");
+    console.log(userId);
+    if(userId!=null){
+    this.cartService.addProductToCart(productId,userId) .subscribe();
+    }
+  }
 
 
 }
