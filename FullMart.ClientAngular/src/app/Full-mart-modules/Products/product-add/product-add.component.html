@@ -1,5 +1,5 @@
-<p>product-add works!</p>
-
+<!-- <p>product-add works!</p> -->
+<h1>New Product</h1>
 
 
 <form #prdFrm="ngForm" (ngSubmit)="addProduct()" class="m-3 form-group">
@@ -44,17 +44,17 @@
 
 
     <!-- productRate -->
-    <div class="mb-3 w-25">
+    <!-- <div class="mb-3 w-25">
         <label for="pRate" class="form-label">Product Rate</label>
         <input type="number" min="0" max="5" class="form-control" id="pRate" name="pRate" [(ngModel)]="product.rate" />
-    </div>
+    </div> -->
 
 
     <!-- productImage -->
-    <div class="mb-3 w-25">
+    <!-- <div class="mb-3 w-25">
         <label for="pImage" class="form-label">Product Image</label>
         <app-upload (onUploadFinished)="uploadFinished($event)" ></app-upload>
-    </div>
+    </div> -->
 
 
 
@@ -75,6 +75,14 @@
                 {{ brand.brandName }}
             </option>
         </select>
+    </div>
+
+
+
+        <!-- productImage -->
+    <div class="mb-3 w-25">
+        <label for="pImage" class="form-label">Product Image</label>
+        <app-upload (onUploadFinished)="uploadFinished($event)" ></app-upload>
     </div>
 
 

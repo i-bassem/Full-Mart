@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Security.Policy;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace FullMart.Api.Controllers
 {
@@ -354,8 +354,9 @@ namespace FullMart.Api.Controllers
 
 
 
-
-
+        //(Roles ="Admin")
+        [Authorize(Roles = "Admin")]
+        
         //https://localhost:7191/api/Product/1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)

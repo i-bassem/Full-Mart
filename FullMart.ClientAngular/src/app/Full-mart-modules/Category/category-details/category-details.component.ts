@@ -23,7 +23,7 @@ import { ReviewService } from 'src/app/_services/Review/review.service';
 export class CategoryDetailsComponent {
   protected catID:number=0;
   protected category:ICategory|null=null;
-   protected products:IProduct[] = []
+  protected products:IProduct[] = []
   protected serverURL = `${environment.ImgURL}`
   catList: ICategory[] = [];
   categorys: ICategory|null=null;
@@ -110,24 +110,24 @@ export class CategoryDetailsComponent {
     }
   }
 
-addToCart(productId:number){
-  const userId=localStorage.getItem("id");
-  console.log(userId);
-  if(userId!=null){
-  this.cartService.addProductToCart(productId,userId) .subscribe();
-  }
-}
+// addToCart(productId:number){
+//   const userId=localStorage.getItem("id");
+//   console.log(userId);
+//   if(userId!=null){
+//   this.cartService.addProductToCart(productId,userId) .subscribe();
+//   }
+// }
 
 
-addTowishlist(productID : number){
-  const userID = localStorage.getItem("id");
-  console.log(userID + "from wishlist");
-  if(userID != null){
-    this.wishlistserv.AddProductToWishlist(productID , userID).subscribe( p => {
-      alert("product added successfully to your list")
-    })
-  }
-}
+// addTowishlist(productID : number){
+//   const userID = localStorage.getItem("id");
+//   console.log(userID + "from wishlist");
+//   if(userID != null){
+//     this.wishlistserv.AddProductToWishlist(productID , userID).subscribe( p => {
+//       alert("product added successfully to your list")
+//     })
+//   }
+// }
 
 
 

@@ -10,14 +10,14 @@
 <form (ngSubmit)="login()">
 
 <label for="emaill" class="label ">Email</label>
-<input #emailinput="ngModel" type="text" class="form-control mb-3" id="email" name="email" [(ngModel)]="email" required/>
+<input #emailinput="ngModel" type="text" class="form-control mb-3 w-25" id="email" name="email" [(ngModel)]="email" required/>
 
 <div class="text-danger"  [hidden]="emailinput.valid || emailinput.untouched">
   <small>This Field is Required</small>
 </div>
 
 <label for="password"  class="label ">Password</label>
-<input #passwordinput="ngModel" type="password" class="form-control mb-3" id="password"  name="password" [(ngModel)]="password" required pattern="[A-Za-z]{6,}"/>
+<input #passwordinput="ngModel" type="password" class="form-control mb-3 w-25" id="password"  name="password" [(ngModel)]="password" required pattern="[A-Za-z]{6,}"/>
 
 <div class="text-danger" [hidden]="passwordinput.valid || passwordinput.untouched">
   <small>Must be at least 6 characters </small>
@@ -27,7 +27,8 @@
 
 </form>
 
-<p>  abc@abc.com
+<p>  admin@a.com
+     user@a.com
      Taa12@!</p>
 
    

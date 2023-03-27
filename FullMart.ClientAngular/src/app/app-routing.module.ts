@@ -27,6 +27,12 @@ import { AddProductToCartComponent } from './Cart/add-product-to-cart/add-produc
 import { OrdersListComponent } from './Full-mart-modules/ordes/orders-list/orders-list.component';
 import { UserProfileComponent } from './Full-mart-modules/User/user-profile/user-profile.component';
 import { ShipingDetailsComponent } from './shiping-details/shiping-details.component';
+import { AuthGuard } from './Guards/auth.guard';
+import { SearchComponent } from './Full-mart-modules/Search/search.component';
+
+
+
+
 
 
 
@@ -57,9 +63,9 @@ const routes:Routes=[
   //brand
   {path:"Brand",component:BrandListComponent},
   //order
-  {path:"order",component:OrdersListComponent},
-//shiping
-{path:"shiping",component:ShipingDetailsComponent},
+  {path:"order",component:OrdersListComponent, canActivate:[AuthGuard]},
+  //shiping
+  {path:"shiping",component:ShipingDetailsComponent},
 
 
 
@@ -76,7 +82,7 @@ const routes:Routes=[
   //User
   {path:"userRegister", component:UserRegisterComponent},
   {path:"userLogin", component: UserAuthenticationComponent},
-  {path:"userProfile", component: UserProfileComponent},
+  {path:"userProfile", component: UserProfileComponent, canActivate:[AuthGuard]},
   // statics
   {path:"aboutus",component:AboutUsComponent},
   {path:"contact",component:ContactUsComponent},
@@ -86,8 +92,8 @@ const routes:Routes=[
   {path:"wishlist" , component:WishlistproductsComponent},
 
 
-
-
+  //search
+  {path:"search", component:SearchComponent},
   {path:"**", component:ErrorsComponent},
 
   // {path:"**", component:NotFoundComponent}

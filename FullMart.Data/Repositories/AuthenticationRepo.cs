@@ -142,8 +142,9 @@ namespace FullMart.Data.Repositories
                 issuer: _jwt.Issuer,
                 audience: _jwt.Audience,
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes), //assigning expiration time 
-                signingCredentials: signingCredentials);
+                //expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes), //assigning expiration time 
+                signingCredentials: signingCredentials,
+                expires: DateTime.Now.AddDays(1) );
 
             return jwtSecurityToken;
         }

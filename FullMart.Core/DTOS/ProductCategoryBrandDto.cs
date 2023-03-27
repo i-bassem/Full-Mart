@@ -11,7 +11,7 @@ namespace FullMart.Core.DTOS
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
-        
+
         public string ProductDescription { get; set; }
 
         public decimal Price { get; set; }
@@ -25,10 +25,21 @@ namespace FullMart.Core.DTOS
         public string CategoryName { get; set; }
         public string BrandName { get; set; }
 
-        public string[] Comment { get; set; }
-
-       
+        public List<ProductReview>? Reviews { get; set; } = new List<ProductReview>();
 
         public bool? IsFree { get; set; }
+    }
+
+
+
+
+    public class ProductReview
+    {
+        public int ReviewID { get; set; }
+        public string ReviewComment { get; set; }
+
+        public int NumberOfStars { get; set; }
+
+
     }
 }

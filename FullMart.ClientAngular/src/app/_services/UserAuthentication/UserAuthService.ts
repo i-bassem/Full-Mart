@@ -11,6 +11,8 @@ export class UserAuthService {
 
   httpOption;
   isloggedsubject : BehaviorSubject<boolean> ;
+  userRole:BehaviorSubject<string>;
+  role=localStorage.getItem('role');
 
   constructor(private userAuthService:HttpClient) {
 
@@ -22,8 +24,10 @@ export class UserAuthService {
     };  
 
     this.isloggedsubject= new BehaviorSubject<boolean>(false);
- }
 
+   this.userRole = new BehaviorSubject<string>('role') 
+ }
+//  Admin
 
    //#region Function for handling errors
   //Function for handling errors
@@ -69,12 +73,13 @@ export class UserAuthService {
   }
 
   logout(){
-
-    localStorage.removeItem("token");
-    localStorage.removeItem("id");
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
-    localStorage.removeItem("role");
+     
+    localStorage.clear()
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("id");
+    // localStorage.removeItem("username");
+    // localStorage.removeItem("email");
+    // localStorage.removeItem("role");
     //Change logged Status
     this.isloggedsubject.next(false);
   }
@@ -89,4 +94,8 @@ export class UserAuthService {
     return this.isloggedsubject.asObservable();
   }
 
+  getUserRole(): Observable<string>{
+
+    return this.userRole
+  }
 }

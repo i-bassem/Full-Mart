@@ -16,7 +16,7 @@ export class HeaderComponent {
   public progress=0;
   public searchInput=""; 
   public productList:IProduct[]|null=null;
-
+  public userName:string|null;
   @HostListener('window:scroll', ['$event'])
   onScrollEvent(){
   this.progress = (window.pageYOffset/ (document.body.scrollHeight-window.innerHeight) *100)
@@ -25,7 +25,9 @@ export class HeaderComponent {
   isUserLogged:boolean =false;
   numOfCartProduct:number=0;
 
-  constructor(private userAuth : UserAuthService, private productService: ProductsService){}
+  constructor(private userAuth : UserAuthService, private productService: ProductsService){
+    this.userName = localStorage.getItem('username')
+  }
   
   ngOnInit(){
    //User logged Status
@@ -33,6 +35,7 @@ export class HeaderComponent {
       this.isUserLogged=status
       )  
 
+    
    //Search
    this.productService.getAllProducts().subscribe(product=>
     this.productList=product
@@ -58,7 +61,9 @@ export class HeaderComponent {
   search(){
 
     //console.log(word);
-    console.log(this.searchInput);
+    //console.log(this.searchInput);
+    console.log('search button');
+    localStorage.setItem('search', this.searchInput)
 
   }
 
