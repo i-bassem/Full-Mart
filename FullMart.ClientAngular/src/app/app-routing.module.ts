@@ -28,7 +28,11 @@ import { OrdersListComponent } from './Full-mart-modules/ordes/orders-list/order
 import { UserProfileComponent } from './Full-mart-modules/User/user-profile/user-profile.component';
 import { ShipingDetailsComponent } from './shiping-details/shiping-details.component';
 import { AuthGuard } from './Guards/auth.guard';
-import { SearchComponent } from './Full-mart-modules/search/search.component';
+import { SearchComponent } from './Full-mart-modules/Search/search.component';
+
+
+
+
 
 
 

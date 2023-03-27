@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { UploadComponent } from 'src/app/shared/upload/upload.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -35,7 +36,7 @@ import { UploadComponent } from 'src/app/shared/upload/upload.component';
  
   imports: [
     CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
-    ,MatCheckboxModule,MatSliderModule,
+    ,MatCheckboxModule,MatSliderModule, SharedModule
 
 
   ]

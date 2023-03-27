@@ -31,13 +31,14 @@ namespace FullMart.Core.Helper.AutoMapper
                 src => src.MapFrom(src => src.PDescription))
                 .ForMember(dest => dest.CategoryName,
                 src => src.MapFrom(src => src.Category.CategoryName))
-                .ForMember(dest => dest.Comment,
-                src => src.MapFrom(src => src.Reviews.Select(r =>r.Comment).ToList()))
                 .ForMember(dest => dest.BrandName,
                 src => src.MapFrom(src => src.Brand.BrandName))
-
-
                 .ReverseMap();
+
+
+
+
+
 
 
             CreateMap<Product, CartProductDTO>().ReverseMap();
@@ -66,21 +67,21 @@ namespace FullMart.Core.Helper.AutoMapper
 
             #region Review To ReviewProduct 
 
+            CreateMap<Review, ProductReview>()
 
-            CreateMap<Review, ReviewProductDto>()
 
-
-            .ForMember(dest => dest.Comment,
+            .ForMember(dest => dest.ReviewComment,
                 src => src.MapFrom(src => src.Comment))
 
-            .ForMember(dest => dest.NumberOfStar,
+            .ForMember(dest => dest.NumberOfStars,
                 src => src.MapFrom(src => src.NumberOfStar))
+            .ForMember(dest => dest.ReviewID,
+                src => src.MapFrom(src => src.Id))
 
-            .ForMember(dest => dest.UserId,
-                src => src.MapFrom(src => src.AppUser.UserName))
-            .ForMember(dest => dest.ProductName,
-                src => src.MapFrom(src => src.Product.PName))
             .ReverseMap();
+
+
+
             #endregion
 
 

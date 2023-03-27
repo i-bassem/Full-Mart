@@ -20,7 +20,7 @@ export class ProductsService {
     this.httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization : `Bearer ${localStorage.getItem("token")}`
+         Authorization : `Bearer ${localStorage.getItem("token")}`
       }),
     };
   }

@@ -44,13 +44,13 @@ export class ProductDetailsComponent {
     }
     //window.location.reload();
   }
-  addToCart(productId:number){
-    const userId=localStorage.getItem("id");
-    console.log(userId);
-    if(userId!=null){
-    this.cartService.addProductToCart(productId,userId) .subscribe();
-    }
-  }
+  // addToCart(productId:number){
+  //   const userId=localStorage.getItem("id");
+  //   console.log(userId);
+  //   if(userId!=null){
+  //   this.cartService.addProductToCart(productId,userId) .subscribe();
+  //   }
+  // }
   
   
 

@@ -354,8 +354,8 @@ namespace FullMart.Api.Controllers
 
 
 
-
-        [Authorize]
+        //(Roles ="Admin")
+        [Authorize(Roles = "Admin")]
         
         //https://localhost:7191/api/Product/1
         [HttpDelete("{id}")]

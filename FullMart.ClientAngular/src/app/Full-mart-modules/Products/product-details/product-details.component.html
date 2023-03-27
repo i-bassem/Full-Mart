@@ -27,7 +27,8 @@
                 </div>                 <!-- add to cart , add to wish list ,use onvlikc to use it  -->
                 <div class="buttons d-flex my-5">
                     <div class="block">
-                        <button class="btn btn-primary" style="height: 50px;" (click)="addToCart(product.id)"> add to cart</button>
+                        <!-- <button class="btn btn-primary" style="height: 50px;" (click)="addToCart(product.id)"> add to cart</button> -->
+                        <app-add-to-cart [productId]="product.id"></app-add-to-cart>
                     </div>
                     <div class="block">
                         <button mat-fab><mat-icon>favorite</mat-icon></button></div>
@@ -102,13 +103,14 @@
             <div class="delivery-options my-4" >
                 Comments
                 <div class="card ">
-                    <div class="card-body" *ngFor="let item of product.comment">
+                    <div class="card-body" *ngFor="let review of product.reviews">
                         <i class="fa-solid fa-comment"></i>
                         UserName:
                       <h3 class="card-title" >Anonymous</h3>
                         comment: 
-                      <p class="card-text bold">{{item}}</p>
-                      <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{product.rate}}</a>
+                      <p class="card-text bold">{{review.reviewComment}}</p>
+                      <!-- <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{review.numberOfStars}}</a> -->
+                      <p-rating ngModel="{{ review.numberOfStars}}" [readonly]="true" [cancel]="false"></p-rating>
                     </div>
                   </div>
             </div>

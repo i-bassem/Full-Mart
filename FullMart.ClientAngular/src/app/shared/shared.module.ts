@@ -11,6 +11,8 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
   imports: [
     CommonModule
   ],
-  exports:[AddToCartComponent]
+  exports: [
+    AddToCartComponent
+  ]
 })
 export class SharedModule { }

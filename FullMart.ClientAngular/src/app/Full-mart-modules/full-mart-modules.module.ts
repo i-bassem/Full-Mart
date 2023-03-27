@@ -9,7 +9,7 @@ import { UserModule } from './User/user.module';
 import { OrdesModule } from './ordes/ordes.module';
 import { ProductsModule } from './Products/products.module';
 import { CategoryListComponent } from './Category/category-list/category-list.component';
-import { SearchModule } from './search/search.module';
+import { SearchModule } from './Search/search.module';
 
 
 
