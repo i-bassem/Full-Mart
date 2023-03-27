@@ -61,7 +61,9 @@ export class HeaderComponent {
   search(){
 
     //console.log(word);
-    console.log(this.searchInput);
+    //console.log(this.searchInput);
+    console.log('search button');
+    localStorage.setItem('search', this.searchInput)
 
   }
 

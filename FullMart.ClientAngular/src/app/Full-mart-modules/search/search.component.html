@@ -1,0 +1,29 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col mb-5">
+        <img src="assets/Search.jpg"   style="width: 100%; height: 40vh" />
+      </div>
+    </div>
+    <div class="row col-10">
+        <div class="row">
+          <div class="col-sm-4" *ngFor="let prd of searchedProducts; let i = index">
+            <div class="card" style="margin-bottom: 20px">
+              <img class="card-img-top" src="{{ serverURL + prd.imageUrl }}" alt="Card image cap" width="200px"
+                height="250px" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a class="nav-link" routerLink="/product/details/{{ prd.id }}">{{ prd.productName }}</a>
+                </h5>
+                <p-rating ngModel="{{ prd.rate }}" [readonly]="true" [cancel]="false"></p-rating>
+                <p class="card-text">{{ prd.price | currency }}</p>
+                <p class="card-text">{{ prd.productDescription }}</p>
+                <!-- <button class="btn btn-primary" (click)="addToCart(prd.id)">add to cart</button>
+                <button mat-fab style="float: right" (click)="addTowishlist(prd.id)"> -->
+                  <mat-icon>favorite</mat-icon>
+                <!-- </button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -9,15 +9,19 @@ import { UserModule } from './User/user.module';
 import { OrdesModule } from './ordes/ordes.module';
 import { ProductsModule } from './Products/products.module';
 import { CategoryListComponent } from './Category/category-list/category-list.component';
+import { SearchModule } from './search/search.module';
+
 
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+   
+  ],
   
   imports: [
-    CommonModule, CategoryModule , WishlistModule, BrandModule, UserModule, OrdesModule, ProductsModule
+    CommonModule, CategoryModule , WishlistModule, BrandModule, UserModule, OrdesModule, ProductsModule, SearchModule
   ],
   exports:[
     CategoryListComponent

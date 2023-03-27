@@ -23,7 +23,7 @@ import { ReviewService } from 'src/app/_services/Review/review.service';
 export class CategoryDetailsComponent {
   protected catID:number=0;
   protected category:ICategory|null=null;
-   protected products:IProduct[] = []
+  protected products:IProduct[] = []
   protected serverURL = `${environment.ImgURL}`
   catList: ICategory[] = [];
   categorys: ICategory|null=null;

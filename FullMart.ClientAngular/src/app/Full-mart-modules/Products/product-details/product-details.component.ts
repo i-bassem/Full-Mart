@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/_models/iproduct';
 import { IReview } from 'src/app/_models/IReview';
+import { CartService } from 'src/app/_services/Cart/cart.service';
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { ReviewService } from 'src/app/_services/Review/review.service';
 import { environment } from 'src/environments/environment.development';
@@ -19,7 +20,7 @@ export class ProductDetailsComponent {
   public comment:string='comment';
   public numOfStars:number=1;
 
-  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService) {
+  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService,private cartService:CartService) {
   }
 
   ngOnInit():void{
@@ -41,6 +42,14 @@ export class ProductDetailsComponent {
       })
     }
   }
+  addToCart(productId:number){
+    const userId=localStorage.getItem("id");
+    console.log(userId);
+    if(userId!=null){
+    this.cartService.addProductToCart(productId,userId) .subscribe();
+    }
+  }
+  
   
 
 
