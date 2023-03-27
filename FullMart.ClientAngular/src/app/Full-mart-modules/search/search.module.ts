@@ -9,6 +9,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ChartModule } from 'primeng/chart';
 import { WishlistModule } from '../wishlist/wishlist.module';
 import { SearchComponent } from './search.component';
+import { SharedModule } from 'primeng/api';
 
 
 
@@ -19,7 +20,7 @@ import { SearchComponent } from './search.component';
   ],
   imports: [
     CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule, MatCheckboxModule, MatSliderModule,
-    ChartModule, WishlistModule
+    ChartModule, WishlistModule, SharedModule
   ],
   exports:[
     SearchComponent

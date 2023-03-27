@@ -19,6 +19,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
+
 @NgModule({
   providers:[ RatingModule],
   declarations: [

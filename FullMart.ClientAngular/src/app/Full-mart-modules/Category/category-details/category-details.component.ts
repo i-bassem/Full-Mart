@@ -119,15 +119,15 @@ export class CategoryDetailsComponent {
 // }
 
 
-addTowishlist(productID : number){
-  const userID = localStorage.getItem("id");
-  console.log(userID + "from wishlist");
-  if(userID != null){
-    this.wishlistserv.AddProductToWishlist(productID , userID).subscribe( p => {
-      alert("product added successfully to your list")
-    })
-  }
-}
+// addTowishlist(productID : number){
+//   const userID = localStorage.getItem("id");
+//   console.log(userID + "from wishlist");
+//   if(userID != null){
+//     this.wishlistserv.AddProductToWishlist(productID , userID).subscribe( p => {
+//       alert("product added successfully to your list")
+//     })
+//   }
+// }
 
 
 
