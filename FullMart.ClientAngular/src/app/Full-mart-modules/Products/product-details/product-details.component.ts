@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/_models/iproduct';
-import { IReview } from 'src/app/_models/IReview';
+import { IReviewModified } from 'src/app/_models/IReviewModified';
 import { CartService } from 'src/app/_services/Cart/cart.service';
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { ReviewService } from 'src/app/_services/Review/review.service';
@@ -19,7 +19,7 @@ export class ProductDetailsComponent {
   protected serverURL = `${environment.ImgURL}`
   public comment:string='comment';
   public numOfStars:number=1;
-
+  
   constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService,private cartService:CartService) {
   }
 
@@ -36,11 +36,13 @@ export class ProductDetailsComponent {
     console.log(this.comment);
     console.log(this.numOfStars);
     if(userID != null){
-      const newReview=new IReview(this.comment,this.numOfStars,this.productID,userID);
+      const newReview = new IReviewModified (this.comment, this.numOfStars, this.productID, userID);
+      console.log(newReview);
       this.reviewService.addProductToCart(newReview).subscribe( p => {
         alert("review added successfully")
       })
     }
+    //window.location.reload();
   }
   addToCart(productId:number){
     const userId=localStorage.getItem("id");

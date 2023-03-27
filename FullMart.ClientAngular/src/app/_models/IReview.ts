@@ -10,3 +10,9 @@ export class IReview {
 
     }
 }
+
+
+// public comment:string,
+// public numberOfStar:number,
+// public productName:string,
+// public userId:string,

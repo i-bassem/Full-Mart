@@ -15,7 +15,7 @@ export class SearchComponent {
   protected products:IProduct[] = []
   protected serverURL = `${environment.ImgURL}`
   protected searchedProducts:IProduct[] = []
-  protected searchedProduct = localStorage.getItem('search')?.toUpperCase()
+  protected searchedProduct = localStorage.getItem('search')!.toUpperCase()
 
 
   constructor(private productService : ProductsService, private cartService:CartService, private wishlistserv:WishlistProductService){}
@@ -30,14 +30,14 @@ export class SearchComponent {
     console.log(this.products);
  
     if(this.searchedProduct){
-    for(let i =0 ; i<this.products.length;i++){
-     if(this.products[i].productName.toUpperCase().includes(this.searchedProduct)){
-       this.searchedProducts.push(this.products[i])   
-       }
+
+      this.searchedProducts = this.products.filter( prd =>
+         prd.productName.toUpperCase().includes(this.searchedProduct) )   
       }
-     }
-    }
-   )
+
+   }
+  )
+   
   }
 
   ngOnchanges(): void{
@@ -49,12 +49,10 @@ export class SearchComponent {
       console.log(this.products);
    
       if(this.searchedProduct){
-      for(let i =0 ; i<this.products.length;i++){
-       if(this.products[i].productName.toUpperCase().includes(this.searchedProduct)){
-         this.searchedProducts.push(this.products[i])   
-         }
+
+        this.searchedProducts = this.products.filter( prd =>
+           prd.productName.toUpperCase().includes(this.searchedProduct) )   
         }
-       }
       }
      )
 

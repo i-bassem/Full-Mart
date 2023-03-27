@@ -59,32 +59,15 @@
                 <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-filter"></i></span>    &nbsp;<b>Delivery options</b> </p>
                 <p class="text-secondary">View delivery options here</p>
             </div>
-             <!-- user comments -->
-            <div class="delivery-options my-4" *ngFor="let item of product.comment">
-                Comments
-                <div class="card ">
-                    <div class="card-body">
-                        <i class="fa-solid fa-comment"></i>
-                        UserName:
-                      <h3 class="card-title" >User name</h3>
-                      comment:
-                      <p class="card-text bold">{{item}}</p>
-                      <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{product.rate}}</a>
-                    </div>
-                  </div>
-            </div>
-<!-- add comment section -->
+
+            <!-- add comment section -->
             <div class="delivery-options my-4">
                 <div class="comment-box ml-2">
                           
                     <h4>Add a comment</h4>
                     
-                    <div class="rating"> 
-                        <input type="radio" name="rating" value="5" id="5"><label for="numOfStars">☆</label>
-                        <input type="radio" name="rating" value="4" id="4"><label for="numOfStars">☆</label> 
-                        <input type="radio" name="rating" value="3" id="3"><label for="numOfStars">☆</label>
-                        <input type="radio" name="rating" value="2" id="2"><label for="numOfStars">☆</label>
-                        <input type="radio" name="rating" value="1" id="1"><label for="numOfStars">☆</label>
+                    <div class="rating my-4"> 
+                        <p-rating [(ngModel)]="numOfStars" [cancel]="false"></p-rating>
                     </div>
                     
                     <div class="comment-area">
@@ -96,17 +79,7 @@
                     <div class="comment-btns mt-2">
                         
                         <div class="row">
-                            
-                            <div class="col-6">
-                                
-                                <div class="pull-left">
-                                
-                                <button class="btn btn-danger btn-sm" >Cancel</button>      
-                                    
-                                </div>
-                            
-                            </div>
-                            
+ 
                             <div class="col-6">
                                 
                                 <div class="pull-right">
@@ -125,7 +98,20 @@
                 </div>
             
             </div>
-
+             <!-- user comments -->
+            <div class="delivery-options my-4" >
+                Comments
+                <div class="card ">
+                    <div class="card-body" *ngFor="let item of product.comment">
+                        <i class="fa-solid fa-comment"></i>
+                        UserName:
+                      <h3 class="card-title" >Anonymous</h3>
+                        comment: 
+                      <p class="card-text bold">{{item}}</p>
+                      <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{product.rate}}</a>
+                    </div>
+                  </div>
+            </div>
         </div>
         </div>
       </div>
