@@ -30,7 +30,7 @@ createImagepath(serverPath: string){
 delete(prdId:number){
   this.productsService.deleteProduct(prdId).subscribe(data=>console.log(data));;
 
-  window.location.reload();
+ // window.location.reload();
 
 }
 }

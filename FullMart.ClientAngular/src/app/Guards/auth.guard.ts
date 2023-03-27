@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserAuthService } from '../_services/UserAuthentication/UserAuthService';
+// import {NgToastSevice} from 'ng-angular-popup';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-
+  // private toast: NgToastSevice
   constructor(private userAuth: UserAuthService , private router:Router){}
   canActivate(
     route: ActivatedRouteSnapshot,
