@@ -25,10 +25,10 @@ export class HeaderComponent {
   isUserLogged:boolean =false;
   numOfCartProduct:number=0;
 
-  constructor(private userAuth : UserAuthService, private productService: ProductsService){
+  constructor(private userAuth : UserAuthService, private productService: ProductsService,){
     this.userName = localStorage.getItem('username')
   }
-  
+  // isuserlogged =this.userAuth.isUserLogged
   ngOnInit(){
    //User logged Status
     this.userAuth.getLoggedStatus().subscribe(status=>
