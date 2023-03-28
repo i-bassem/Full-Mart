@@ -2,9 +2,7 @@
     width: 400px;
     height: fit-content;
 }
-img{
-    height: 200px;
-}
+
 .btn-danger{
     float: right;
 }
@@ -12,3 +10,9 @@ img{
     width: 20%;
     margin-bottom: 4px;
 } */
+img{
+    height: 15em;
+}
+img:hover{
+    cursor: pointer;
+}
