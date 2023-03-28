@@ -9,7 +9,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ChartModule } from 'primeng/chart';
 import { WishlistModule } from '../wishlist/wishlist.module';
 import { SearchComponent } from './search.component';
-import { SharedModule } from 'primeng/api';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 

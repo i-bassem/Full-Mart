@@ -37,8 +37,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,RouterModule,LibrariesimportModule, FormsModule, ReactiveFormsModule
     ,MatCheckboxModule,MatSliderModule, SharedModule
-
-
   ]
 })
 export class ProductsModule { }

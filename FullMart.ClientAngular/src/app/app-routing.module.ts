@@ -56,7 +56,7 @@ const routes:Routes=[
   {path:"category/edit/:id",component:CategoryEditComponent},
   {path:"category/details/:id", component:CategoryDetailsComponent},
   //Products
-  {path:"product",component:ProductListComponent},
+  {path:"product",component:ProductListComponent, canActivate:[AuthGuard]},
   {path:"product/add",component:ProductAddComponent},
   {path:"product/edit/:id",component:ProductEditComponent},
   {path:"product/details/:id",component:ProductDetailsComponent},
@@ -73,7 +73,7 @@ const routes:Routes=[
 
 
   //Cart
-  {path:"Cart",component:IndexComponent},
+  {path:"Cart",component:IndexComponent, canActivate:[AuthGuard]},
 
 
 
@@ -89,7 +89,7 @@ const routes:Routes=[
   {path:"libraries", component:LibrariesComponent},
   {path:"", redirectTo:"/home", pathMatch:"full"},
 
-  {path:"wishlist" , component:WishlistproductsComponent},
+  {path:"wishlist" , component:WishlistproductsComponent, canActivate:[AuthGuard]},
 
 
   //search

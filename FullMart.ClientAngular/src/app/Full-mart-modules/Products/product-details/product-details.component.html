@@ -31,7 +31,7 @@
                         <app-add-to-cart [productId]="product.id"></app-add-to-cart>
                     </div>
                     <div class="block">
-                        <button mat-fab><mat-icon>favorite</mat-icon></button></div>
+                        <app-add-to-wishlist [productID]="product.id"></app-add-to-wishlist>
                     <div class="block quantity">
                         <input type="number" class="form-control" id="cart_quantity" value="{{product.quantity}}" min="0" max="5" placeholder="Enter email" name="cart_quantity"></div>
                 </div>

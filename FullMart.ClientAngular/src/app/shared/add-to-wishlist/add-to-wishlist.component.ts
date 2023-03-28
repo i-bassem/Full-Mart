@@ -14,7 +14,8 @@ constructor(protected wishlistservice: WishlistProductService){}
 
   addTowishlist(){
     const userID = localStorage.getItem("id");
-    console.log(userID + "from wishlist");
+    //document.querySelector("#whishlist")?.classList.add('fa-solid')
+   
     if(userID != null){
       this.wishlistservice.AddProductToWishlist(this.productID , userID).subscribe( p => {
         alert("product added successfully to your list")
