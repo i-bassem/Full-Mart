@@ -56,7 +56,7 @@ const routes:Routes=[
   {path:"category/edit/:id",component:CategoryEditComponent},
   {path:"category/details/:id", component:CategoryDetailsComponent},
   //Products
-  {path:"product",component:ProductListComponent, canActivate:[AuthGuard]},
+  {path:"product",component:ProductListComponent},
   {path:"product/add",component:ProductAddComponent},
   {path:"product/edit/:id",component:ProductEditComponent},
   {path:"product/details/:id",component:ProductDetailsComponent},
