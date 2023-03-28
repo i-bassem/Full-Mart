@@ -34,7 +34,7 @@
         <td>{{prd.productName}}</td>
         <td><img class="card-img-top" [src]="createImagepath(prd.imageUrl)" routerLink="/product/details/{{ prd.id }}" style="width: 100px; height: 100px;"></td>
         <td>{{ prd.categoryName }}</td> 
-        <td><a class="nav-link" routerLink="product/edit/{{prd.id}}"><mat-icon>edit</mat-icon>Edit</a></td>
+        <td><a class="nav-link" routerLink="/product/edit/{{prd.id}}"><mat-icon>edit</mat-icon>Edit</a></td>
         <td><button class="btn btn-danger" (click)="delete(prd.id)" routerLink="/product"><mat-icon>delete</mat-icon></button></td>
     </tr>
   </tbody>

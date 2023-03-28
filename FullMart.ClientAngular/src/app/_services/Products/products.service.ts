@@ -1,13 +1,14 @@
-
-
+import { IProductEdit } from './../../_models/IProductEdit';
 
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { IProduct } from 'src/app/_models/iproduct';
+
+
 import { IProductAdded } from 'src/app/_models/iproduct-added';
 
 import { environment } from 'src/environments/environment.development';
+import { IProduct } from 'src/app/_models/iproduct';
 
 @Injectable({
   providedIn: 'root'
@@ -70,11 +71,14 @@ export class ProductsService {
   }
 
   //https://localhost:7191/api/Product/400
+  //https://localhost:7191/api/Product/3
 
-  editCategory(prdId:number, product:IProductAdded){
+  editProduct(prdId:number, product:IProductEdit){
 
     return this.productService.put(`${environment.APIURL}/Product/${prdId}`, JSON.stringify(product), this.httpOption)
   }
+
+  
 
 
    //https://localhost:7191/api/Product/50
