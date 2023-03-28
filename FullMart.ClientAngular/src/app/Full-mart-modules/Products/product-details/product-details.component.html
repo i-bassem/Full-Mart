@@ -66,18 +66,19 @@
                 <div class="comment-box ml-2">
                           
                     <h4>Add a comment</h4>
-                    
-                    <div class="rating my-4"> 
+                    <ng-container *ngIf="!isUserLogged"><p class="text text-danger">Login to add a Review</p> </ng-container>
+                    <ng-container *ngIf="isUserLogged">
+                    <div class="rating my-2"> 
                         <p-rating [(ngModel)]="numOfStars" [cancel]="false"></p-rating>
                     </div>
                     
-                    <div class="comment-area">
+                    <div class="comment-area my-2">
                         
-                        <input class="form-control" placeholder="what is your view?" rows="4" [(ngModel)]="comment">
+                        <input class="form-control" placeholder="Write a review" rows="4" [(ngModel)]="comment">
                     
                     </div>
                     
-                    <div class="comment-btns mt-2">
+                    <div class="comment-btns my-2">
                         
                         <div class="row">
  
@@ -95,7 +96,7 @@
                     
                     </div>
                 
-                
+                </ng-container>
                 </div>
             
             </div>
