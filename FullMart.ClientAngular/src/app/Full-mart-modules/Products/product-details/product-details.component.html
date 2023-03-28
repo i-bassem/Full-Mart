@@ -9,6 +9,7 @@
     <!-- show category details -->
     <div class="col-md-7">
 
+<<<<<<< HEAD
       <div class="main-description px-2">
         <div class="category text-bold">
           <h2>{{product.productName}}</h2>
@@ -22,6 +23,37 @@
             <!-- description -->
 
             <!-- price -->
+=======
+            <div class="main-description px-2">
+                <div class="category text-bold">
+                    <h2>{{product.productName}}</h2>
+                </div>
+            <div class="main-description px-2">
+                <div class=><strong>Category:</strong> <br> <i>{{product.categoryName}}</i> </div>
+                    <br>
+                <div class="main-description">
+                    <div class=><strong>Description:</strong> <br> <i>{{product.productDescription}}</i> 
+                    </div>
+                       <!-- description -->
+           
+                <!-- price -->
+                <div class="product-details my-4">
+                    <span class="details-title text-color mb-1">price :</span>
+                    <span class="details-title text-color mb-1"><strong>{{product.price|currency|uppercase}}</strong> </span>
+                </div>                 <!-- add to cart , add to wish list ,use onvlikc to use it  -->
+                <div class="buttons d-flex my-5">
+                    <div class="block">
+                        <!-- <button class="btn btn-primary" style="height: 50px;" (click)="addToCart(product.id)"> add to cart</button> -->
+                        <app-add-to-cart [productId]="product.id"></app-add-to-cart>
+                    </div>
+                    <div class="block">
+                        <app-add-to-wishlist [productID]="product.id"></app-add-to-wishlist>
+                    <div class="block quantity">
+                        <input type="number" class="form-control" id="cart_quantity" value="{{product.quantity}}" min="0" max="5" placeholder="Enter email" name="cart_quantity"></div>
+                </div>
+                </div>
+                
+>>>>>>> 5210535be0d0b31278cb2ee8fea9ca5a7894078f
             <div class="product-details my-4">
               <span class="details-title text-color mb-1">price :</span>
               <span class="details-title text-color mb-1"><strong>{{product.price|currency|uppercase}}</strong> </span>
@@ -79,6 +111,7 @@
                 <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{product.rate}}</a>
               </div>
             </div>
+<<<<<<< HEAD
           </div>
           <!-- add comment section -->
           <div class="delivery-options my-4">
@@ -125,15 +158,73 @@
 
                   </div>
 
+=======
+
+            <!-- add comment section -->
+            <div class="delivery-options my-4">
+                <div class="comment-box ml-2">
+                          
+                    <h4>Add a comment</h4>
+                    <ng-container *ngIf="!isUserLogged"><p class="text text-danger">Login to add a Review</p> </ng-container>
+                    <ng-container *ngIf="isUserLogged">
+                    <div class="rating my-2"> 
+                        <p-rating [(ngModel)]="numOfStars" [cancel]="false"></p-rating>
+                    </div>
+                    
+                    <div class="comment-area my-2">
+                        
+                        <input class="form-control" placeholder="Write a review" rows="4" [(ngModel)]="comment">
+                    
+                    </div>
+                    
+                    <div class="comment-btns my-2">
+                        
+                        <div class="row">
+ 
+                            <div class="col-6">
+                                
+                                <div class="pull-right">
+                                
+                                <button class="btn btn-success" (click)="addReview()">Send <i class="fa fa-long-arrow-right ml-1"></i></button>      
+                                    
+                                </div>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+                
+                </ng-container>
+>>>>>>> 5210535be0d0b31278cb2ee8fea9ca5a7894078f
                 </div>
 
               </div>
 
 
             </div>
+<<<<<<< HEAD
 
           </div>
 
+=======
+             <!-- user comments -->
+            <div class="delivery-options my-4" >
+                Comments
+                <div class="card ">
+                    <div class="card-body" *ngFor="let review of product.reviews">
+                        <i class="fa-solid fa-comment"></i>
+                        UserName:
+                      <h3 class="card-title" >Anonymous</h3>
+                        comment: 
+                      <p class="card-text bold">{{review.reviewComment}}</p>
+                      <!-- <a class="btn btn-success"><i class="fa fa-star rating-color"></i>{{review.numberOfStars}}</a> -->
+                      <p-rating ngModel="{{ review.numberOfStars}}" [readonly]="true" [cancel]="false"></p-rating>
+                    </div>
+                  </div>
+            </div>
+        </div>
+>>>>>>> 5210535be0d0b31278cb2ee8fea9ca5a7894078f
         </div>
       </div>
     </div>

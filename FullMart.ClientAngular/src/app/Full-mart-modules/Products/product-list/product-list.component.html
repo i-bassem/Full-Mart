@@ -1,19 +1,41 @@
-<!-- <p>product-list works!</p> -->
+
 
 <a routerLink="/product/add" class="btn btn-primary" style="float:right;">Add New Product</a>
 
-
+<!-- 
 <div class="row">
     <div class="col-4" *ngFor="let prd of productList; let x=index">
   
       <div class="card">
         <a class="btn btn-secondary" routerLink="/product/edit/{{prd.id }}">Edit</a>
   
-        <img class="card-img-top" [src]="createImagepath(prd.imageUrl)" alt="" routerLink="/product/details/{{ prd.id }}">
+        
         <div class="card-body">
           <h3 class="card-title"><p>{{ prd.categoryName }}</p></h3>
           <button class="btn btn-danger" (click)="delete(prd.id)" routerLink="/product">Delete</button>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+
+  <table class="table table-bordered table-dark" >
+    <thead>
+        <!-- <th>INDEX</th> -->
+        <th>#</th>
+        <th>NAME</th>
+        <th>Image</th>
+        <th>Categoty</th>
+        <th>Delete</th>
+    </thead>
+  <tbody>
+    <tr *ngFor="let prd of productList; let x=index">
+        <td>{{x+1}}</td>
+        <td>{{prd.productName}}</td>
+        <td><img class="card-img-top" [src]="createImagepath(prd.imageUrl)" routerLink="/product/details/{{ prd.id }}" style="width: 100px; height: 100px;"></td>
+        <td>{{ prd.categoryName }}</td> 
+        <td><a class="nav-link" routerLink="product/edit/{{prd.id}}"><mat-icon>edit</mat-icon>Edit</a></td>
+        <td><button class="btn btn-danger" (click)="delete(prd.id)" routerLink="/product"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+  </tbody>
+</table>

@@ -28,9 +28,16 @@ createImagepath(serverPath: string){
 }
 
 delete(prdId:number){
-  this.productsService.deleteProduct(prdId).subscribe(data=>console.log(data));;
 
-  window.location.reload();
-
+  if(confirm("Are you sure you want to remove this product  ?")){
+    this.productsService.deleteProduct(prdId).subscribe(data=>console.log(data));
+    
+     window.location.reload();
+    }
 }
+  
+
+
+
+
 }

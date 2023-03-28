@@ -91,9 +91,9 @@ namespace FullMart.Api.Controllers
 
 
         //https://localhost:7191/api/Review/CreatReview
-
+        //[FromForm]
         [HttpPost("CreatReview")]
-        public async Task<IActionResult> AddReview([FromForm] NewReviewDto dto)
+        public async Task<IActionResult> AddReview( NewReviewDto dto)
         {
             try
             {

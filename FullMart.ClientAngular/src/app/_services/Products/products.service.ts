@@ -16,10 +16,11 @@ export class ProductsService {
 
   httpOption;
   constructor(public productService : HttpClient) {
+
     this.httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        //  Authorization :'my-auth-token'
+         Authorization : `Bearer ${localStorage.getItem("token")}`
       }),
     };
   }
@@ -78,7 +79,7 @@ export class ProductsService {
 
    //https://localhost:7191/api/Product/50
    public deleteProduct(prdId:number){
-    return this.productService.delete(`${environment.APIURL}/Product/${prdId}`)    }
+    return this.productService.delete(`${environment.APIURL}/Product/${prdId}`, this.httpOption)    }
 
 
   private handleError(error: HttpErrorResponse) {

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 import { IProduct } from 'src/app/_models/IProduct';
-import { IReview } from 'src/app/_models/IReview';
+import { IReviewModified } from 'src/app/_models/IReviewModified';
+import { CartService } from 'src/app/_services/Cart/cart.service';
 import { ProductsService } from 'src/app/_services/Products/products.service';
 import { ReviewService } from 'src/app/_services/Review/review.service';
+import { UserAuthService } from 'src/app/_services/UserAuthentication/UserAuthService';
+import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -17,16 +19,22 @@ export class ProductDetailsComponent {
   // public product:IProduct=new IProduct(0,"","",0,0,0,"","",0,[],null)
   protected product:any
   protected serverURL = `${environment.ImgURL}`
-  public comment:string='comment';
+  public comment:string='';
   public numOfStars:number=1;
+  isUserLogged:boolean =false;
 
-  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService ,private wishlistser : WishlistProductService) {
+  constructor(private ac: ActivatedRoute, private productService:ProductsService,private reviewService:ReviewService,
+    private cartService:CartService, private userAuth: UserAuthService , private wishlistser:WishlistProductService) {
   }
 
   ngOnInit():void{
+   //Get Product by ID
    this.productID =this.ac.snapshot.params["id"];
    console.log(this.productID);
    this.productService.getProductByID(this.productID).subscribe(data=> this.product = data);
+   //User logged Status
+   this.userAuth.getLoggedStatus().subscribe(status=>
+   this.isUserLogged=status)
   }
   addReview(){
     const userID = localStorage.getItem("id");
@@ -36,12 +44,23 @@ export class ProductDetailsComponent {
     console.log(this.comment);
     console.log(this.numOfStars);
     if(userID != null){
-      const newReview=new IReview(this.comment,this.numOfStars,this.productID,userID);
+      const newReview = new IReviewModified (this.comment, this.numOfStars, this.productID, userID);
+      console.log(newReview);
       this.reviewService.addProductToCart(newReview).subscribe( p => {
         alert("review added successfully")
       })
     }
+    //window.location.reload();
   }
+  // addToCart(productId:number){
+  //   const userId=localStorage.getItem("id");
+  //   console.log(userId);
+  //   if(userId!=null){
+  //   this.cartService.addProductToCart(productId,userId) .subscribe();
+  //   }
+  // }
+
+
 
 
 AddToWishlist(productID : number){

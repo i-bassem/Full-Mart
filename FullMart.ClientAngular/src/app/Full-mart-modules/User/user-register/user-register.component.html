@@ -11,7 +11,7 @@
   
     <div class="mb-3">
         <label class="form-label"  for="fName">First Name</label>
-        <input type="text" class="form-control" formControlName="firstName" id="fName" [class.is-valid]="firstName?.valid">
+        <input type="text" class="form-control w-25" formControlName="firstName" id="fName" [class.is-valid]="firstName?.valid">
     </div>
     <!-- Errors Either in html or ts-->
     <div class="alert alert-danger" [hidden]="firstName?.valid || firstName?.untouched">
@@ -23,7 +23,7 @@
 
     <div class="mb-3">
         <label for="lName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" formControlName="lastName" id="lName" [class.is-valid]="lastName?.valid">
+        <input type="text" class="form-control w-25" formControlName="lastName" id="lName" [class.is-valid]="lastName?.valid">
     </div>
      <!-- Errors -->
     <div class="alert alert-danger" [hidden]="lastName?.valid || lastName?.untouched">
@@ -32,7 +32,7 @@
       
     <div class="mb-3">
         <label for="userName" class="form-label">User Name</label>
-        <input type="text" class="form-control" formControlName="username" id="userName" [class.is-valid]="username?.valid">
+        <input type="text" class="form-control w-25" formControlName="username" id="userName" [class.is-valid]="username?.valid">
     </div>
      <!-- Errors -->
      <div class="alert alert-danger" [hidden]="username?.valid || username?.untouched">
@@ -42,7 +42,7 @@
 
     <div class="mb-3">
         <label for="Email" class="form-label">Email</label>
-        <input type="email" class="form-control"  formControlName="email" id="Email" [class.is-invalid]="email?.invalid && email?.touched">
+        <input type="email" class="form-control w-25"  formControlName="email" id="Email" [class.is-invalid]="email?.invalid && email?.touched">
     </div>
     <!-- Errors -->
     <div class="alert alert-danger" [hidden]="email?.valid || email?.untouched">
@@ -52,7 +52,7 @@
     <!-- Taa12@! -->
     <div class="mb-3">
         <label for="Password" class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="password"  id="Password"  [class.is-valid]="password?.valid">
+        <input type="password" class="form-control w-25" formControlName="password"  id="Password"  [class.is-valid]="password?.valid">
     </div>
     <div class="alert alert-danger" *ngIf="(password?.touched && password?.errors?.['required'])">
         <!-- *ngIf="password?.errors?.['required']" -->
@@ -66,7 +66,7 @@
     
     <div class="mb-3">
         <label for="CPassword" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" formControlName="confirmPassword" id="CPassword" [class.is-invalid]="confirmPassword?.invalid && confirmPassword?.touched">
+        <input type="password" class="form-control w-25" formControlName="confirmPassword" id="CPassword" [class.is-invalid]="confirmPassword?.invalid && confirmPassword?.touched">
     </div>
      <!-- Errors div-->
     <div class="alert alert-danger" *ngIf="(password?.touched && confirmPassword?.touched) && (confirmPassword?.invalid || userRegistrationForm?.errors?.['UnmatchedPassword'])">

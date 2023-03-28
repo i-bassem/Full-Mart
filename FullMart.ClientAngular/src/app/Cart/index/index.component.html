@@ -1,3 +1,4 @@
+<div class="container">
 <section class="h-100 gradient-custom">
   <div class="container py-5">
     <div class="row d-flex justify-content-center my-4">
@@ -19,50 +20,31 @@
                 </div>
                 <!-- Image -->
               </div>
+              <!-- Single item -->
 
-              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                <!-- Data -->
-                <p><strong>{{item.pName}}</strong></p>
-                <p>{{item.pDescription}}</p>
 
-                <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                  title="Remove item" (click)="deleteFromCart(item.id)">
-                  <i class="fas fa-trash"></i>
-                </button>
-                <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                  title="Move to the wish list">
-                  <i class="fas fa-heart"></i>
-                </button>
-                <!-- Data -->
-              </div>
 
-              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <!-- Quantity -->
-                <div class="d-flex mb-4" style="max-width: 300px">
-                  <button class="btn btn-primary px-3 me-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="fas fa-minus"></i>
-                  </button>
 
-                  <div class="form-outline">
-                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                    <label class="form-label" for="form1">Quantity</label>
-                  </div>
-
-                  <button class="btn btn-primary px-3 ms-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-                <!-- Quantity -->
-
-                <!-- Price -->
-                <p class="text-start text-md-center">
-                  <strong>{{item.price}}</strong>
-                </p>
-                <!-- Price -->
-              </div>
-              <hr class="my-4" />
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-body">
+              <p><strong>Expected shipping delivery</strong></p>
+              <p class="mb-0">12.10.2020 - 14.10.2020</p>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body">
+              <p><strong>We accept</strong></p>
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                alt="Visa" />
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                alt="American Express" />
+              <img class="me-2" width="45px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                alt="Mastercard" />
             </div>
             <!-- Single item -->
 
@@ -129,54 +111,46 @@
               (click)="createOrder()" routerLink="/shiping">Checkout</button>
 
           </div>
-        </div>
+
+                  <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+                      <form>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <div class="form-outline">
+                            <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                              placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                            <label class="form-label" for="typeText">Card Number</label>
+                          </div>
+                          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa" width="64px" />
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                              placeholder="Cardholder's Name" />
+                            <label class="form-label" for="typeName">Cardholder's Name</label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center pb-2">
+                          <div class="form-outline">
+                            <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YYYY"
+                              size="7" id="exp" minlength="7" maxlength="7" />
+                            <label class="form-label" for="typeExp">Expiration</label>
+                          </div>
+                          <div class="form-outline">
+                            <input type="password" id="typeText2" class="form-control form-control-lg"
+                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                            <label class="form-label" for="typeText2">Cvv</label>
+                          </div>
+
+
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+               </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="gradient-custom">
-  <div class="container my-5 py-5">
-    <div class="row d-flex justify-content-center py-5">
-      <div class="col-md-7 col-lg-5 col-xl-4">
-        <div class="card" style="border-radius: 15px;">
-          <div class="card-body p-4">
-            <form>
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="form-outline">
-                  <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                    placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
-                  <label class="form-label" for="typeText">Card Number</label>
-                </div>
-                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa" width="64px" />
-              </div>
 
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="form-outline">
-                  <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                    placeholder="Cardholder's Name" />
-                  <label class="form-label" for="typeName">Cardholder's Name</label>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-between align-items-center pb-2">
-                <div class="form-outline">
-                  <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YYYY" size="7"
-                    id="exp" minlength="7" maxlength="7" />
-                  <label class="form-label" for="typeExp">Expiration</label>
-                </div>
-                <div class="form-outline">
-                  <input type="password" id="typeText2" class="form-control form-control-lg"
-                    placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-                  <label class="form-label" for="typeText2">Cvv</label>
-                </div>
-                <button type="button" class="btn btn-info btn-lg btn-rounded">
-                  <i class="fas fa-arrow-right"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
