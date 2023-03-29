@@ -25,7 +25,7 @@ export class UserAuthService {
 
     this.isloggedsubject= new BehaviorSubject<boolean>(false);
 
-   this.userRole = new BehaviorSubject<string>('role') 
+    this.userRole = new BehaviorSubject<string>('role') 
  }
 //  Admin
 
@@ -63,8 +63,11 @@ export class UserAuthService {
                     map((res) => 
                     {
                       this.isloggedsubject.next(true)
-                      //console.log(res)
                       //Change logged Status
+                       this.role=localStorage.getItem('role')//null
+                       console.log(this.role);
+                      if(this.role){this.userRole.next(this.role), console.log(this.userRole); }
+                      console.log("service");
                       return res
                     }),
                    catchError(this.handleError),
@@ -82,6 +85,7 @@ export class UserAuthService {
     // localStorage.removeItem("role");
     //Change logged Status
     this.isloggedsubject.next(false);
+    this.userRole.next('Logedout');
   }
 
   get isUserLogged(){
@@ -96,6 +100,9 @@ export class UserAuthService {
 
   getUserRole(): Observable<string>{
 
-    return this.userRole
+    return this.userRole.asObservable();
   }
+
+
+
 }

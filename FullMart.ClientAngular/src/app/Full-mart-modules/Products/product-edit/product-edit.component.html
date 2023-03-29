@@ -5,7 +5,7 @@
     <div class="mb-3 w-25">
         <label for="pName" class="form-label">Product Name</label>
         <input type="text" #prdNameInp="ngModel" class="form-control" id="pName" name="prdname"
-            [(ngModel)]="product.productName" required pattern="[A-Za-z]{3,}" />
+            [(ngModel)]="product.productName" required pattern="[A-Za-z0-9\s]+{3,}"/>
         <div class="alert alert-warning" [hidden]="prdNameInp.valid || prdNameInp.untouched">
             <small *ngIf="prdNameInp.errors?.['required']">
                 Name Is Required</small>
@@ -63,8 +63,8 @@
     <!-- ProductCategory -->
     <div class="mb-3 w-25">
         <label for="prdCat" class="form-label">Product Category</label>
-        <select class="form-select" name="cat" id="prdCat"  [(ngModel)]="product.categoryName">
-            <option *ngFor="let cat of catList" [value]="product.categoryName">
+        <select class="form-select" name="cat" id="prdCat"  [(ngModel)]="productCategoryId">
+            <option *ngFor="let cat of catList" [value]="cat.id">
                 {{ cat.categoryName }}
             </option>
         </select>
@@ -72,8 +72,8 @@
     <!-- ProductBrand -->
     <div class="mb-3 w-25">
         <label for="prdBrand" class="form-label">Product Brand</label>
-        <select class="form-select" name="brand" id="prdBrand" [(ngModel)]="product.brandName">
-            <option *ngFor="let brand of brandList" [value]="product.brandName">
+        <select class="form-select" name="brand" id="prdBrand" [(ngModel)]="productBrandId">
+            <option *ngFor="let brand of brandList" [value]="brand.id">
                 {{ brand.brandName }}
             </option>
         </select>

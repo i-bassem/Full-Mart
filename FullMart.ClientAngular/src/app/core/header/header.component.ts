@@ -24,7 +24,8 @@ export class HeaderComponent {
   
   isUserLogged:boolean =false;
   numOfCartProduct:number=0;
-
+  userRole:string="";
+  adminRole:boolean=false;
   constructor(private userAuth : UserAuthService, private productService: ProductsService,){
     this.userName = localStorage.getItem('username')
   }
@@ -32,9 +33,26 @@ export class HeaderComponent {
   ngOnInit(){
    //User logged Status
     this.userAuth.getLoggedStatus().subscribe(status=>
-      this.isUserLogged=status
-      )  
+      this.isUserLogged=status 
+    ) 
 
+      //console.log(this.adminRole); 
+
+    this.userAuth.getUserRole().subscribe(role=> {
+      
+      console.log(role);
+
+      this.userRole = role
+
+      //console.log('role='+this.userRole)
+
+      if(this.userRole == "Admin"){
+        this.adminRole=true;
+        console.log('admin');
+      }else{this.adminRole=false}
+    }
+    )
+ 
     
    //Search
    this.productService.getAllProducts().subscribe(product=>
@@ -47,7 +65,7 @@ export class HeaderComponent {
 
   login(){
 
-    console.log(this.isUserLogged)
+    //console.log(this.isUserLogged)
   }
 
   logout(){
@@ -60,9 +78,9 @@ export class HeaderComponent {
 
   search(){
 
-    //console.log(word);
-    //console.log(this.searchInput);
-    console.log('search button');
+ 
+
+    
     localStorage.setItem('search', this.searchInput)
 
   }

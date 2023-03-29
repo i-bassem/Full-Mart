@@ -17,7 +17,7 @@ export class CategoriesService {
     this.httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        //  Authorization :'my-auth-token'
+         Authorization : `Bearer ${localStorage.getItem("token")}`
       }),
     };
   }
@@ -89,7 +89,7 @@ export class CategoriesService {
   //Deleting Category by ID
   //https://localhost:7191/api/Categories?id=1028
   deleteCategory(catID:number){
-    return this.httpClient.delete(`${environment.APIURL}/Categories?id=${catID}`)                      
+    return this.httpClient.delete(`${environment.APIURL}/Categories?id=${catID}`, this.httpOption)                      
   }
 
 

@@ -24,7 +24,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProductDetailsComponent,
     ProductEditComponent,
     ProductListComponent,
-    UploadComponent,
+    
     
   ],
   exports:[

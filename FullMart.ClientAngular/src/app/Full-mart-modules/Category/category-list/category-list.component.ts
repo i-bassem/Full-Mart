@@ -30,9 +30,10 @@ export class CategoryListComponent implements OnInit, OnChanges{
                                     .subscribe((cat) => (this.catList = cat));   
                                     
                                       //User logged Status
-                   this.userAuth.getLoggedStatus().subscribe(status=>
-                                this.isUserLogged=status)
-                                                    
+                   this.userAuth.getLoggedStatus().subscribe(status=>{
+                               console.log(status)
+                                this.isUserLogged=status})
+                              
   }
 
   ngOnChanges(): void {
@@ -46,10 +47,11 @@ export class CategoryListComponent implements OnInit, OnChanges{
   }
 
 delete(catID:number){
-    this.catservice.deleteCategory(catID).subscribe(data=>console.log(data));;
-    // setTimeout(()=>this.router.navigateByUrl("/category"),1500)   
-    window.location.reload();
-    
+    this.catservice.deleteCategory(catID).subscribe(data=>console.log(data));
+    //setTimeout(()=>this.router.navigateByUrl("/category"),1500)   
+    //window.location.reload();
+    //this.router.navigateByUrl("/category")
+    //this.router.navigate(['/category'])
  }
 
 

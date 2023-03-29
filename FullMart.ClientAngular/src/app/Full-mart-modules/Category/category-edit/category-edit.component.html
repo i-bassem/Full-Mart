@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td><label for="catImageURL">New Image</label></td>
-        <!-- <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload> -->
+        <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>
     </tr>
     </table>
 
@@ -19,12 +19,3 @@
 <!-- routerLink="/category" priorety over  navigateByUrl -->
 <p-toast position="bottom-center"></p-toast>
 
-<!-- export class ICategory{
-
-    constructor(
-       public id:number,
-       public categoryName:string,
-       public imageUrl:string,     
-    ){}
-
-} -->
