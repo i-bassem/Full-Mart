@@ -32,9 +32,9 @@ export class UserAuthenticationComponent {
      localStorage.setItem("id", response?.id),
      localStorage.setItem("username", response?.username),
      localStorage.setItem("email", response?.email),
-     localStorage.setItem("role", response?.roles[0]),
+     localStorage.setItem("role", response?.roles[0])
     
-     console.log(response)
+     //console.log(response)
      if (window.history.length > 1) {
       //console.log(window.history);
       this.location.back()

@@ -37,7 +37,8 @@ export class ProductEditComponent {
   // public  categoryId: number,
   // public brandId: number
 
- 
+  productBrandId :number=1 ;
+  productCategoryId :number=1 ;
 
   catList: ICategory[] = [];
   brandList: IBrandDTO[] = [];
@@ -45,7 +46,8 @@ export class ProductEditComponent {
 
    //Dependancy injection
    constructor(public productService:ProductsService,private ac:ActivatedRoute
-    , private categoryService:CategoriesService,private brandServices:BrandService  ){
+    , private categoryService:CategoriesService,private brandServices:BrandService, private router:Router  ){
+      //this.productBrandId = 3; this.productCategoryId = 1
     this.categoryService.getAllCategories().subscribe((catlist) => {
       this.catList = catlist;
 
@@ -76,14 +78,25 @@ export class ProductEditComponent {
 UpdateProduct(){
 
     this.productEdit = new IProductEdit(
-      this.product.productName
-      ,this.product.productDescription
-      ,this.product.price,
+      this.product.productName,
+      this.product.productDescription,
+      this.product.price,
       this.product.rate,
       this.product.quantity,
       this.response.dbPath,
-      this.product.quantity, this.product.quantity);
-      this.productService.editProduct(this.prdId, this.productEdit).subscribe();
+      this.productCategoryId, 
+      this.productBrandId
+      );
+      this.productService.editProduct(this.prdId, this.productEdit).subscribe((response:any)=>{
+
+        this.router.navigateByUrl("/home")
+        },
+          (errors)=>{
+            alert(errors);
+         }
+       
+      );
+      
 }
 
 }

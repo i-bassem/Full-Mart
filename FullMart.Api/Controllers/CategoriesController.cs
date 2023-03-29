@@ -114,6 +114,7 @@ namespace FullMart.Api.Controllers
         }
 
         //https://localhost:44308/api/Categories?id=17
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         public async Task<IActionResult> DeleteCategory(int id)
         {

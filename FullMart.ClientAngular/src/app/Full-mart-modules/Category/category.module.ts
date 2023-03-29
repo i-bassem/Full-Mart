@@ -26,8 +26,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
             CategoryAddComponent,
             CategoryDetailsComponent,
             CategoryListComponent,
-            CategoryEditComponent,
-            //  UploadComponent,
+            CategoryEditComponent, 
                    
   ],
   exports:[

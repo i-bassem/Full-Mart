@@ -14,7 +14,7 @@ import { MatSliderModule } from '@angular/material/slider';
   declarations: [
     AddToCartComponent,
     AddToWishlistComponent,
-    //UploadComponent
+    UploadComponent
   ],
   imports: [
     CommonModule,LibrariesimportModule, FormsModule, ReactiveFormsModule,MatCheckboxModule,MatSliderModule
@@ -22,7 +22,7 @@ import { MatSliderModule } from '@angular/material/slider';
   exports: [
     AddToCartComponent,
     AddToWishlistComponent,
-    //UploadComponent
+    UploadComponent
   ]
 })
 export class SharedModule { }
