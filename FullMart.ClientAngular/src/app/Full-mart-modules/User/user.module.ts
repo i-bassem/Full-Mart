@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RouteConfigLoadEnd, RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     UserProfileComponent
   ],
   imports: [
-    CommonModule, ReactiveFormsModule, FormsModule
+    CommonModule, ReactiveFormsModule, FormsModule, RouterModule
   ]
 })
 export class UserModule { }

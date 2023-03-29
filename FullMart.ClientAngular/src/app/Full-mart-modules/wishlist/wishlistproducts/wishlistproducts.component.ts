@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } fro
 import { Router } from '@angular/router';
 import { IWishlist } from 'src/app/_models/iwishlist';
 import { Iwishlistproducts } from 'src/app/_models/iwishlistproducts';
+import { CartService } from 'src/app/_services/Cart/cart.service';
 import { WishlistProductService } from 'src/app/_services/Wishlist/wishlist-product.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -18,7 +19,7 @@ productCount! :number;
 products! : Iwishlistproducts[];
 prdid :number= 5 ;
 
-constructor(public wishlistservice : WishlistProductService , public router:Router){
+constructor(public wishlistservice : WishlistProductService , public router:Router , private cartservice:CartService){
 }
   ngOnInit(): void {
       const userID :any=localStorage.getItem('id');
@@ -54,5 +55,10 @@ removeprd(productID : number){
 createImagepath(serverPath: string){
   return `${environment.ImgURL+serverPath}`
 }
+
+addToCart(productID : number){
+  const userID : any = localStorage.getItem('id');
+  this.cartservice.addProductToCart(productID , userID).subscribe();
+  }
 
 }
