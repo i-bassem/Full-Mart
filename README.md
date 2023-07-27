@@ -1,4 +1,4 @@
-![Screenshot 2023-07-27 125817](https://github.com/i-bassem/Full-Mart/assets/122347329/301b5d3b-8c38-443c-9d85-4ff5ce88bd67)# Full-Mart an E-Commerce Website
+# Full-Mart an E-Commerce Website
 
 ## Description
 
