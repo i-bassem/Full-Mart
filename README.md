@@ -7,13 +7,13 @@ Homepage: Upon landing on our homepage, you will be greeted with a clean and vis
 Product Categories: We offer an extensive collection of products across various categories such as electronics, fashion, ..etc.\
 Product Pages: Clicking on a product reveals its detailed page, where you can find comprehensive information about the item.\
 User Accounts: For a personalized experience, we encourage customers to create accounts. With an account, you can track your orders, view purchase history, and save items to your wishlist.\
-Shopping Cart and Checkout: Once you've selected the products you want to buy, you can add them to your shopping cart. \
+Shopping Cart and Checkout: Once you've selected the products you want to buy, you can add them to your shopping cart. 
 
 ## Technology used
 
 With the utilization of SQL Server for database management,\
-ASP.NET Core Web API for implementing a robust three-tier architecture,\ 
-Angular for crafting an intuitive and visually appealing front end.\
+ASP.NET Core Web API for implementing a robust three-tier architecture,\
+Angular for crafting an intuitive and visually appealing front end.
 
 ## Additional features
 
