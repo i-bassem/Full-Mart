@@ -9,7 +9,7 @@ Product Pages: Clicking on a product reveals its detailed page, where you can fi
 User Accounts: For a personalized experience, we encourage customers to create accounts. With an account, you can track your orders, view purchase history, and save items to your wishlist.
 Shopping Cart and Checkout: Once you've selected the products you want to buy, you can add them to your shopping cart. 
 
-## Methods used
+## Technology used
 
 With the utilization of SQL Server for database management,
 ASP.NET Core Web API for implementing a robust three-tier architecture, 
