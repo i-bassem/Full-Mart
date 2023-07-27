@@ -21,7 +21,10 @@ We have implemented JWT (JSON Web Token) authentication to further enhance the s
 JWT is a widely adopted standard for securely transmitting information between parties as a JSON object.
 
 ## Images
-![Screenshot 2023-07-27 125817](https://github.com/i-bassem/Full-Mart/assets/122347329/4f9af9ee-d9b1-49fa-8fa9-0f2b9010e339)
 
-![Screenshot 2023-07-27 125958](https://github.com/i-bassem/Full-Mart/assets/122347329/c6ccd388-65ad-4260-ac80-382efb8201ec)
+![Screenshot 2023-07-27 125817](https://github.com/i-bassem/Full-Mart/assets/122347329/0782e2a9-034a-46f7-bcb6-de0aaeefb1e8)
+
+
+![Screenshot 2023-07-27 125958](https://github.com/i-bassem/Full-Mart/assets/122347329/0d60f8b9-872c-4798-930d-6b922304fa1a)
+
 
